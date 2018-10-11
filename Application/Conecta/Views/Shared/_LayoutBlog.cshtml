@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title>@ViewData["Title"] - Conectaconlamemoria</title>
+    @await Html.PartialAsync("_MetaTagsPartial")
+    @await Html.PartialAsync("_HeadPartial")
+</head>
+<body class="blog-page sidebar-collapse">
+    @await Html.PartialAsync("_SideNavPartial")
+
+    @await Html.PartialAsync("_MainContentPartial")
+    @await Html.PartialAsync("_HeaderBlogPartial")
+    <div class="main main-raised">
+        <div class="container">
+            <div class="section section-text">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_RelateBlog")
+    @await Html.PartialAsync("_FooterPartial")
+    @await Html.PartialAsync("_CookieConsentPartial")
+    @await Html.PartialAsync("_ScriptsPartial")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
