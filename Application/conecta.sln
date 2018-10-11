@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnet-core-dotnet-core", "C:\Users\Administrador\source\repos\mattasur-conecta\mattasur-conecta\aspnet-core-dotnet-core.csproj", "{5AD83073-AB72-4926-92C0-5C189AF21159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "conecta", "C:\Users\Administrador\source\repos\mattasur-conecta\mattasur-conecta\conecta.csproj", "{5AD83073-AB72-4926-92C0-5C189AF21159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
