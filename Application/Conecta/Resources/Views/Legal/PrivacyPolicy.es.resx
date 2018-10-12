@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Policy" xml:space="preserve">
+    <value>&lt;h1&gt;Política de privacidad&lt;/h1&gt;
+
+
+&lt;p&gt;Fecha efectiva: October 08, 2018&lt;/p&gt;
+
+
+&lt;p&gt;Transportcenter.net S.A.S ("nosotros", "a nosotros", "nuestro") opera el sitio web https://transportcenter.net y la aplicación móvil TransportCenter Pocket (en adelante, el "Servicio").&lt;/p&gt;
+
+&lt;p&gt;Esta página le informa de nuestras políticas en materia de recopilación, uso y divulgación de datos personales cuando utiliza nuestro Servicio y de las opciones de las que dispone en relación con esos datos.
+
+&lt;p&gt;Utilizamos sus datos para prestarle el Servicio y mejorarlo. Al utilizar el Servicio, usted acepta la recopilación y el uso de información de conformidad con esta política. A menos que esta Política de privacidad defina lo contrario, los términos utilizados en ella tienen los mismos significados que nuestros Términos y Condiciones.&lt;/p&gt;
+
+&lt;h2&gt;Definiciones&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Servicio&lt;/strong&gt;&lt;/p&gt;
+                &lt;p&gt;Servicio significa el sitio web https://transportcenter.net y la aplicación móvil TransportCenter Pocket operados por Transportcenter.net S.A.S&lt;/p&gt;
+            &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Datos personales&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Datos personales significa los datos sobre una persona física viva que puede ser identificada a partir de esos datos (o con esos datos y otra información de la que dispongamos o probablemente podamos disponer).&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Datos de uso&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Datos de uso son los datos recopilados automáticamente, generados por el uso del Servicio o por la propia infraestructura del Servicio (por ejemplo, la duración de la visita a una página).&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Cookies&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Las cookies son pequeños archivos ialmacenados en su dispositivo (ordenador o dispositivo móvil).&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Recopilación y uso de la información&lt;/h2&gt;
+&lt;p&gt;Recopilamos diferentes tipos de información con diversas finalidades para prestarle el
+Servicio y mejorarlo.&lt;/p&gt;
+
+&lt;h3&gt;Tipos de datos recopilados&lt;/h3&gt;
+
+&lt;h4&gt;Datos personales&lt;/h4&gt;
+&lt;p&gt;Cuando utilice nuestro Servicio, es posible que le pidamos que nos proporcione determinada información personalmente identificable que podrá ser utilizada para contactar con usted o para identificarle ("Datos personales"). La información personalmente identificable puede incluir, entre otras, la siguiente:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Dirección de e-mail&lt;/li&gt;    &lt;li&gt;Nombre y apellidos&lt;/li&gt;    &lt;li&gt;Número de teléfono&lt;/li&gt;    &lt;li&gt;Dirección, localidad, provincia, código postal, ciudad&lt;/li&gt;    &lt;li&gt;Cookies y datos de uso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Datos de uso&lt;/h4&gt;
+
+&lt;p&gt;También podemos recopilar información que envía su dispositivo siempre que visita nuestro Servicio o cuando usted accede al Servicio a través de un dispositivo móvil ("Datos de uso").&lt;/p&gt;
+&lt;p&gt;Estos Datos de uso pueden incluir información como la dirección del protocolo de Internet de su ordenador (por ejemplo, dirección IP), tipo de navegador, versión del navegador, las páginas que visita de nuestro Servicio, la hora y la fecha de su visita, el tiempo que pasa en esas páginas, identificadores exclusivos de dispositivos y otros datos de diagnóstico.&lt;/p&gt;
+&lt;p&gt;Cuando accede al Servicio econ un dispositivo móvil, estos Datos de uso pueden incluir información como el tipo de dispositivo móvil que utiliza, el identificador exclusivo de su dispositivo móvil, la dirección de IP de su dispositivo móvil, el sistema operativo de su dispositivo móvil, el tipo de navegador de Internet que utiliza su dispositivo móvil, identificadores exclusivos de dispositivos y otros datos de diagnóstico.&lt;/p&gt;
+
+&lt;h4&gt;Datos de cookies y seguimiento&lt;/h4&gt;
+&lt;p&gt;Utilizamos cookies y tecnologías de seguimiento similares para rastrear la actividad de nuestro Servicio y mantener determinada información.&lt;/p&gt;
+&lt;p&gt;Las cookies son archivos con una pequeña cantidad de datos que pueden incluir un identificador exclusivo anónimo. Las cookies son enviadas a su navegador desde un sitio web y se almacenan en su dispositivo. Otras tecnologías de seguimiento también utilizadas son balizas, etiquetas y scripts para recopilar y rastrear la información, así como para mejorar y analizar nuestro Servicio.&lt;/p&gt;
+&lt;p&gt;Usted puede ordenar a su navegador que rechace todas las cookies o que le avise cuando se envía una cookie. Sin embargo, si no acepta cookies, es posible que no pueda utilizar algunas partes de nuestro Servicio.&lt;/p&gt;
+&lt;p&gt;Ejemplos de Cookies que utilizamos:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Cookies de sesión.&lt;/strong&gt; Utilizamos Cookies de sesión para operar nuestro Servicio.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Cookies de preferencia.&lt;/strong&gt; Utilizamos Cookies de preferencia para recordar sus preferencias y diversos ajustes.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Cookies de seguridad.&lt;/strong&gt; Utilizamos Cookies de seguridad para fines de seguridad.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Uso de datos&lt;/h2&gt; 
+&lt;p&gt;Transportcenter.net S.A.S utiliza los datos recopilados con diversas finalidades:&lt;/p&gt;    
+&lt;ul&gt;
+    &lt;li&gt;Suministrar y mantener nuestro Servicio&lt;/li&gt;
+    &lt;li&gt;Notificarle cambios en nuestro Servicio&lt;/li&gt;
+    &lt;li&gt;Permitirle participar en funciones interactivas de nuestro Servicio cuando decida hacerlo&lt;/li&gt;
+    &lt;li&gt;Prestar asistencia al cliente&lt;/li&gt;
+    &lt;li&gt;Recopilar análisis o información valiosa que nos permitan mejorar nuestro Servicio&lt;/li&gt;
+    &lt;li&gt;Controlar el uso de nuestro Servicio&lt;/li&gt;
+    &lt;li&gt;Detectar, evitar y abordar problemas técnicos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Transferencia de datos&lt;/h2&gt;
+&lt;p&gt;Su información, incluyendo Datos personales, puede ser transferida a —y mantenida en— ordenadores localizados fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.&lt;/p&gt;
+&lt;p&gt;Si usted se encuentra fuera de Colombia y decide facilitarnos información, tenga en cuenta que nosotros transferimos los datos, incluyendo Datos personales, a Colombia y que los tratamos allí.&lt;/p&gt;
+&lt;p&gt;Su aceptación de esta Política de privacidad seguida de su envío de esta información representa que está de acuerdo con dicha transferencia.&lt;/p&gt;
+&lt;p&gt;Transportcenter.net S.A.S emprenderá todas las medidas razonables necesarias para garantizar que sus datos sean tratados de forma segura y de conformidad con esta Política de privacidad y no se realizará ninguna transferencia de sus Datos personales a una organización o país, salvo que existan unos controles adecuados establecidos incluyendo la seguridad de sus datos y otra información personal.&lt;/p&gt;
+
+&lt;h2&gt;Divulgación de datos&lt;/h2&gt;
+
+&lt;h3&gt;Requisitos legales&lt;/h3&gt;
+&lt;p&gt;Transportcenter.net S.A.S puede divulgar sus Datos personales de buena fe cuando considere que esta acción es necesaria para lo siguiente:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Cumplir una obligación legal&lt;/li&gt;
+    &lt;li&gt;Proteger y defender los derechos o bienes de Transportcenter.net S.A.S&lt;/li&gt;
+    &lt;li&gt;Prevenir o investigar posibles infracciones en relación con el Servicio&lt;/li&gt;
+    &lt;li&gt;Proteger la seguridad personal de usuarios del Servicio o del público&lt;/li&gt;
+    &lt;li&gt;Protegerse frente a consecuencias legales&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Seguridad de los datos&lt;/h2&gt;
+&lt;p&gt;La seguridad de sus datos es importante para nosotros, pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico resulta 100% seguro. A pesar de que nos esforzamos por utilizar medios comercialmente aceptables para proteger sus Datos personales, no podemos garantizar su seguridad absoluta.&lt;/p&gt;
+
+&lt;h2&gt;Proveedores de servicios&lt;/h2&gt;
+&lt;p&gt;Podemos contratar a personas físicas y jurídicas terceras para facilitar nuestro Servicio ("Proveedores de servicios"), para que presten el Servicio en nuestro nombre, para que suministren servicios relacionados con el Servicio o para que nos ayuden a analizar cómo se utiliza nuestro Servicio.&lt;/p&gt;
+&lt;p&gt;Estos terceros tienen acceso a sus Datos personales únicamente para realizar estas tareas en nuestro nombre y están obligados a no divulgarlos ni utilizarlos con ningún otro fin.&lt;/p&gt;
+
+&lt;h3&gt;Análisis&lt;/h3&gt;
+&lt;p&gt;Podemos utilizar Proveedores de servicios terceros para controlar y analizar el uso de nuestro Servicio.&lt;/p&gt;    
+&lt;ul&gt;
+        &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Google Analytics&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;Google Analytics es un servicio de analítica web ofrecido por Google que rastrea e informa del tráfico de los sitios web. Google utiliza los datos recopilados para rastrear y controlar el uso de nuestro Servicio. Estos datos son compartidos con otros servicios de Google. Google puede utilizar los datos recopilados para contextualizar y personalizar los anuncios de su propia red de publicidad.&lt;/p&gt;
+                        &lt;p&gt;Para más información sobre las prácticas de privacidad de Google, visite la página web de Privacidad y Condiciones de Google: &lt;a href="https://policies.google.com/privacy?hl=en"&gt;https://policies.google.com/privacy?hl=en&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+                                &lt;/ul&gt;
+
+
+&lt;h2&gt;Enlaces a otros sitios&lt;/h2&gt;
+&lt;p&gt;Nuestro Servicio puede contener enlaces a otros sitios no operados por nosotros. Si hace clic en el enlace de un tercero, será dirigido al sitio de ese tercero. Le recomendamos encarecidamente que revise la Política de privacidad de todos los sitios que visite.&lt;/p&gt;
+&lt;p&gt;No tenemos ningún control ni asumimos responsabilidad alguna con respecto al contenido, las políticas o prácticas de privacidad de sitios o servicios de terceros.&lt;/p&gt;
+
+
+&lt;h2&gt;Privacidad del menor&lt;/h2&gt;
+&lt;p&gt;Nuestro servicio no está dirigido a ningún menor de 18 años (en adelante, "Menor").&lt;/p&gt;
+&lt;p&gt;No recopilamos de forma consciente información personalmente identificable de menores de 18 años. Si es usted un padre/madre o tutor y tiene conocimiento de que su hijo nos ha facilitado Datos personales, contacte con nosotros. Si tenemos conocimiento de que hemos recopilado Datos personales de menores sin verificación del consentimiento parental, tomamos medidas para eliminar esa información de nuestros servidores.&lt;/p&gt;
+
+
+&lt;h2&gt;Cambios en esta Política de privacidad&lt;/h2&gt;
+&lt;p&gt;Podemos actualizar nuestra Política de privacidad periódicamente. Le notificaremos cualquier cambio publicando la nueva Política de privacidad en esta página.&lt;/p&gt;
+&lt;p&gt;Le informaremos a través del e-mail y/o de un aviso destacado sobre nuestro Servicio antes de que el cambio entre en vigor y actualizaremos la «fecha efectiva» en la parte superior de esta Política de privacidad.&lt;/p&gt;
+&lt;p&gt;Le recomendamos que revise esta Política de privacidad periódicamente para comprobar si se ha introducido algún cambio. Los cambios en esta Política de privacidad entran en vigor cuando se publican en esta página.&lt;/p&gt;
+
+
+&lt;h2&gt;Contacte con nosotros&lt;/h2&gt;
+&lt;p&gt;Si tiene alguna pregunta sobre esta Política de privacidad, contacte con nosotros: &lt;/p&gt;
+&lt;ul&gt;
+        &lt;li&gt;Por e-mail: privacy@transportcenter.net&lt;/li&gt;
+            &lt;li&gt;Visitando esta página en nuestro sitio web: https://transportcenter.net/Legal&lt;/li&gt;
+      
+            &lt;li&gt;Por correo: Diagonal 67a # 1a-10 Tunja – Boyacá 150003&lt;/li&gt;
+    &lt;/ul&gt;</value>
+  </data>
+  <data name="Privacy Policy." xml:space="preserve">
+    <value>Declaración de privacidad</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Política de privacidad.</value>
+  </data>
+</root>

@@ -12,11 +12,25 @@ using Microsoft.EntityFrameworkCore;
 using Conecta.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Localization;
 
 namespace Conecta
 {
     public class Startup
     {
+
+
+        //Language Default
+        private CultureInfo[] supportedCultures = new[]{
+            new CultureInfo("en"),
+            new CultureInfo("es"),
+            new CultureInfo("fr"),
+            new CultureInfo("de"),
+            new CultureInfo("it"),
+        };
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +48,10 @@ namespace Conecta
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+            //Set Region and Languages
+            this.SetRegionAndLanguages(services);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -42,6 +60,25 @@ namespace Conecta
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
+
+        protected void SetRegionAndLanguages(IServiceCollection services)
+        {
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture(culture: "es", uiCulture: "es");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
+
+        }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
