@@ -24,8 +24,8 @@ namespace Conecta
 
         //Language Default
         private CultureInfo[] supportedCultures = new[]{
-            new CultureInfo("en"),
             new CultureInfo("es"),
+            new CultureInfo("en"),
             new CultureInfo("fr"),
             new CultureInfo("de"),
             new CultureInfo("it"),
