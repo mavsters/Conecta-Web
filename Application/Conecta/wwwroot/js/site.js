@@ -1,1 +1,0 @@
-﻿$(function () { materialKitDemo.initContactUs2Map(); });
