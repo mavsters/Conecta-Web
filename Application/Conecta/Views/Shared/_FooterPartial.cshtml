@@ -1,19 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
-
 @inject IViewLocalizer Localizer
 <div class="cd-section" id="footers">
     <div id="footer-areas">
-
         <footer class="footer footer-white footer-big">
-
             <div class="container">
-
                 <div class="content">
                     <div class="row">
-
                         <div class="col-md-3">
                             <a href="@Url.Content("~/")"><h5>Conecta</h5></a>
-                            <p>Conecta con la memoria es un proyecto innovador el cual es liderado por un grupo de estudiantes en diversas modalidades de la Universidad de Boyacá - Tunja</p>
+                            <p>@Localizer["Description-short"]</p>
                         </div>
                         <div class="col-md-2">
                             <h5>About</h5>

@@ -9,7 +9,7 @@
 <body class="@ViewData["Title"].ToString().ToLower()-page sidebar-collapse">
     @await Html.PartialAsync("_SideNavPartial")
     @await Html.PartialAsync("_HeaderPartial")
-    <div class="main">
+    <div class="main@(!ViewData["Title"].ToString().Equals("Index")?" main-raised":"")">
         @RenderBody()
     </div>
     @await Html.PartialAsync("_FooterPartial")

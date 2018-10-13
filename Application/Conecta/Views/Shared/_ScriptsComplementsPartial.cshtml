@@ -1,0 +1,27 @@
+﻿@{
+    var title = ViewData["Title"].ToString().ToLower();
+}
+@if (title.Equals("index") || title.Equals("contact"))
+{
+<!--    Plugin for Google Maps  -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCHv-eC18jc0LRrrXRtKpDLFOQrpMuWYA" async defer></script>
+}
+<script type="text/javascript">
+    //<![CDATA[
+    $().ready(function () {
+@{
+    var script = "";
+    switch (title)
+    {
+        case "index":
+            script = "materialKitDemo.initContactUs2Map();";
+            break;
+        case "contact":
+            script = "materialKitDemo.initContactUsMap();";
+            break;
+    }
+}
+        @script
+});
+//]]></script>
+
