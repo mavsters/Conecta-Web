@@ -8,14 +8,14 @@
 </head>
 <body class="@ViewData["Title"].ToString().ToLower()-page sidebar-collapse">
     @await Html.PartialAsync("_SideNavPartial")
+
+    @await Html.PartialAsync("_MainContentPartial")
+    @await Html.PartialAsync("_HeaderPartial")
     <div class="main">
-        @await Html.PartialAsync("_MainContentPartial")
-        @await Html.PartialAsync("_HeaderPartial")
         <div class="section-space"></div>
         @RenderBody()
     </div>
     @await Html.PartialAsync("_FooterPartial")
-    @await Html.PartialAsync("_CookieConsentPartial")
     @await Html.PartialAsync("_ScriptsPartial")
     @RenderSection("Scripts", required: false)
 </body>
