@@ -43,4 +43,13 @@
     <Folder Include="Data\Country\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\_FooterSignUpRegisterPartial.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutSignUpRegister.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
