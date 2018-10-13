@@ -20,7 +20,7 @@ span.pro-badge {
 }
 div.conecta-box-search {
     position: absolute;
-    top: calc(100% - 561px);
+    top: 30vh;
     z-index: 1;
 }
 .conecta-card-body {
