@@ -45,6 +45,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Main\MemoriaGrafica - Copy %282%29.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\MemoriaGrafica - Copy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\ProfileStudents.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\GraphMemory.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\_FooterSignUpRegisterPartial.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
