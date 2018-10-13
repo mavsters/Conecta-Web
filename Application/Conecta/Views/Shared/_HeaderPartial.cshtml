@@ -28,33 +28,80 @@ else if (title.Equals("index"))
 
                 <h3 class="title">Santiago de Chile - Matta Sur</h3>
             </div>
-            <div class=" card card-raised card-form-horizontal">
-                <div class="conecta-card-body card-body conecta-card-body">
-                    <!--Content-->
-                    <!--//Content-->
-                </div>
-            </div>
-        </div><div class="container">
-            <div class="row">
+            <!--Content-->
+            <center style="margin-top: 20vh;">
+                <div class="container">
+                    <div class="row">
+                        <!--Content-->
+                        <div class="col-md-4">
 
-            </div>
+                            <div class="card card-blog">
+                                <div class="card-header card-header-image">
+                                    <a href="/ArteyCultura">
+                                        <img src="~/images/maincontent/memoria-grafica.png" alt="">
+                                        <div class="colored-shadow" style="background-image: url(~/images/maincontent/memoria-grafica.png); opacity: 1;"></div>
+                                    </a>
+
+                                    <div class="colored-shadow" style="background-image: url(&quot;/images/maincontent/memoria-grafica.png&quot;); opacity: 1;"></div>
+                                </div><div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="/ArteyCultura">Memoria Grafica</a>
+                                    </h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="card card-blog">
+                                <div class="card-header card-header-image">
+                                    <a href="/ArteyCultura">
+                                        <img src="~/images/maincontent/concurso-bid.jpg" alt="">
+                                        <div class="colored-shadow" style="background-image: url(~/images/maincontent/concurso-bid.jpg); opacity: 1;"></div>
+                                    </a>
+
+                                    <div class="colored-shadow" style="background-image: url(&quot;/images/maincontent/concurso-bid.jpg&quot;); opacity: 1;"></div>
+                                </div><div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="/ArteyCultura">Concurso - BID Cities Lab</a>
+                                    </h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="card card-blog">
+                                <div class="card-header card-header-image">
+                                    <a href="/ArteyCultura">
+                                        <img src="~/images/maincontent/actividades.png" alt="">
+                                        <div class="colored-shadow" style="background-image: url(~/images/maincontent/actividades.png); opacity: 1;"></div>
+                                    </a>
+
+                                    <div class="colored-shadow" style="background-image: url(&quot;/images/maincontent/actividades.pngg&quot;); opacity: 1;"></div>
+                                </div><div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="/ArteyCultura">Actividades con Conecta</a>
+                                    </h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--//Content-->
+                    </div>
+                </div>
+            </center>
+            <!--//Content-->
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item">
-                <div class="page-header header-filter" style="background-image: url('../../../images/background/1.JPG');">
+            @for (int i = 1; i < 4; i++)
+            {
+                <div class="carousel-item @((i==1)?"active":"")">
+                    <div class="page-header header-filter" style="background-image: url('../../../images/background/@(i.ToString()+".jpg")');">
 
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="page-header header-filter" style="background-image: url('../../../images/background/2.JPG');">
-
-                </div>
-            </div>
-            <div class="carousel-item active">
-                <div class="page-header header-filter" style="background-image: url('../../../images/background/3.JPG');">
-
-                </div>
-            </div>
+            }
         </div>
     </div>
 }
