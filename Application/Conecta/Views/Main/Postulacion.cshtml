@@ -1,9 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Blog";
     ViewData["Additional"] = "Dashboard";
-    ViewData["Background"] = "maincontent/memoria-grafica.png";
-    ViewData["Title-Main"] = "Memoria Grafica de 'Conecta con la Memoria'";
-    ViewData["Title-Description"] = "Proceso Grafico y Explicativo del Proyecto 'Conecta'";
+    ViewData["Background"] = "concurso/bid-cities-lab.jpg";
+    ViewData["Title-Main"] = "Conocimiento y Documentación de Cities Lab BID";
+    ViewData["Title-Description"] = "Concepción de la información base ante la postulación del concurso.";
     Layout = "~/Views/Shared/_LayoutBlog.cshtml";
 }
-@await Html.PartialAsync("../GraphMemory")
+<div class="container-fluid">
+    <div class="header text-center">
+        <h3 class="title">BID - Cities Lab</h3>
+    </div>
+    <h3 style="text-align:center">
+        Organizadores
+    </h3>
+    @await Html.PartialAsync("../Organizadores")
+    <div class="row">
+        1
+    </div>
+</div>

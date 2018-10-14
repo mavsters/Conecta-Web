@@ -41,10 +41,14 @@
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
     <Folder Include="Data\Country\" />
+    <Folder Include="Models\Country\" />
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Organizadores.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Main\Actividades.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

@@ -28,5 +28,10 @@ namespace Conecta.Controllers
             return View();
         }
 
+        public IActionResult Postulacion()
+        {
+            return View();
+        }
+
     }
 }
