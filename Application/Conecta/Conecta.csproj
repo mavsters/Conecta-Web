@@ -45,10 +45,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Main\MemoriaGrafica - Copy %282%29.cshtml">
+    <Content Update="Views\Main\Actividades.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Main\MemoriaGrafica - Copy.cshtml">
+    <Content Update="Views\Main\Fase-1.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\Fase-2.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\Postulacion.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\ProyectoBID.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\ProfileStudents.cshtml">

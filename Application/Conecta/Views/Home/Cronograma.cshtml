@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Blog";
+    ViewData["Additional"] = "Dashboard";//Css
+    ViewData["Similar-Content"] = false;
+    ViewData["Background"] = "maincontent/memoria-grafica.png";
+    ViewData["Title-Main"] = "Cronograma proyecto 'Conecta con la Memoria'";
+    ViewData["Title-Description"] = "Descripción de actividades culminadas hasta la fecha en 'Conecta con la Memoria'";
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Cronograma - Concuro </h3>
+        <p>
+            El siguiente cronograma describe de manera general las actividades a realizar, no obstante, existiran links que permitiran al usuario conocer el proceso de inclusión del proyecto al concurso Cities LAB Chile - BID.
+        </p>
+
+        <div class="blockquote undefined">
+            <ol>
+                <li>
+                    <p>
+                        Conocimiento del concurs, documentación del mismo y participación por parte de estudiantes.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Fecha de inicio para postulaciones: 11 de junio de 2018. <strong style="color:red">(Culminado)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Cierre de postulaciones y entrega de propuestas FASE I: 13 de agosto de 2018. <strong style="color:red">(Culminado)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Publicación de equipos clasificados a FASE II: 27 de agosto de 2018. <strong style="color:red">(Culminado)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Fecha límite para entrega de proyectos en FASE II: 22 de octubre de 2018. <strong style="color:green">(Proceso)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Publicación de equipos finalistas: 12 de noviembre de 2018. <strong style="color:blue">(Espera)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Presentación final y ceremonia de premiación: noviembre - diciembre 2018. <strong style="color:blue">(Espera)</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Fase de validación en la ciudad de Santiago de Chile: febrero - marzo 2019. <strong style="color:blue">(Espera)</strong>
+                    </p>
+                </li>
+            </ol>
+            <small>
+                *Todos los plazos están establecidos hasta las 05:00 pm. (Hora Washington, DC - USA, EST).
+            </small>
+        </div>
+    </div>
+
+    <div class="section col-md-10 ml-auto mr-auto">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-raised rounded img-fluid" alt="Primeras Fases" src="~/images/maincontent/concurso-bid.jpg">
+            </div>
+            <div class="col-md-4" style="margin-top: 3.5%;">
+                <img class="img-raised rounded img-fluid" alt="Proceso" src="~/images/maincontent/memoria-grafica.png">
+            </div>
+            <div class="col-md-4" style="margin-top: 2%;">
+                <img class="img-raised rounded img-fluid" alt="Culminación Esperada" src="~/images/bocetos/model/3D-Model.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Conocimiento del concurso:</h3>
+        <p>We are here to make life better. And now I look and look around and there’s so many Kanyes I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... and thank you for turning my personal jean jacket into a couture piece. <br> I speak yell scream directly at the old guard on behalf of the future. daytime All respect prayers and love to Phife’s family Thank you for so much inspiration. </p>
+        <a asp-controller="Main" asp-action="ProyectoBID" class="btn btn-primary btn-round btn-success">
+            <i class="material-icons">done_outline</i> Ver Contenido
+            <div class="ripple-container"></div>
+        </a>
+    </div>
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Documentación ante la postulación:</h3>
+        <p>We are here to make life better. And now I look and look around and there’s so many Kanyes I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... and thank you for turning my personal jean jacket into a couture piece. <br> I speak yell scream directly at the old guard on behalf of the future. daytime All respect prayers and love to Phife’s family Thank you for so much inspiration. </p>
+        <a asp-controller="Main" asp-action="Postulacion" class="btn btn-primary btn-round btn-success">
+            <i class="material-icons">done_outline</i> Ver Contenido
+            <div class="ripple-container"></div>
+        </a>
+    </div>
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Propuesta - Fase I:</h3>
+        <p>We are here to make life better. And now I look and look around and there’s so many Kanyes I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... and thank you for turning my personal jean jacket into a couture piece. <br> I speak yell scream directly at the old guard on behalf of the future. daytime All respect prayers and love to Phife’s family Thank you for so much inspiration. </p>
+        <a asp-controller="Main" asp-action="FaseUno" class="btn btn-primary btn-round btn-success">
+            <i class="material-icons">done_outline</i> Ver Contenido
+            <div class="ripple-container"></div>
+        </a>
+    </div>
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Propuesta - Fase II:</h3>
+        <p>We are here to make life better. And now I look and look around and there’s so many Kanyes I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... and thank you for turning my personal jean jacket into a couture piece. <br> I speak yell scream directly at the old guard on behalf of the future. daytime All respect prayers and love to Phife’s family Thank you for so much inspiration. </p>
+        <a asp-controller="Main" asp-action="FaseDos" class="btn btn-primary btn-round btn-info">
+            <i class="material-icons">autorenew</i> En Proceso
+            <div class="ripple-container"></div>
+        </a>
+    </div>
+    <div class="col-md-8 ml-auto mr-auto">
+        <h3 class="title">Mejoras & Recomendaciones:</h3>
+        <p>We are here to make life better. And now I look and look around and there’s so many Kanyes I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound... and thank you for turning my personal jean jacket into a couture piece. <br> I speak yell scream directly at the old guard on behalf of the future. daytime All respect prayers and love to Phife’s family Thank you for so much inspiration. </p>
+        <button class="btn btn-primary btn-round btn-warning">
+            <i class="material-icons">alarm_on</i> En Espera
+            <div class="ripple-container"></div>
+        </button>
+    </div>
+</div>
+
