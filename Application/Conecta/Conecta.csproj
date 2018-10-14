@@ -40,8 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
-    <Folder Include="Data\Country\" />
-    <Folder Include="Models\Country\" />
+    <Folder Include="Data\Migrations\" />
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 
