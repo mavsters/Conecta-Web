@@ -4,109 +4,22 @@ using Conecta.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Conecta.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181015121848_CountryStructure")]
+    partial class CountryStructure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Commune", b =>
-                {
-                    b.Property<int>("CommuneId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("ProvinceId");
-
-                    b.HasKey("CommuneId");
-
-                    b.HasIndex("ProvinceId");
-
-                    b.ToTable("Commune");
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Country", b =>
-                {
-                    b.Property<int>("CountryId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("About");
-
-                    b.Property<string>("CountryFlagUrl");
-
-                    b.Property<string>("IATA");
-
-                    b.Property<string>("Indicator");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("CountryId");
-
-                    b.ToTable("Country");
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Map", b =>
-                {
-                    b.Property<int>("MapId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("NeighborhoodId");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("MapId");
-
-                    b.HasIndex("NeighborhoodId");
-
-                    b.ToTable("Map");
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Neighborhood", b =>
-                {
-                    b.Property<int>("NeighborhoodId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CommuneId");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("NeighborhoodId");
-
-                    b.HasIndex("CommuneId");
-
-                    b.ToTable("Neighborhood");
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Province", b =>
-                {
-                    b.Property<int>("ProvinceId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CountryId");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("ProvinceId");
-
-                    b.HasIndex("CountryId");
-
-                    b.ToTable("Province");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -271,38 +184,6 @@ namespace Conecta.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Commune", b =>
-                {
-                    b.HasOne("Conecta.Models.CountryStructure.Province", "Province")
-                        .WithMany("Communes")
-                        .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Map", b =>
-                {
-                    b.HasOne("Conecta.Models.CountryStructure.Neighborhood", "Neighborhood")
-                        .WithMany("Maps")
-                        .HasForeignKey("NeighborhoodId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Neighborhood", b =>
-                {
-                    b.HasOne("Conecta.Models.CountryStructure.Commune", "Commune")
-                        .WithMany("Communes")
-                        .HasForeignKey("CommuneId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Conecta.Models.CountryStructure.Province", b =>
-                {
-                    b.HasOne("Conecta.Models.CountryStructure.Country", "Country")
-                        .WithMany("Provinces")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
