@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-Coneca-6ACF1265-9C88-4E45-A399-50AA4D0A2D9A</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Views\Contenido\**" />
+      <Content Remove="Views\Contenido\**" />
+      <EmbeddedResource Remove="Views\Contenido\**" />
+      <None Remove="Views\Contenido\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Views\Home\About.cshtml" />
+      <None Include="Views\Home\Contact.cshtml" />
+      <None Include="Views\Home\Index.cshtml" />
+      <None Include="Views\Home\Privacy.cshtml" />
+      <None Include="Views\Shared\Error.cshtml" />
+      <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
+      <None Include="Views\Shared\_Layout.cshtml" />
+      <None Include="Views\Shared\_LoginPartial.cshtml" />
+      <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mailjet.Api" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
+  </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Identity\Services\" />
+      <Folder Include="wwwroot\NewFolder\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Views\Organizadores.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Main\Actividades.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Main\Fase-1.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Main\Fase-2.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Main\Postulacion.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Main\ProyectoBID.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\ProfileStudents.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\GraphMemory.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Shared\_FooterSignUpRegisterPartial.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+      <Content Update="Views\Shared\_LayoutSignUpRegister.cshtml">
+        <Pack>$(IncludeRazorContentInPack)</Pack>
+      </Content>
+    </ItemGroup>
+
+  </Project>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title>@ViewData["Title"] - Conectaconlamemoria</title>
+    @await Html.PartialAsync("_MetaTagsPartial")
+    @await Html.PartialAsync("_HeadPartial")
+    @if (ViewData["Additional"]!=null&&ViewData["Additional"].ToString().Equals("Dashboard"))
+    {
+        <!-- CSS Files -->
+        <link href="~/css/material-dashboard.min.css?v=2.0.2" rel="stylesheet" />
+    }
+</head>
+<body class="blog-page sidebar-collapse">
+    @await Html.PartialAsync("_SideNavPartial")
+
+    @await Html.PartialAsync("_MainContentPartial")
+    @await Html.PartialAsync("_HeaderBlogPartial")
+    <div class="main main-raised">
+        <div class="container" id="content">
+            <div class="section section-text">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @if (ViewData["Similar-Content"] != null && (Boolean.Parse(ViewData["Similar-Content"].ToString()) != false))
+    {
+        @await Html.PartialAsync("_RelateBlog")
+    }
+    @await Html.PartialAsync("_FooterPartial")
+    @await Html.PartialAsync("_CookieConsentPartial")
+    @await Html.PartialAsync("_ScriptsPartial")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
