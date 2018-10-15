@@ -1,4 +1,4 @@
-﻿using Conecta.Models.ContryStructure;
+﻿using Conecta.Models.CountryStructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

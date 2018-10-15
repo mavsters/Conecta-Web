@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Conecta.Models.ContryStructure
+namespace Conecta.Models.CountryStructure
 {
     public class Province
     {
