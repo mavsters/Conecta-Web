@@ -1,8 +1,9 @@
 ﻿<!--   Core JS Files   -->
-<script src="~/js/core/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="~/js/core/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="~/js/core/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script src="~/js/core/jquery-3.2.1.slim.min.js"></script>
+<script src="~/js/core/popper.min.js"></script>
+<script src="~/js/core/bootstrap-material-design.js"></script>
 <script src="~/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
 
 <!-- Plugin for the momentJs  -->
 <script src="~/js/plugins/moment.min.js"></script>
@@ -41,13 +42,14 @@
 <script src="~/js/plugins/nouislider.min.js"></script>
 <!-- Library for adding dinamically elements -->
 <script src="~/js/plugins/arrive.min.js"></script>
-@if (ViewData["Title"].ToString().ToLower().Equals("maps")) {
-<!--  Azure Maps Plugin    -->
-<script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
-<!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
-<script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1"></script>
-<!--  Maps Plugin    -->
-<script src="~/js/maps.js"></script>
+@if (ViewData["Title"].ToString().ToLower().Equals("maps"))
+{
+    <!--  Azure Maps Plugin    -->
+    <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+    <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+    <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1"></script>
+    <!--  Maps Plugin    -->
+    <script src="~/js/maps.js"></script>
 }
 <!-- Chartist JS -->
 <script src="~/js/plugins/chartist.min.js"></script>
