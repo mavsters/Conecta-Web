@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title>@ViewData["Title"] - Conecta</title>
+    @await Html.PartialAsync("_MetaTagsPartial")
+    @await Html.PartialAsync("_HeadPartial")
+</head>
+<body class="@ViewData["Title"].ToString().ToLower()-page sidebar-collapse">
+    @await Html.PartialAsync("_SideNavPartial")
+        <div class="page-header header-filter" filter-color="blue" style="background-image: url('../'); background-size: cover; background-position: top center;">
+            <div class="container">
+                @RenderBody()
+            </div>
+            @await Html.PartialAsync("_FooterSignUpRegisterPartial")
+        </div>
+
+    @await Html.PartialAsync("_ScriptsPartial")
+    @if (ViewData["Title"]!=null&&ViewData["Title"].ToString().ToLower().Equals("maps"))
+    {
+        <!--  Azure Maps Plugin    -->
+        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+        <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=1"></script>
+        <!--  Maps Plugin    -->
+        <script src="~/js/maps.js"></script>
+    }
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

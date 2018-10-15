@@ -13,6 +13,11 @@ namespace Conecta.Controllers
             return View();
         }
 
+        public IActionResult Recomendacion()
+        {
+            return View();
+        }
+
         public IActionResult Fullscreen()
         {
             return View();
