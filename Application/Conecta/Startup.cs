@@ -55,11 +55,10 @@ namespace Conecta
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             //services.AddIdentity<ApplicationDbContext, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-
             
-
             //Login
-            this.SetLoginOptions(services);
+            //TODO: Revisar
+            //this.SetLoginOptions(services);
 
             //Set Region and Languages
             this.SetRegionAndLanguages(services);
@@ -103,8 +102,8 @@ namespace Conecta
             if (env.IsDevelopment())
             {
                 //app.UseBrowserLink();  
-                app.UseDeveloperExceptionPage();  
-                app.UseDatabaseErrorPage();  
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {

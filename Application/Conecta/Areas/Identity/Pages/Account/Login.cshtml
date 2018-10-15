@@ -1,0 +1,94 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    ViewData["Background"] = "1.jpg";
+
+}
+
+<div class="col-lg-5 col-md-6 col-sm-6 ml-auto mr-auto">
+    <form method="post">
+
+        <div class="card card-login card-hidden">
+            <div class="card-header card-header-rose text-center">
+                <h4 class="card-title">Ingresar</h4>
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div class="social-line">
+                            <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </div>
+            <div class="card-body ">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <span class="bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">email</i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                </span>
+                <span class="bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">lock_outline</i>
+                            </span>
+                        </div>
+                        <input asp-for="Input.Password" class="form-control" placeholder="Contraseña" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                </span>
+                <div class="form-check" style="display:none">
+                    <label asp-for="Input.RememberMe" class="form-check-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" type="checkbox" value="true" checked="true">
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+            </div>
+            <div class="card-footer justify-content-center">
+                <button type="submit" class="btn btn-social btn-fill btn-github">Iniciar Sesión</button>
+            </div>
+            <div class="card-footer justify-content-center">
+                <a asp-page="./ForgotPassword" class="btn btn-link"><i class="material-icons">lock_outline</i> ¿Mi contraseña?</a>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-danger btn-sm">Nuevo usuario<div class="ripple-container"></div></a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
