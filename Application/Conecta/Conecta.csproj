@@ -14,6 +14,10 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="Models\Coins\" />
+    <Folder Include="Models\Location\" />
+    <Folder Include="Models\Routes\" />
+    <Folder Include="Models\User\" />
   </ItemGroup>
 
 </Project>
