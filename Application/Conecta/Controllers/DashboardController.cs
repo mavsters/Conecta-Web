@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Conectaconlamemoria.Controllers
+namespace Conecta.Controllers
 {
     [Authorize]
     public class DashboardController : Controller

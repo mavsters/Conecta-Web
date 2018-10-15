@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Conectaconlamemoria.Controllers
+namespace Conecta.Controllers
 {
     public class FiestasController : Controller
     {

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Localization;
 using Conecta.Models;
 using System.Net.Http;
 
-namespace Conectaconlamemoria.Controllers
+namespace Conecta.Controllers
 {
     public class HomeController : Controller
     {
