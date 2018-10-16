@@ -8,15 +8,15 @@
 </head>
 <body class="@ViewData["Title"].ToString().ToLower()-page sidebar-collapse">
     @await Html.PartialAsync("_SideNavPartial")
-        <div class="page-header header-filter" filter-color="blue" style="background-image: url('../'); background-size: cover; background-position: top center;">
-            <div class="container">
-                @RenderBody()
-            </div>
-            @await Html.PartialAsync("_FooterSignUpRegisterPartial")
+    <div class="page-header header-filter" filter-color="blue" style="background-image: url('../'); background-size: cover; background-position: top center;">
+        <div class="container">
+            @RenderBody()
         </div>
+    </div>
 
+    @await Html.PartialAsync("_FooterPartial")
     @await Html.PartialAsync("_ScriptsPartial")
-    @if (ViewData["Title"]!=null&&ViewData["Title"].ToString().ToLower().Equals("maps"))
+    @if (ViewData["Title"] != null && ViewData["Title"].ToString().ToLower().Equals("maps"))
     {
         <!--  Azure Maps Plugin    -->
         <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>

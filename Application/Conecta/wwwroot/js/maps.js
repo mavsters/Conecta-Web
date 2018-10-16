@@ -1,138 +1,103 @@
-﻿    
-var map, client, datasource, popup;
+﻿$().ready(function () {
+    //Variables Main
+    var key_map = 'dzeFyndWBQ-iqPo_8KRkeU-0ENIezkqh3HXDzmSrn_Y';
+    var map;
+    //Position Matta Sur  
+    var lon = -33.459696810494876;
+    var lat = -70.63834840000004;
+    //Positions
+    var startPosition;
+    var endPosition = [lat, lon];
+    //Start
+    setVariables();
+    startMaps();
 
-function GetMap() {
-    //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
-    atlas.setSubscriptionKey('dzeFyndWBQ-iqPo_8KRkeU-0ENIezkqh3HXDzmSrn_Y');
-    //Initialize a map instance.
-    map = new atlas.Map('myMap');
-
-    //Wait until the map resources have fully loaded.
-    map.events.add('load', function (e) {
-        //Create an instance of the services client.
-        client = new atlas.service.Client(atlas.getSubscriptionKey());
-
-        //Create a data source and add it to the map.
-        datasource = new atlas.source.DataSource();
-        map.sources.add(datasource);
-
-        //Add a layer for rendering the results as symbols.
-        var resultsLayer = new atlas.layer.SymbolLayer(datasource);
-        map.layers.add(resultsLayer);
-
-        //Create a popup but leave it closed so we can update it and display it later.
-        popup = new atlas.Popup({
-            position: [0, 0],
-            pixelOffset: [0, -18]
-        });
-
-        //Add a click event to the results symbol layer.
-        map.events.add('click', resultsLayer, symbolClicked);
-    });
-}
-
-function closePopup() {
-    popup.close();
-}
-
-function search(userLatitude, userLongitude) {
-    var query = document.getElementById('input').value;
-
-    //Remove any previous results from the map.
-   // datasource.clear();
-
-    client.search.getSearchFuzzy(query, {
-        lat: userLatitude,
-        lon: userLongitude,
-        radius: 100000,
-    }).then(response => {
-        //Parse the response into GeoJSON that the map can understand.
-        var geojsonResponse = new atlas.service.geojson.GeoJsonSearchResponse(response);
-        var geojsonResults = geojsonResponse.getGeoJsonResults();
-
-        //Add the results to the data source.
-        datasource.add(geojsonResults);
-
-        //Set the camera to the bounds of the results.
-        map.setCamera({
-            bounds: geojsonResults.bbox,
-            padding: 40
-        });
-    });
-}
-
-function searchWithUserLocation() {
-    //Using the HTML5 geolocation API, request the users location from the browser, this will display a prompt to the user to share their location.
-    navigator.geolocation.getCurrentPosition(function (position) {
-        //Pass in the user location into the search.
-        search(position.coords.latitude, position.coords.longitude);
-    }, function (error) {
-        //If unable to get the users location, fall back to a search without their location information.
-        search();
-    });
-}
-
-function symbolClicked(e) {
-    //Make sure the event occured on a point feature.
-    if (e.shapes && e.shapes.length > 0 && e.shapes[0].getType() === 'Point') {
-        var properties = e.shapes[0].getProperties();
-
-        //Using the properties, create HTML to fill the popup with useful information.
-        var html = ['<div style="padding:10px;"><span style="font-size:14px;font-weight:bold;">'];
-        var addressInTitle = false;
-
-        if (properties.type === 'POI' && properties.poi && properties.poi.name) {
-            html.push(properties.poi.name);
-        } else if (properties.address && properties.address.freeformAddress) {
-            html.push(properties.address.freeformAddress);
-            addressInTitle = true;
-        }
-
-        html.push('</span><br/>');
-
-        if (!addressInTitle && properties.address && properties.address.freeformAddress) {
-            html.push(properties.address.freeformAddress, '<br/>');
-        }
-
-        html.push('<b>Type: </b>', properties.type, '<br/>');
-
-        if (properties.entityType) {
-            html.push('<b>Entity Type: </b>', properties.entityType, '<br/>');
-        }
-
-        if (properties.type === 'POI' && properties.poi) {
-            if (properties.poi.phone) {
-                html.push('<b>Phone: </b>', properties.poi.phone, '<br/>');
-            }
-
-            if (properties.poi.url) {
-                html.push('<b>URL: </b>', properties.poi.url, '<br/>');
-            }
-
-            if (properties.poi.classifications) {
-                html.push('<b>Classifications:</b><br/>');
-                for (var i = 0; i < properties.poi.classifications.length; i++) {
-                    for (var j = 0; j < properties.poi.classifications[i].names.length; j++) {
-                        html.push(' - ', properties.poi.classifications[i].names[j].name, '<br/>');
-                    }
-                }
-            }
-
-        }
-
-        html.push('</div>');
-
-        //Set the popup options.
-        popup.setPopupOptions({
-            //Update the content of the popup.
-            content: html.join(''),
-
-            //Update the position of the popup with the pins coordinate.
-            position: e.shapes[0].getCoordinates()
-        });
-
-        //Open the popup.
-        popup.open(map);
+    function setVariables() {
+        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+        atlas.setSubscriptionKey(key_map);
+        //Initialize a map instance.
+        map = new atlas.Map('myMap');
     }
-}
-GetMap();
+
+    function startMaps() {
+
+        //Wait until the map resources have fully loaded.map.events.add('load', function (e) {//Start Process//Create a HTML marker and add it to the map.marker = new atlas.HtmlMarker({htmlContent: '<div class="pulse"></div>',position: endPosition});map.markers.add(marker);//setPositionInitEndMiddle();//setText();});
+        map.events.add('load', function (e) {
+            //Request the user's location
+            navigator.geolocation.getCurrentPosition(function (position) {
+                //Add the users position to the data source.
+                var userPosition = [position.coords.longitude, position.coords.latitude];
+                //Add a layer for rendering the users position as a symbol.
+                var startPoint = new atlas.data.Feature(new atlas.data.Point(userPosition), {
+                    title: 'Start'
+                });
+                var endPoint = new atlas.data.Feature(new atlas.data.Point(endPosition), {
+                    title: 'End'
+                });
+
+                //Calculate a geodesic path between the two points (line that follows curvature of the earth).
+                var path = atlas.math.getGeodesicPath([userPosition, endPosition]);
+                var poly = new atlas.data.LineString(path);
+                //Calculate the midpoint of the line.
+                var midPoint = atlas.math.interpolate(userPosition, endPosition);
+                var pin = new atlas.data.Feature(new atlas.data.Point(midPoint), {
+                    title: 'Midpoint'
+                });
+
+                //Create a data source and add it to the map.
+                var datasource = new atlas.source.DataSource();
+                map.sources.add(datasource);
+                //Add the data to the data source.
+                datasource.add([poly, startPoint, endPoint, pin]);
+                
+                map.layers.add([
+                    //Add a layer for rendering line data.
+                    new atlas.layer.LineLayer(datasource, null, {
+                        strokeColor: 'red',
+                        strokeWidth: 4,
+                        filter: ['==', '$type', 'LineString']
+                    }),
+                    //Add a layer for rendering point data.
+                    new atlas.layer.SymbolLayer(datasource, null, {
+                        iconOptions: {
+                            allowOverlap: true,
+                            ignorePlacement: true
+                        },
+                        textOptions: {
+                            textField: ['get', 'title'],
+                            offset: [0, 1]
+                        },
+                        filter: ['==', '$type', 'Point']
+                    })
+                ]);
+
+                //Calculate the distance from the northWest coordinate to the southEast coordinate.
+                var distance = atlas.math.getDistanceTo(userPosition, endPosition, 'miles');
+                //Calculate the heading from the northWest coordinate to the southEast coordinate.
+                var heading = atlas.math.getHeading(userPosition, endPosition);
+                document.getElementById('outputPanel').innerHTML = 'Your Position:<br/>Lat:' + userPosition[0] + '<br/>Lon:' + userPosition[1] + '<hr/>' +
+                    'Asilo: <br />Lat: ' + endPosition[0] + ' <br /> Lon: ' + endPosition[1] + ' <hr />'+'Distance: ' + distance + ' miles<br/>Heading: ' + heading + ' degrees';
+
+
+            }, function (error) {
+                //If an error occurs when trying to access the users position information, display an error message.
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert('User denied the request for Geolocation.');
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert('Position information is unavailable.');
+                        break;
+                    case error.TIMEOUT:
+                        alert('The request to get user position timed out.');
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert('An unknown error occurred.');
+                        break;
+                }
+                });
+
+            });
+    }
+
+});
