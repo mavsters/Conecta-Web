@@ -33,5 +33,16 @@ namespace Conecta.Controllers
             return View();
         }
 
+        public IActionResult FaseUno()
+        {
+            return View();
+        }
+
+        public IActionResult FaseDos()
+        {
+            return View();
+        }
+        
+            
     }
 }
