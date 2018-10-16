@@ -40,7 +40,7 @@ namespace Conecta.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
+            [DataType(DataType.Text)]
             [Display(Name = "Nombre")]
             public string Name { get; set; }
 
