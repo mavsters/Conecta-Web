@@ -41,6 +41,11 @@ namespace Conecta.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Name = "Nombre")]
+            public string Name { get; set; }
+
+            [Required]
+            [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
