@@ -6,27 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Conecta.Data;
-using Conecta.Models.CountryStructure;
+using Conecta.Models.Type;
 
 namespace Conecta.Controllers
 {
-    public class MapsController : Controller
+    public class CategoryTypesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapsController(ApplicationDbContext context)
+        public CategoryTypesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Maps1
+        // GET: CategoryTypes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Map.Include(m => m.Neighborhood);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.CategoryType.ToListAsync());
         }
 
-        // GET: Maps1/Details/5
+        // GET: CategoryTypes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var categoryType = await _context.CategoryType
+                .FirstOrDefaultAsync(m => m.CategoryTypeID == id);
+            if (categoryType == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(categoryType);
         }
 
-        // GET: Maps1/Create
+        // GET: CategoryTypes/Create
         public IActionResult Create()
         {
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId");
             return View();
         }
 
-        // POST: Maps1/Create
+        // POST: CategoryTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Create([Bind("CategoryTypeID,Name")] CategoryType categoryType)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(map);
+                _context.Add(categoryType);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(categoryType);
         }
 
-        // GET: Maps1/Edit/5
+        // GET: CategoryTypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map.FindAsync(id);
-            if (map == null)
+            var categoryType = await _context.CategoryType.FindAsync(id);
+            if (categoryType == null)
             {
                 return NotFound();
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(categoryType);
         }
 
-        // POST: Maps1/Edit/5
+        // POST: CategoryTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryTypeID,Name")] CategoryType categoryType)
         {
-            if (id != map.MapId)
+            if (id != categoryType.CategoryTypeID)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace Conecta.Controllers
             {
                 try
                 {
-                    _context.Update(map);
+                    _context.Update(categoryType);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapExists(map.MapId))
+                    if (!CategoryTypeExists(categoryType.CategoryTypeID))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace Conecta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(categoryType);
         }
 
-        // GET: Maps1/Delete/5
+        // GET: CategoryTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var categoryType = await _context.CategoryType
+                .FirstOrDefaultAsync(m => m.CategoryTypeID == id);
+            if (categoryType == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(categoryType);
         }
 
-        // POST: Maps1/Delete/5
+        // POST: CategoryTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var map = await _context.Map.FindAsync(id);
-            _context.Map.Remove(map);
+            var categoryType = await _context.CategoryType.FindAsync(id);
+            _context.CategoryType.Remove(categoryType);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapExists(int id)
+        private bool CategoryTypeExists(int id)
         {
-            return _context.Map.Any(e => e.MapId == id);
+            return _context.CategoryType.Any(e => e.CategoryTypeID == id);
         }
     }
 }

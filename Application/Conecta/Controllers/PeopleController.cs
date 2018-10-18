@@ -6,27 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Conecta.Data;
-using Conecta.Models.CountryStructure;
+using Conecta.Models.User;
 
 namespace Conecta.Controllers
 {
-    public class MapsController : Controller
+    public class PeopleController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapsController(ApplicationDbContext context)
+        public PeopleController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Maps1
+        // GET: People
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Map.Include(m => m.Neighborhood);
+            var applicationDbContext = _context.Person.Include(p => p.UserMain);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Maps1/Details/5
+        // GET: People/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,42 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var person = await _context.Person
+                .Include(p => p.UserMain)
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(person);
         }
 
-        // GET: Maps1/Create
+        // GET: People/Create
         public IActionResult Create()
         {
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId");
+            ViewData["UserId"] = new SelectList(_context.UserMain, "UserId", "UserId");
             return View();
         }
 
-        // POST: Maps1/Create
+        // POST: People/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Create([Bind("PersonId,Name,LastName,Address,UserId")] Person person)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(map);
+                _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["UserId"] = new SelectList(_context.UserMain, "UserId", "UserId", person.UserId);
+            return View(person);
         }
 
-        // GET: Maps1/Edit/5
+        // GET: People/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +77,23 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map.FindAsync(id);
-            if (map == null)
+            var person = await _context.Person.FindAsync(id);
+            if (person == null)
             {
                 return NotFound();
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["UserId"] = new SelectList(_context.UserMain, "UserId", "UserId", person.UserId);
+            return View(person);
         }
 
-        // POST: Maps1/Edit/5
+        // POST: People/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Edit(int id, [Bind("PersonId,Name,LastName,Address,UserId")] Person person)
         {
-            if (id != map.MapId)
+            if (id != person.PersonId)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace Conecta.Controllers
             {
                 try
                 {
-                    _context.Update(map);
+                    _context.Update(person);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapExists(map.MapId))
+                    if (!PersonExists(person.PersonId))
                     {
                         return NotFound();
                     }
@@ -118,11 +118,11 @@ namespace Conecta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["UserId"] = new SelectList(_context.UserMain, "UserId", "UserId", person.UserId);
+            return View(person);
         }
 
-        // GET: Maps1/Delete/5
+        // GET: People/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +130,31 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var person = await _context.Person
+                .Include(p => p.UserMain)
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(person);
         }
 
-        // POST: Maps1/Delete/5
+        // POST: People/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var map = await _context.Map.FindAsync(id);
-            _context.Map.Remove(map);
+            var person = await _context.Person.FindAsync(id);
+            _context.Person.Remove(person);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapExists(int id)
+        private bool PersonExists(int id)
         {
-            return _context.Map.Any(e => e.MapId == id);
+            return _context.Person.Any(e => e.PersonId == id);
         }
     }
 }

@@ -1,0 +1,1 @@
+﻿ALTER ROLE dbmanager ADD MEMBER [ingeniero.miguelvargas]; 

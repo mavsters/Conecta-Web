@@ -6,27 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Conecta.Data;
-using Conecta.Models.CountryStructure;
+using Conecta.Models.Type;
 
 namespace Conecta.Controllers
 {
-    public class MapsController : Controller
+    public class EventTypesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapsController(ApplicationDbContext context)
+        public EventTypesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Maps1
+        // GET: EventTypes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Map.Include(m => m.Neighborhood);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.EventType.ToListAsync());
         }
 
-        // GET: Maps1/Details/5
+        // GET: EventTypes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var eventType = await _context.EventType
+                .FirstOrDefaultAsync(m => m.EventTypeID == id);
+            if (eventType == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(eventType);
         }
 
-        // GET: Maps1/Create
+        // GET: EventTypes/Create
         public IActionResult Create()
         {
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId");
             return View();
         }
 
-        // POST: Maps1/Create
+        // POST: EventTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Create([Bind("EventTypeID,Name")] EventType eventType)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(map);
+                _context.Add(eventType);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(eventType);
         }
 
-        // GET: Maps1/Edit/5
+        // GET: EventTypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map.FindAsync(id);
-            if (map == null)
+            var eventType = await _context.EventType.FindAsync(id);
+            if (eventType == null)
             {
                 return NotFound();
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(eventType);
         }
 
-        // POST: Maps1/Edit/5
+        // POST: EventTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Edit(int id, [Bind("EventTypeID,Name")] EventType eventType)
         {
-            if (id != map.MapId)
+            if (id != eventType.EventTypeID)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace Conecta.Controllers
             {
                 try
                 {
-                    _context.Update(map);
+                    _context.Update(eventType);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapExists(map.MapId))
+                    if (!EventTypeExists(eventType.EventTypeID))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace Conecta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            return View(eventType);
         }
 
-        // GET: Maps1/Delete/5
+        // GET: EventTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var eventType = await _context.EventType
+                .FirstOrDefaultAsync(m => m.EventTypeID == id);
+            if (eventType == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(eventType);
         }
 
-        // POST: Maps1/Delete/5
+        // POST: EventTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var map = await _context.Map.FindAsync(id);
-            _context.Map.Remove(map);
+            var eventType = await _context.EventType.FindAsync(id);
+            _context.EventType.Remove(eventType);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapExists(int id)
+        private bool EventTypeExists(int id)
         {
-            return _context.Map.Any(e => e.MapId == id);
+            return _context.EventType.Any(e => e.EventTypeID == id);
         }
     }
 }

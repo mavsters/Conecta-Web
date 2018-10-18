@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Conecta.Models.Coins.QRMain>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.scan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserMain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.scan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserMain.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place.PlaceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.QRMainId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.QRMainId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.QRMainId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

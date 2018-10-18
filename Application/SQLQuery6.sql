@@ -1,0 +1,1 @@
+﻿ALTER DATABASE [mattasur-conecta-db] SET TRUSTWORTHY OFF;

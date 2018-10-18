@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Maps";
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+
+<div class="row">
+    <div id="myMap" style="position:absolute;width:800px;height:600px;"></div>
+
+    <div>
+        <input type="text" id="input" value="New York" />
+        <input type="button" onClick="search()" value="Search" />
+        <input type="button" onClick="searchWithUserLocation()" value="Search with User Location" />
+    </div>
+
+</div>

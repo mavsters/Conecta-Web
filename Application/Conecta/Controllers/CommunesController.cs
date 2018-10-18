@@ -10,23 +10,23 @@ using Conecta.Models.CountryStructure;
 
 namespace Conecta.Controllers
 {
-    public class MapsController : Controller
+    public class CommunesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapsController(ApplicationDbContext context)
+        public CommunesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Maps1
+        // GET: Communes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Map.Include(m => m.Neighborhood);
+            var applicationDbContext = _context.Commune.Include(c => c.Province);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Maps1/Details/5
+        // GET: Communes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,42 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var commune = await _context.Commune
+                .Include(c => c.Province)
+                .FirstOrDefaultAsync(m => m.CommuneId == id);
+            if (commune == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(commune);
         }
 
-        // GET: Maps1/Create
+        // GET: Communes/Create
         public IActionResult Create()
         {
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId");
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "ProvinceId", "ProvinceId");
             return View();
         }
 
-        // POST: Maps1/Create
+        // POST: Communes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Create([Bind("CommuneId,Name,ProvinceId")] Commune commune)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(map);
+                _context.Add(commune);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "ProvinceId", "ProvinceId", commune.ProvinceId);
+            return View(commune);
         }
 
-        // GET: Maps1/Edit/5
+        // GET: Communes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +77,23 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map.FindAsync(id);
-            if (map == null)
+            var commune = await _context.Commune.FindAsync(id);
+            if (commune == null)
             {
                 return NotFound();
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "ProvinceId", "ProvinceId", commune.ProvinceId);
+            return View(commune);
         }
 
-        // POST: Maps1/Edit/5
+        // POST: Communes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Edit(int id, [Bind("CommuneId,Name,ProvinceId")] Commune commune)
         {
-            if (id != map.MapId)
+            if (id != commune.CommuneId)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace Conecta.Controllers
             {
                 try
                 {
-                    _context.Update(map);
+                    _context.Update(commune);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapExists(map.MapId))
+                    if (!CommuneExists(commune.CommuneId))
                     {
                         return NotFound();
                     }
@@ -118,11 +118,11 @@ namespace Conecta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "ProvinceId", "ProvinceId", commune.ProvinceId);
+            return View(commune);
         }
 
-        // GET: Maps1/Delete/5
+        // GET: Communes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +130,31 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var commune = await _context.Commune
+                .Include(c => c.Province)
+                .FirstOrDefaultAsync(m => m.CommuneId == id);
+            if (commune == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(commune);
         }
 
-        // POST: Maps1/Delete/5
+        // POST: Communes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var map = await _context.Map.FindAsync(id);
-            _context.Map.Remove(map);
+            var commune = await _context.Commune.FindAsync(id);
+            _context.Commune.Remove(commune);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapExists(int id)
+        private bool CommuneExists(int id)
         {
-            return _context.Map.Any(e => e.MapId == id);
+            return _context.Commune.Any(e => e.CommuneId == id);
         }
     }
 }

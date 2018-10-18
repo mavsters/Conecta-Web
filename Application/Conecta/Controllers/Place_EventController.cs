@@ -6,27 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Conecta.Data;
-using Conecta.Models.CountryStructure;
+using Conecta.Models.Events;
 
 namespace Conecta.Controllers
 {
-    public class MapsController : Controller
+    public class Place_EventController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapsController(ApplicationDbContext context)
+        public Place_EventController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Maps1
+        // GET: Place_Event
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Map.Include(m => m.Neighborhood);
+            var applicationDbContext = _context.Place_Event.Include(p => p.Event).Include(p => p.Place);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Maps1/Details/5
+        // GET: Place_Event/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,45 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var place_Event = await _context.Place_Event
+                .Include(p => p.Event)
+                .Include(p => p.Place)
+                .FirstOrDefaultAsync(m => m.Place_EventId == id);
+            if (place_Event == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(place_Event);
         }
 
-        // GET: Maps1/Create
+        // GET: Place_Event/Create
         public IActionResult Create()
         {
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId");
+            ViewData["EventId"] = new SelectList(_context.Event, "UserId", "UserId");
+            ViewData["PlaceId"] = new SelectList(_context.Place, "PlaceId", "PlaceId");
             return View();
         }
 
-        // POST: Maps1/Create
+        // POST: Place_Event/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Create([Bind("Place_EventId,EventId,PlaceId")] Place_Event place_Event)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(map);
+                _context.Add(place_Event);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["EventId"] = new SelectList(_context.Event, "UserId", "UserId", place_Event.EventId);
+            ViewData["PlaceId"] = new SelectList(_context.Place, "PlaceId", "PlaceId", place_Event.PlaceId);
+            return View(place_Event);
         }
 
-        // GET: Maps1/Edit/5
+        // GET: Place_Event/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +80,24 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map.FindAsync(id);
-            if (map == null)
+            var place_Event = await _context.Place_Event.FindAsync(id);
+            if (place_Event == null)
             {
                 return NotFound();
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["EventId"] = new SelectList(_context.Event, "UserId", "UserId", place_Event.EventId);
+            ViewData["PlaceId"] = new SelectList(_context.Place, "PlaceId", "PlaceId", place_Event.PlaceId);
+            return View(place_Event);
         }
 
-        // POST: Maps1/Edit/5
+        // POST: Place_Event/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapId,Type,NeighborhoodId")] Map map)
+        public async Task<IActionResult> Edit(int id, [Bind("Place_EventId,EventId,PlaceId")] Place_Event place_Event)
         {
-            if (id != map.MapId)
+            if (id != place_Event.Place_EventId)
             {
                 return NotFound();
             }
@@ -102,12 +106,12 @@ namespace Conecta.Controllers
             {
                 try
                 {
-                    _context.Update(map);
+                    _context.Update(place_Event);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapExists(map.MapId))
+                    if (!Place_EventExists(place_Event.Place_EventId))
                     {
                         return NotFound();
                     }
@@ -118,11 +122,12 @@ namespace Conecta.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NeighborhoodId"] = new SelectList(_context.Neighborhood, "NeighborhoodId", "NeighborhoodId", map.NeighborhoodId);
-            return View(map);
+            ViewData["EventId"] = new SelectList(_context.Event, "UserId", "UserId", place_Event.EventId);
+            ViewData["PlaceId"] = new SelectList(_context.Place, "PlaceId", "PlaceId", place_Event.PlaceId);
+            return View(place_Event);
         }
 
-        // GET: Maps1/Delete/5
+        // GET: Place_Event/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +135,32 @@ namespace Conecta.Controllers
                 return NotFound();
             }
 
-            var map = await _context.Map
-                .Include(m => m.Neighborhood)
-                .FirstOrDefaultAsync(m => m.MapId == id);
-            if (map == null)
+            var place_Event = await _context.Place_Event
+                .Include(p => p.Event)
+                .Include(p => p.Place)
+                .FirstOrDefaultAsync(m => m.Place_EventId == id);
+            if (place_Event == null)
             {
                 return NotFound();
             }
 
-            return View(map);
+            return View(place_Event);
         }
 
-        // POST: Maps1/Delete/5
+        // POST: Place_Event/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var map = await _context.Map.FindAsync(id);
-            _context.Map.Remove(map);
+            var place_Event = await _context.Place_Event.FindAsync(id);
+            _context.Place_Event.Remove(place_Event);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapExists(int id)
+        private bool Place_EventExists(int id)
         {
-            return _context.Map.Any(e => e.MapId == id);
+            return _context.Place_Event.Any(e => e.Place_EventId == id);
         }
     }
 }
