@@ -1,10 +1,6 @@
-﻿using Conecta.Models.CountryStructure;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Conecta.Models.CountryStructure
 {
@@ -14,6 +10,7 @@ namespace Conecta.Models.CountryStructure
         public int CommuneId { get; set; }
 
         [Display(Name = "Nombre de la Comuna")]
+        [DataType(DataType.Text)]
         public string Name { get; set; }
 
         /**  "Foreing Key" **/
@@ -25,7 +22,7 @@ namespace Conecta.Models.CountryStructure
 
         //A Donde va
         [Display(Name = "Barrio")]
-        public List<Neighborhood> Communes { get; set; }
+        public List<Neighborhood> Neighborhoods { get; set; }
 
     }
 }

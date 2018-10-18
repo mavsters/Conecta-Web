@@ -13,6 +13,7 @@ namespace Conecta.Models.CountryStructure
         public int ProvinceId { get; set; }
 
         [Display(Name = "Nombre de la Provincia")]
+        [DataType(DataType.Text)]
         public string Name { get; set; }
 
         /**  "Foreing Key" **/
