@@ -31,6 +31,6 @@ namespace Conecta.Models.Events
         public Event Event { get; set; }
 
         //A Donde Va
-        public List<PointsMain> PointsMain { get; set; }
+
     }
 }

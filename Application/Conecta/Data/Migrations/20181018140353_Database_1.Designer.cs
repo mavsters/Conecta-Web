@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Conecta.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181018054822_DataBase_1")]
-    partial class DataBase_1
+    [Migration("20181018140353_Database_1")]
+    partial class Database_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -283,8 +283,6 @@ namespace Conecta.Data.Migrations
 
                     b.Property<int?>("UserMainUserId");
 
-                    b.Property<int>("UserMain_EventId");
-
                     b.Property<double>("count");
 
                     b.HasKey("PointsMainId");
@@ -293,8 +291,6 @@ namespace Conecta.Data.Migrations
                         .IsUnique();
 
                     b.HasIndex("UserMainUserId");
-
-                    b.HasIndex("UserMain_EventId");
 
                     b.ToTable("PointsMain");
                 });
@@ -714,11 +710,6 @@ namespace Conecta.Data.Migrations
                     b.HasOne("Conecta.Models.User.UserMain")
                         .WithMany("PointsMain")
                         .HasForeignKey("UserMainUserId");
-
-                    b.HasOne("Conecta.Models.Events.UserMain_Event", "UserMain_Event")
-                        .WithMany("PointsMain")
-                        .HasForeignKey("UserMain_EventId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Conecta.Models.Routes.Route", b =>

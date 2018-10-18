@@ -29,11 +29,6 @@ namespace Conecta.Models.Points
         public QRMain QRMain { get; set; }
 
 
-        [Display(Name = "Usuario va Evento Otorga Puntos")]
-        [ForeignKey("UserMain_EventId")]//
-        public int UserMain_EventId { get; set; }
-        public UserMain_Event UserMain_Event { get; set; }
-
         //A donde va
         [Display(Name = "Beneficios")]
         public Benefits Benefits { get; set; }

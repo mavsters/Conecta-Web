@@ -281,8 +281,6 @@ namespace Conecta.Data.Migrations
 
                     b.Property<int?>("UserMainUserId");
 
-                    b.Property<int>("UserMain_EventId");
-
                     b.Property<double>("count");
 
                     b.HasKey("PointsMainId");
@@ -291,8 +289,6 @@ namespace Conecta.Data.Migrations
                         .IsUnique();
 
                     b.HasIndex("UserMainUserId");
-
-                    b.HasIndex("UserMain_EventId");
 
                     b.ToTable("PointsMain");
                 });
@@ -712,11 +708,6 @@ namespace Conecta.Data.Migrations
                     b.HasOne("Conecta.Models.User.UserMain")
                         .WithMany("PointsMain")
                         .HasForeignKey("UserMainUserId");
-
-                    b.HasOne("Conecta.Models.Events.UserMain_Event", "UserMain_Event")
-                        .WithMany("PointsMain")
-                        .HasForeignKey("UserMain_EventId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Conecta.Models.Routes.Route", b =>

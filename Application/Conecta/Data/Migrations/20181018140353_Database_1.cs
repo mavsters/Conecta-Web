@@ -2,7 +2,7 @@
 
 namespace Conecta.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class Database_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
