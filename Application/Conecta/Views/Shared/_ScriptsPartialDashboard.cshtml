@@ -42,7 +42,7 @@
 <script src="~/js/plugins/nouislider.min.js"></script>
 <!-- Library for adding dinamically elements -->
 <script src="~/js/plugins/arrive.min.js"></script>
-@if (ViewData["Title"].ToString().ToLower().Equals("maps"))
+@if (ViewData["Title"] != null && ViewData["Title"].ToString().ToLower().Equals("maps"))
 {
     <!--  Azure Maps Plugin    -->
     <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
