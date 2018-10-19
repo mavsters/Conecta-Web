@@ -17,18 +17,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace Conecta
 {
     public class Startup
     {
         //Language Default
+        private const string Culture = "es";
+
         private CultureInfo[] supportedCultures = new[]{
-            new CultureInfo("es"),
-            new CultureInfo("en"),
-            new CultureInfo("fr"),
-            new CultureInfo("de"),
-            new CultureInfo("it"),
+            new CultureInfo(Culture),
+            new CultureInfo("en")
         };
 
         public Startup(IConfiguration configuration)
@@ -46,6 +46,9 @@ namespace Conecta
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+
+
+
             });
             //DataBase
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -55,18 +58,13 @@ namespace Conecta
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             //services.AddIdentity<ApplicationDbContext, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-            
+
             //Login
             //TODO: Revisar
             //this.SetLoginOptions(services);
 
             //Set Region and Languages
             this.SetRegionAndLanguages(services);
-
-            // Add application services.  services.AddTransient<IEmailSender, EmailSender>();
-
-            //Model
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         protected void SetRegionAndLanguages(IServiceCollection services)
@@ -74,22 +72,26 @@ namespace Conecta
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            services.AddMvc()
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization();
-
             services.Configure<RequestLocalizationOptions>(options =>
             {
-                options.DefaultRequestCulture = new RequestCulture(culture: "es", uiCulture: "es");
+                options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            
+                
 
         }
 
         protected void SetLoginOptions(IServiceCollection services)
         {
-            services.AddAuthentication().AddTwitter(twitterOptions => {
+            services.AddAuthentication().AddTwitter(twitterOptions =>
+            {
                 twitterOptions.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
                 twitterOptions.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"];
             });
@@ -111,16 +113,30 @@ namespace Conecta
                 app.UseHsts();
             }
 
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("es"),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
+
             app.UseHttpsRedirection();
             app.UseCookiePolicy();
             app.UseStaticFiles();
             app.UseAuthentication();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            
+
+
+
         }
     }
 }
