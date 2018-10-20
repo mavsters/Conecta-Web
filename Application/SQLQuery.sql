@@ -1,1 +1,0 @@
-﻿CREATE LOGIN 'AdminConecta' WITH PASSWORD = 'Abcdefg@'; 

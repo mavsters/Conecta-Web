@@ -70,7 +70,7 @@ namespace Conecta
         protected void SetRegionAndLanguages(IServiceCollection services)
         {
 
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddLocalization(options => options.ResourcesPath = "App_GlobalResources");
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
@@ -82,10 +82,6 @@ namespace Conecta
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            
-                
-
         }
 
         protected void SetLoginOptions(IServiceCollection services)
