@@ -1,7 +1,7 @@
 ﻿$().ready(function () {
     //Variables Main
     var key_map = 'dzeFyndWBQ-iqPo_8KRkeU-0ENIezkqh3HXDzmSrn_Y';
-    var map;
+    var map, controls = [];
     //Position Matta Sur  
     var lon = -33.459696810494876;
     var lat = -70.63834840000004;
@@ -11,12 +11,14 @@
     //Start
     setVariables();
     startMaps();
+    
 
     function setVariables() {
         //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
         atlas.setSubscriptionKey(key_map);
         //Initialize a map instance.
         map = new atlas.Map('myMap');
+        
     }
 
     function startMaps() {

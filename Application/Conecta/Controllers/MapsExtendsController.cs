@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class MapsExtendController : Controller
+    public class MapsExtendsController : Controller
     {
         public IActionResult Index()
         {

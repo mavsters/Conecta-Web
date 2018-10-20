@@ -16753,7 +16753,7 @@ select.bs-select-hidden, select.selectpicker {
 .index-page .header-filter:after, .presentation-page .header-filter:after {
     background: rgba(236, 110, 41,.88);
     background: linear-gradient(45deg,rgba(51, 98, 163,.88),rgba(121, 142, 199,.31));
-    background: -webkit-linear-gradient(135deg,rgba(236, 110, 41,.88),rgba(237, 114, 114,.31));
+    background: -webkit-linear-gradient(135deg,rgba(51, 98, 163, .88),rgba(160, 185, 225,.31));
 }
 
 .index-page h4.description, .presentation-page h4.description {
