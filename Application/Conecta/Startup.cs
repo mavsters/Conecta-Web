@@ -1,37 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+
+using Conecta.Data;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Conecta.Data;
-using Conecta.Models;
-//using Conecta.Services;
-using System.Globalization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Routing;
+using System.Globalization;
 
 namespace Conecta
 {
     public class Startup
     {
-        //Language Default
-        private const string Culture = "es";
-
-        private CultureInfo[] supportedCultures = new[]{
-            new CultureInfo(Culture),
-            new CultureInfo("en")
-        };
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -70,24 +57,21 @@ namespace Conecta
 
         protected void SetRegionAndLanguages(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddDataAnnotationsLocalization().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc()
                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-               .AddDataAnnotationsLocalization();
+               .AddDataAnnotationsLocalization().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
                 {
-                    new CultureInfo("en-US"),
-                    new CultureInfo("tr-TR"),
+                    new CultureInfo("es"),
+                    new CultureInfo("en"),
                 };
 
-                options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+                options.DefaultRequestCulture = new RequestCulture(culture: "es", uiCulture: "es");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
                 options.RequestCultureProviders = new[]{ new RouteDataRequestCultureProvider{
@@ -120,26 +104,35 @@ namespace Conecta
 
             if (env.IsDevelopment())
             {
-                //app.UseBrowserLink();
+                //app.UseBrowserLink();  
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
-
 
             app.UseHttpsRedirection();
             app.UseCookiePolicy();
             app.UseStaticFiles();
             app.UseAuthentication();
 
+            /*app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });*/
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                         name: "LocalizedDefault",
                         template: "{culture:culture}/{controller=Home}/{action=Index}/{id?}"
-                ); routes.MapRoute(
+                );
+                routes.MapRoute(
                       name: "default",
                       template: "{*catchall}",
                       defaults: new { controller = "Home", action = "RedirectToDefaultLanguage", culture = "en" });
