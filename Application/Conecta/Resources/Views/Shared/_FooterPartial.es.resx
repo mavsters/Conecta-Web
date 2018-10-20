@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Index_Title_Main" xml:space="preserve">
-    <value>¿Qué es el proyecto "Matta Sur - Conecta con la Memoria"?</value>
+  <data name="Description_Short" xml:space="preserve">
+    <value />
   </data>
 </root>

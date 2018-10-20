@@ -12,6 +12,7 @@ namespace Conecta.Controllers
     {
         //Set Language
         private string _currentLanguage = "es";
+        private string _returnUrl = "";
 
         private string CurrentLanguage
         {
@@ -30,17 +31,30 @@ namespace Conecta.Controllers
             }
         }
 
+        public void SetLanguage(string culture, string returnUrl)
+        {
+            _currentLanguage = culture;
+            _returnUrl = returnUrl;
+            RedirectToDefaultLanguage();
+        }
+        
         public ActionResult RedirectToDefaultLanguage()
         {
             var culture = CurrentLanguage;
+            var returnUrl = _returnUrl;
             if (culture != "es")
                 culture = "es";
+            if (returnUrl == "")
+            {
+                returnUrl = "Index";
+            }
+
             Response.Cookies.Append(
                CookieRequestCultureProvider.DefaultCookieName,
                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
            );
-            return RedirectToAction("Index", new { culture });
+            return RedirectToAction(returnUrl, new { culture });
         }
     }
 }
