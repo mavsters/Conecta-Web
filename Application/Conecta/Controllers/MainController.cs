@@ -23,7 +23,7 @@ namespace Conecta.Controllers
             return View();
         }
 
-        public IActionResult Actividades()
+        public IActionResult Conecta()
         {
             return View();
         }

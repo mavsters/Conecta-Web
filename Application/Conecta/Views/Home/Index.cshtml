@@ -15,10 +15,10 @@
             <div class="col-md-6 ml-auto mr-auto">
                 <div class="rotating-card-container">
                     <div class="card card-rotate card-background">
-                        <div class="front front-background" style="background-image:url('@Url.Content("~/")images/bocetos/model/3D-Model.jpg');">
+                        <div class="front front-background" style="background-image:url('@Url.Content("~/")images/maincontent/memoria-grafica-culminada.png');">
                             <div class="card-body">
                                 <h6 class="card-category">Universidad de Boyacá</h6>
-                                <a href="#pablo">
+                                <a asp-area="" asp-controller="Main" asp-action="Conecta">
                                     <h3 class="card-title">Matta Sur Conecta con la Memoria</h3>
                                 </a>
                                 <p class="card-description">
@@ -27,14 +27,14 @@
                             </div>
                         </div>
 
-                        <div class="back back-background" style="background-image: url('@Url.Content("~/")images/bocetos/model/3D-Model.jpg');">
+                        <div class="back back-background" style="background-image: url('@Url.Content("~/")images/maincontent/memoria-grafica-culminada.png');">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Matta Sur - Conecta con la Memoria
                                 </h5>
                                 <p class="card-description">Conoce desde las memorias graficas hasta la implementación del aplicativo movil de Conecta.</p>
                                 <div class="footer justify-content-center">
-                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                    <a asp-controller="Main" asp-action="Conecta" class="btn btn-info btn-just-icon btn-fill btn-round">
                                         <i class="material-icons">subject</i>
                                     </a>
                                 </div>
@@ -100,7 +100,7 @@
                         <div class="front front-background" style="background-image:url('@Url.Content("~/")images/Evento/evento-1.jpg');">
                             <div class="card-body">
                                 <h6 class="card-category">Cultura y Entretenimiento</h6>
-                                <a href="#pablo">
+                                <a asp-controller="Dashboard" asp-action="Eventos">
                                     <h3 class="card-title">Mantente atento en este sitio web a todos los eventos que se realizan en Matta Sur</h3>
                                 </a>
                                 <p class="card-description">
@@ -116,9 +116,9 @@
                                 </h5>
                                 <p class="card-description">Este sitio web te mantendra informado de los diversos eventos que se presentaran a lo largo del mes, e igualmente, se dara una descripción de los mismos y la ubicación mediante la aplicación.</p>
                                 <div class="footer justify-content-center">
-                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                    /
+                                    <a asp-controller="Dashboard" asp-action="Eventos"  class="btn btn-info btn-just-icon btn-fill btn-round">
                                         <i class="material-icons">subject</i>
-                                    </a>
                                     </a>
                                 </div>
                             </div>
@@ -130,7 +130,9 @@
     </div>
 </div>
 <!-- End Project -->
-<hr />
+<!-- Process -->
+
+<!-- End Process -->
 <!--Content-->
 <partial name="../ButtonsHistory" />
 <!--/ End Content-->
