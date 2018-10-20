@@ -1,20 +1,25 @@
 ﻿
 @{
     ViewData["Title"] = "Maps";
-
+    ViewData["Background"] = "background/6.jpg";
     Layout = "/Views/Shared/_LayoutPage.cshtml";
 }
-<div class="row ml-auto mr-auto mb-auto" style="margin-top: 130px;">
+
+
+<div class="row">
     <div class="col-md-12 ml-auto mr-auto">
         <div class="card">
-            <h2 class="card-title text-center">¿Dondé esta el Asilo de las hermanitas de los pobres?</h2>
+            <h2 class="card-title text-center">¿Dondé esta el Ex-Asilo de las Hermanitas de los Pobres?</h2>
             <div class="card-body">
                 <div class="row">
-                    <div id="myMap" class="ml-auto mr-auto" style="position: relative;width: 800px;height: 600px;"></div>
+                    <div class="col-sm-9">
+                        <div id="myMap" class="ml-auto mr-auto" style="position: relative;width: 750px;height: 600px;"></div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="outputPanel">Cargando...<br />Load...</div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div id="outputPanel">Load...</div>
-                </div>
+    
             </div>
         </div>
     </div>

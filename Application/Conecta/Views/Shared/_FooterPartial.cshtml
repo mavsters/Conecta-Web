@@ -7,15 +7,17 @@
                 <div class="content">
                     <div class="row">
                         <div class="col-md-3">
-                            <a href="@Url.Content("~/")"><h5>Conecta</h5></a>
+                            <a href="@Url.Content("~/")"><h5>Matta Sur - Conecta Con la Memoria</h5></a>
                             <p>@Localizer["Description_Short"]</p>
                         </div>
                         <div class="col-md-2">
                             <h5>About</h5>
                             <ul class="links-vertical">
-                                <a asp-controller="Home" asp-action="About">
-                                    Nosotros
-                                </a>
+                                <li>
+                                    <a asp-controller="Home" asp-action="About">
+                                        Nosotros
+                                    </a>
+                                </li>
                                 <li>
                                     <a asp-controller="Main" asp-action="Conecta">
                                         Presentación
@@ -47,20 +49,22 @@
                             </ul>
                         </div>
                         <div class="col-md-3">
-                            <h5>Subscribe to Newsletter</h5>
-                            <p>
-                                Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about this.
-                            </p>
-                            <form class="form form-newsletter" method="" action="#">
-
-                                <div class="form-group bmd-form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email...">
-                                </div>
-
-                                <button type="button" class="btn btn-primary btn-just-icon" name="button">
-                                    <i class="material-icons">mail</i>
-                                </button>
-                            </form>
+                            <center>
+                                <h5>Matta Sur - Conecta con la Memoria</h5>
+                                <ul class="links-vertical">
+                                    <li>
+                                        <a asp-controller="Home" asp-action="Index">
+                                            <img id="logo" src="~/images/logos/logo_horizontal.png" alt="Conecta - Inicio" />
+                                        </a>
+                                    </li>
+                                    <li></li>
+                                    <li>
+                                        <a href="https://uniboyaca.edu.co">
+                                            <img id="logo" src="~/images/logos/uniboyaca.png" alt="Conecta - Inicio" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </center>
                         </div>
 
                     </div>
@@ -70,35 +74,28 @@
 
                 <ul class="social-buttons">
                     <li>
-                        <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter">
+                        <a href="#" class="btn btn-just-icon btn-link btn-twitter">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#pablo" class="btn btn-just-icon btn-link btn-facebook">
+                        <a href="#" class="btn btn-just-icon btn-link btn-facebook">
                             <i class="fa fa-facebook-square"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble">
-                            <i class="fa fa-dribbble"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pablo" class="btn btn-just-icon btn-link btn-google">
+                        <a href="#" class="btn btn-just-icon btn-link btn-google">
                             <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pablo" class="btn btn-just-icon btn-link btn-youtube">
-                            <i class="fa fa-youtube-play"></i>
                         </a>
                     </li>
                 </ul>
 
                 <div class="copyright pull-center">
-                    Copyright ©
-                    <script>document.write(new Date().getFullYear())</script>2018 Creative Tim All Rights Reserved.
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, hecho con <i class="material-icons">favorite</i> por los<a asp-controller="Home" asp-action="About"> integrantes de Matta Sur - Conecta.</a>
+                    <!-- Creative Tim -->
                 </div>
             </div>
         </footer>

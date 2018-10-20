@@ -1,129 +1,244 @@
 ﻿<center>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title text-center">
-                    <h2 id="coloredShadows">Matta Sur Conecta con la memoria te Presenta:<br/>Conoce Tú historia Chilena</h2>
-                    <h4>En los siguientes enlaces hacemos alución a gran parte del patrimonio Chileno en especial el barrio de Matta Sur y lugares aledaños al Asilo.</h4>
-                    <br>
+    @if (ViewData["Title"] != null && ViewData["Title"].ToString().ToLower().Equals("index"))
+    {
+        <div class="features-5" style="background-image: url('@Url.Content("~/")images/background/5.jpg')">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+                <h3 class="title">Matta Sur Conecta con la memoria te Presenta:</h3>
+                <h2 class="title">Conoce Tú historia Chilena</h2>
+                <h4 class="title">A parte de conocer el proceso especificado del proyecto "Matta Sur Conecta con la memoria", mostramos diversos contenidos patrimoniales representativos de Chile.</h4>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="Historia" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/historia.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/historia.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body">
+                                <h6 class="card-category text-warning">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="Historia" asp-action="Index">Historia</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="ArteyCultura" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/arte.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/arte.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body">
+                                <h6 class="card-category text-rose">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="ArteyCultura" asp-action="Index">Arte y Cultura</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="Personajes" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body ">
+                                <h6 class="card-category text-info">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="Personajes" asp-action="Index">Personajes Representativos</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="FaunayFlora" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/fauna-flora.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fauna-flora.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body">
+                                <h6 class="card-category text-warning">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="FaunayFlora" asp-action="Index">Fauna Y Flora</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="FiestasPatrias" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/fiestas-patrias.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fiestas-patrias.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body">
+                                <h6 class="card-category text-rose">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="FiestasPatrias" asp-action="Index">Fiestas Patrias</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card card-blog">
+                            <div class="card-header card-header-image">
+                                <a asp-controller="Lugares" asp-action="Index">
+                                    <img src="@Url.Content("~/")images/maincontent/representativos-lugares.jpg" alt="">
+                                    <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/representativos-lugares.jpg); opacity: 1;"></div>
+                                </a>
+
+                            </div><div class="card-body ">
+                                <h6 class="card-category text-info">Tema a Tratar</h6>
+                                <h4 class="card-title">
+                                    <a asp-controller="Lugares" asp-action="Index">Lugares Representativos</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="Historia" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/historia.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/historia.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body">
-                        <h6 class="card-category text-warning">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="Historia" asp-action="Index">Historia</a>
-                        </h4>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title text-center">
+                        <h3 id="coloredShadows">Matta Sur Conecta con la memoria te Presenta:</h3><h1>Conoce Tú historia Chilena</h1>
+                        <h4>A parte de conocer el proceso especificado del proyecto "Matta Sur Conecta con la memoria", mostramos diversos contenidos patrimoniales representativos de Chile.</h4>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="Historia" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/historia.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/historia.jpg); opacity: 1;"></div>
+                            </a>
 
-            <div class="col-md-4">
-
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="ArteyCultura" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/arte.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/arte.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body">
-                        <h6 class="card-category text-rose">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="ArteyCultura" asp-action="Index">Arte y Cultura</a>
-                        </h4>
+                        </div><div class="card-body">
+                            <h6 class="card-category text-warning">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="Historia" asp-action="Index">Historia</a>
+                            </h4>
+                        </div>
                     </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="ArteyCultura" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/arte.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/arte.jpg); opacity: 1;"></div>
+                            </a>
+
+                        </div><div class="card-body">
+                            <h6 class="card-category text-rose">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="ArteyCultura" asp-action="Index">Arte y Cultura</a>
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="Personajes" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg); opacity: 1;"></div>
+                            </a>
+
+                        </div><div class="card-body ">
+                            <h6 class="card-category text-info">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="Personajes" asp-action="Index">Personajes Representativos</a>
+                            </h4>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
-            <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="FaunayFlora" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/fauna-flora.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fauna-flora.jpg); opacity: 1;"></div>
+                            </a>
 
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="Personajes" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/represetnativos-personajes.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body ">
-                        <h6 class="card-category text-info">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="Personajes" asp-action="Index">Personajes Representativos</a>
-                        </h4>
+                        </div><div class="card-body">
+                            <h6 class="card-category text-warning">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="FaunayFlora" asp-action="Index">Fauna Y Flora</a>
+                            </h4>
+                        </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="col-md-4">
 
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="FiestasPatrias" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/fiestas-patrias.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fiestas-patrias.jpg); opacity: 1;"></div>
+                            </a>
+
+                        </div><div class="card-body">
+                            <h6 class="card-category text-rose">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="FiestasPatrias" asp-action="Index">Fiestas Patrias</a>
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card card-blog">
+                        <div class="card-header card-header-image">
+                            <a asp-controller="Lugares" asp-action="Index">
+                                <img src="@Url.Content("~/")images/maincontent/representativos-lugares.jpg" alt="">
+                                <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/representativos-lugares.jpg); opacity: 1;"></div>
+                            </a>
+
+                        </div><div class="card-body ">
+                            <h6 class="card-category text-info">Tema a Tratar</h6>
+                            <h4 class="card-title">
+                                <a asp-controller="Lugares" asp-action="Index">Lugares Representativos</a>
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="FaunayFlora" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/fauna-flora.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fauna-flora.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body">
-                        <h6 class="card-category text-warning">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="FaunayFlora" asp-action="Index">Fauna Y Flora</a>
-                        </h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="FiestasPatrias" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/fiestas-patrias.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/fiestas-patrias.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body">
-                        <h6 class="card-category text-rose">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="FiestasPatrias" asp-action="Index">Fiestas Patrias</a>
-                        </h4>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card card-blog">
-                    <div class="card-header card-header-image">
-                        <a asp-controller="Lugares" asp-action="Index">
-                            <img src="@Url.Content("~/")images/maincontent/representativos-lugares.jpg" alt="">
-                            <div class="colored-shadow" style="background-image: url(@Url.Content("~/")images/maincontent/representativos-lugares.jpg); opacity: 1;"></div>
-                        </a>
-
-                    </div><div class="card-body ">
-                        <h6 class="card-category text-info">Tema a Tratar</h6>
-                        <h4 class="card-title">
-                            <a asp-controller="Lugares" asp-action="Index">Lugares Representativos</a>
-                        </h4>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
+    }
 </center>

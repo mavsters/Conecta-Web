@@ -73,12 +73,12 @@
                     })
                 ]);
 
-                //Calculate the distance from the northWest coordinate to the southEast coordinate.
-                var distance = atlas.math.getDistanceTo(userPosition, endPosition, 'miles');
+                //Calculate the distance from the northWest coordinate to the southEast coordinate. //kilometres //miles
+                var distance = atlas.math.getDistanceTo(userPosition, endPosition, 'kilometres');
                 //Calculate the heading from the northWest coordinate to the southEast coordinate.
                 var heading = atlas.math.getHeading(userPosition, endPosition);
-                document.getElementById('outputPanel').innerHTML = 'Your Position:<br/>Lat:' + userPosition[0] + '<br/>Lon:' + userPosition[1] + '<hr/>' +
-                    'Asilo: <br />Lat: ' + endPosition[0] + ' <br /> Lon: ' + endPosition[1] + ' <hr />'+'Distance: ' + distance + ' miles<br/>Heading: ' + heading + ' degrees';
+                document.getElementById('outputPanel').innerHTML = 'Tu Ubicación:<br/>Lat: ' + userPosition[0] + '<br/>Lon: ' + userPosition[1] + '<hr/>' +
+                    'Ubicación del Ex-Asilo: <br />Lat: ' + endPosition[0] + ' <br /> Lon: ' + endPosition[1] + ' <hr />' + 'Distancia: ' + distance + ' kilometres<br/>Heading: ' + heading + ' degrees';
 
 
             }, function (error) {

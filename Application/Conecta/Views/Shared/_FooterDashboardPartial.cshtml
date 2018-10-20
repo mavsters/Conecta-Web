@@ -8,23 +8,16 @@
         <nav class="float-left">
             <ul>
                 <li>
-                    <a href="../../../www.creative-tim.com/index.html">
-                        Creative Tim
+                    <a asp-controller="Home" asp-action="Index">Matta Sur - Conecta Con la Memoria</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="About">
+                        Nosotros
                     </a>
                 </li>
                 <li>
-                    <a href="../../../www.creative-tim.com/presentation.html">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="../../../blog.creative-tim.com/index.html">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="../../../www.creative-tim.com/license.html">
-                        Licenses
+                    <a asp-controller="Main" asp-action="Conecta">
+                        Presentación del Proyecto
                     </a>
                 </li>
             </ul>
@@ -32,9 +25,9 @@
         <div class="copyright float-right">
             &copy;
             <script>
-                            document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="../../../www.creative-tim.com/index.html" target="_blank">Creative Tim</a> for a better web.
+                document.write(new Date().getFullYear())
+            </script>, hecho con <i class="material-icons">favorite</i> por los<a asp-controller="Home" asp-action="About"> integrantes de Matta Sur - Conecta.</a>
+            <!-- Creative Tim -->
         </div>
     </div>
 </footer>

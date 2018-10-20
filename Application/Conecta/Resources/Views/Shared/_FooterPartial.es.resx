@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Contact" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
   <data name="Description_Short" xml:space="preserve">
     <value>Proyecto "Matta Sur conecta con la memoria", genera un recorrido patrimonial por la ciudad que incluya al ex-asilo incorporando nuevas tecnología, creando un equipamiento institucional administrativo y de servicios que supla las necesidades del sector.</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Politicas de Privacidad</value>
+  </data>
+  <data name="Terms and conditions" xml:space="preserve">
+    <value>Terminos y Condiciones</value>
   </data>
 </root>
