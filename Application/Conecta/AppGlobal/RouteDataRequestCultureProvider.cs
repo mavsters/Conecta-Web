@@ -21,15 +21,15 @@ namespace Conecta
             var twoLetterCultureName = httpContext.Request.Path.Value.Split('/')[IndexOfCulture]?.ToString();
             var twoLetterUICultureName = httpContext.Request.Path.Value.Split('/')[IndexofUICulture]?.ToString();
 
-            if (twoLetterCultureName == "tr")
-                culture = "tr-TR";
+            if (twoLetterCultureName == "es")
+                culture = "es";
             else if (twoLetterCultureName == "en")
-                culture = uiCulture = "en-US";
+                culture = uiCulture = "en";
 
-            if (twoLetterUICultureName == "tr")
-                culture = "tr-TR";
+            if (twoLetterUICultureName == "es")
+                culture = "es";
             else if (twoLetterUICultureName == "en")
-                culture = uiCulture = "en-US";
+                culture = uiCulture = "en";
 
             if (culture == null && uiCulture == null)
                 return NullProviderCultureResult;

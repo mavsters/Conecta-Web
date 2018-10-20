@@ -12,7 +12,7 @@ namespace Conecta
                 return false;
 
             var culture = values["culture"].ToString();
-            return culture == "en" || culture == "tr";
+            return culture == "es" || culture == "en";
         }
     }
 }

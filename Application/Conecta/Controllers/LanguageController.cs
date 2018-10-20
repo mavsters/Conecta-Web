@@ -11,7 +11,7 @@ namespace Conecta.Controllers
     public class LanguageController : Controller
     {
         //Set Language
-        private string _currentLanguage;
+        private string _currentLanguage = "es";
 
         private string CurrentLanguage
         {
@@ -33,8 +33,8 @@ namespace Conecta.Controllers
         public ActionResult RedirectToDefaultLanguage()
         {
             var culture = CurrentLanguage;
-            if (culture != "en")
-                culture = "en";
+            if (culture != "es")
+                culture = "es";
             Response.Cookies.Append(
                CookieRequestCultureProvider.DefaultCookieName,
                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
