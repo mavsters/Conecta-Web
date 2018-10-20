@@ -8,29 +8,16 @@
                     <div class="row">
                         <div class="col-md-3">
                             <a href="@Url.Content("~/")"><h5>Conecta</h5></a>
-                            <p>@Localizer["Description-short"]</p>
+                            <p>@Localizer["Description_Short"]</p>
                         </div>
                         <div class="col-md-2">
                             <h5>About</h5>
                             <ul class="links-vertical">
-                                <li>
-                                    <a href="#pablo">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#pablo">
-                                        About Us
-                                    </a>
-                                </li>
+                                <a asp-area="" asp-controller="Home" asp-action="About"> Nosotros
+                                </a>
                                 <li>
                                     <a href="#pablo">
                                         Presentation
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#pablo">
-                                        Contact Us
                                     </a>
                                 </li>
                             </ul>

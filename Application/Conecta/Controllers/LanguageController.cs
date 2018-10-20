@@ -30,20 +30,24 @@ namespace Conecta.Controllers
                 return _currentLanguage;
             }
         }
-
+        [HttpGet]
         public void SetLanguage(string culture, string returnUrl)
         {
             _currentLanguage = culture;
             _returnUrl = returnUrl;
             RedirectToDefaultLanguage();
         }
-        
+
         public ActionResult RedirectToDefaultLanguage()
         {
             var culture = CurrentLanguage;
             var returnUrl = _returnUrl;
+
             if (culture != "es")
+            {
                 culture = "es";
+            }
+
             if (returnUrl == "")
             {
                 returnUrl = "Index";

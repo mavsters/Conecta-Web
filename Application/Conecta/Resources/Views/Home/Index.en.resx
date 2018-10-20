@@ -117,7 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Index_Title_Main" xml:space="preserve">
-    <value>What is the project "Matta Sur - Conecta con la memoria"?</value>
+  <data name="Index_Content_Main" xml:space="preserve">
+    <value>&lt;h2 class="title"&gt;What is the project "Matta Sur - Conecta con la memoria"?&lt;/h2&gt;
+&lt;h5 class="description"&gt;Matta Sur Conecta is a project carried out by different students of the University of Boyacá - Tunja whose sole objective is to provide a perfect place for any entity that wishes it, the initiative of this project is to make known the cultural heritage of Matta Sur in Santiago of Chile, next to the asylum and the construction of a new recreational park it is desired to become one of the best heritage sites that exist.&lt;/h5&gt;</value>
   </data>
 </root>

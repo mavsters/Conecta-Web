@@ -117,7 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Index_Title_Main" xml:space="preserve">
-    <value>¿Qué es el proyecto "Matta Sur - Conecta con la Memoria"?</value>
+  <data name="Index_Content_Main" xml:space="preserve">
+    <value>&lt;h2 class="title"&gt;¿Qué es el proyecto "Matta Sur - Conecta con la Memoria"?&lt;/h2&gt;
+&lt;h5 class="description"&gt;Matta Sur Conecta es un proyeco realizado por diferentes estudiantes de la universidad de Boyacá - Tunja que su único objetivo es brindar un lugar perfecto para todo ente que lo desee, la iniciativa de este proyecto es dar a conocer el patrimonio cultural de Matta Sur en Santiago de Chile, junto al asilo y la edificación de un nuevo parque recreacional se deseea llegar a ser uno de los mejores lugares patrimoniales que existan.&lt;/h5&gt;</value>
   </data>
 </root>
