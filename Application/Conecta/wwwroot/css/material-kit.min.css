@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'FontConecta';
+    src: url('../fonts/conecta/ArimaMadurai-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
 .carousel.carousel-full-nagivation .left {
     cursor: url(../../img/arrow-left.html),url(../../img/arrow-left-2.html),default !important
 }
@@ -84,7 +91,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: FontConecta,sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -102,7 +109,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
     margin: 0;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: FontConecta,Roboto,Helvetica,Arial,sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -216,7 +223,7 @@ a {
         }
 
 code, kbd, pre, samp {
-    font-family: monospace,monospace;
+    font-family: FontConecta,monospace,monospace;
     font-size: 1em
 }
 
@@ -272,7 +279,7 @@ button {
 
 button, input, optgroup, select, textarea {
     margin: 0;
-    font-family: inherit;
+    font-family: FontConecta,inherit;
     font-size: inherit;
     line-height: inherit
 }
@@ -368,7 +375,7 @@ template {
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5rem;
-    font-family: inherit;
+    font-family: FontConecta,inherit;
     font-weight: 400;
     line-height: 1.2;
     color: inherit
@@ -507,7 +514,7 @@ hr {
 }
 
 code, kbd, pre, samp {
-    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace
+    font-family: FontConecta,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace
 }
 
 code {
@@ -4912,7 +4919,7 @@ button.close {
     z-index: 1070;
     display: block;
     margin: 0;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: FontConecta,Roboto,Helvetica,Arial,sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -5021,7 +5028,7 @@ button.close {
     left: 0;
     z-index: 1060;
     max-width: 276px;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: FontConecta,Roboto,Helvetica,Arial,sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -9311,7 +9318,7 @@ legend {
 }
 
 .serif-font {
-    font-family: Roboto Slab,Times New Roman,serif
+    font-family: FontConecta,Roboto Slab,Times New Roman,serif
 }
 
 * {
@@ -12347,7 +12354,7 @@ footer {
 }
 
 .h1, .h2, .h3, .h4, body, h1, h2, h3, h4, h5, h6 {
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: FontConecta,Roboto,Helvetica,Arial,sans-serif;
     font-weight: 300;
     line-height: 1.5em
 }
@@ -12415,7 +12422,7 @@ b {
 
 .card-title, .footer-big h4, .footer-big h5, .footer-brand, .info-title, .media .media-heading, .title {
     font-weight: 700;
-    font-family: Roboto Slab,Times New Roman,serif
+    font-family: FontConecta,Roboto Slab,Times New Roman,serif
 }
 
     .card-title, .card-title a, .footer-big h4, .footer-big h4 a, .footer-big h5, .footer-big h5 a, .footer-brand, .footer-brand a, .info-title, .info-title a, .media .media-heading, .media .media-heading a, .title, .title a {
@@ -14757,7 +14764,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     }
 
 .media .media-heading small {
-    font-family: Roboto,Helvetica,Arial,sans-serif
+    font-family: FontConecta,Roboto,Helvetica,Arial,sans-serif
 }
 
 .media .media-body {
