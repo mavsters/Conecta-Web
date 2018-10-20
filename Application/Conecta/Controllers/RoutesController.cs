@@ -10,7 +10,7 @@ using Conecta.Models.Routes;
 
 namespace Conecta.Controllers
 {
-    public class RoutesController : Controller
+    public class RoutesController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

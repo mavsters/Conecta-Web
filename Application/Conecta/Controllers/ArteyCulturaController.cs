@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class ArteyCulturaController : Controller
+    public class ArteyCulturaController : LanguageController
     {
         // GET: ArteyCultura
         public ActionResult Index()

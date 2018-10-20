@@ -11,7 +11,7 @@ using Conecta.Models.Location;
 
 namespace Conecta.Controllers
 {
-    public class QRMainsController : Controller
+    public class QRMainsController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

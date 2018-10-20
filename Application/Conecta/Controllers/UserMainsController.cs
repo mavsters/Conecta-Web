@@ -10,7 +10,7 @@ using Conecta.Models.User;
 
 namespace Conecta.Controllers
 {
-    public class UserMainsController : Controller
+    public class UserMainsController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

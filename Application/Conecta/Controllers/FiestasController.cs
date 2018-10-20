@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class FiestasController : Controller
+    public class FiestasController : LanguageController
     {
         // GET: FiestasPatrias
         public ActionResult Index()

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class FaunayfloraController : Controller
+    public class FaunayfloraController : LanguageController
     {
         // GET: FaunayFlora
         public ActionResult Index()

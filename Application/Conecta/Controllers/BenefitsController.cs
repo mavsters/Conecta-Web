@@ -11,7 +11,7 @@ using Conecta.Models.Points;
 
 namespace Conecta.Controllers
 {
-    public class BenefitsController : Controller
+    public class BenefitsController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

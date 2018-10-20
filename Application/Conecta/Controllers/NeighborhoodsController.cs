@@ -10,7 +10,7 @@ using Conecta.Models.CountryStructure;
 
 namespace Conecta.Controllers
 {
-    public class NeighborhoodsController : Controller
+    public class NeighborhoodsController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

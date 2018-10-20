@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class HistoriaController : Controller
+    public class HistoriaController : LanguageController
     {
         // GET: Historia
         public ActionResult Index()

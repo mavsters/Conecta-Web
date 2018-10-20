@@ -13,12 +13,10 @@ using System.Net.Http;
 
 namespace Conecta.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : LanguageController
     {
         public IActionResult Index()
         {
-
-
             return View();
         }
 
@@ -64,48 +62,6 @@ namespace Conecta.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        [HttpPost]
-        public IActionResult SetLanguage(string culture, string returnUrl)
-        {
-            Response.Cookies.Append(
-                CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
-            );
-
-            return LocalRedirect(returnUrl);
-        }
-
-        private string _currentLanguage;
-        private string CurrentLanguage
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(_currentLanguage))
-                    return _currentLanguage;
-
-                if (string.IsNullOrEmpty(_currentLanguage))
-                {
-                    var feature = HttpContext.Features.Get<IRequestCultureFeature>();
-                    _currentLanguage = feature.RequestCulture.Culture.TwoLetterISOLanguageName.ToLower();
-                }
-
-                return _currentLanguage;
-            }
-        }
-
-        public ActionResult RedirectToDefaultLanguage()
-        {
-            var culture = CurrentLanguage;
-            if (culture != "en")
-                culture = "en";
-            Response.Cookies.Append(
-               CookieRequestCultureProvider.DefaultCookieName,
-               CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-               new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
-           );
-            return RedirectToAction("Index", new { culture });
-        }
+        
     }
 }

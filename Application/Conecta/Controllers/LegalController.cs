@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class LegalController : Controller
+    public class LegalController : LanguageController
     {
         public IActionResult Index()
         {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Conecta.Controllers
 {
-    public class EventosController : Controller
+    public class EventosController : LanguageController
     {
         // GET: Eventos
         public ActionResult Index()

@@ -10,7 +10,7 @@ using Conecta.Models.Type;
 
 namespace Conecta.Controllers
 {
-    public class CategoryTypesController : Controller
+    public class CategoryTypesController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

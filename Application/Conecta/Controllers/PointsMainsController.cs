@@ -11,7 +11,7 @@ using Conecta.Models.Coins;
 
 namespace Conecta.Controllers
 {
-    public class PointsMainsController : Controller
+    public class PointsMainsController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

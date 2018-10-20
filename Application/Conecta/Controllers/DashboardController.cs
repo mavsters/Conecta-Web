@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Conecta.Controllers
 {
     [Authorize]
-    public class DashboardController : Controller
+    public class DashboardController : LanguageController
     {
 
 

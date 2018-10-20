@@ -10,7 +10,7 @@ using Conecta.Models.Location;
 
 namespace Conecta.Controllers
 {
-    public class PlacesController : Controller
+    public class PlacesController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 

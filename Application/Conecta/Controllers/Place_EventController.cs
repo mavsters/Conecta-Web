@@ -10,7 +10,7 @@ using Conecta.Models.Events;
 
 namespace Conecta.Controllers
 {
-    public class Place_EventController : Controller
+    public class Place_EventController : LanguageController
     {
         private readonly ApplicationDbContext _context;
 
