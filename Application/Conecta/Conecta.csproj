@@ -33,6 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Main\_MG_Julio.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\_MG_Octubre.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Main\_MG_Agosto.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\_LayoutPage.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

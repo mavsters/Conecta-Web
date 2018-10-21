@@ -8,24 +8,24 @@
 </head>
 <body class="@ViewData["Title"].ToString().ToLower()-page sidebar-collapse">
     @await Html.PartialAsync("_SideNavPartial")
-    @if(ViewData["Title"].ToString().Equals("Login")){
-    <div class="page-header header-filter" style="height: -webkit-fill-available;background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
-        <div class="container">
-            @RenderBody()
+    @if (ViewData["Title"].ToString().Equals("Login"))
+    {
+        <div class="page-header header-filter" style="height: -webkit-fill-available;background-image: url('@Url.Content("~/")images/@ViewData["Background"]'); background-size: cover; background-position: top center;">
+            <div class="container">
+                @RenderBody()
+            </div>
+            @await Html.PartialAsync("_FooterDashboardPartial")
         </div>
-        @await Html.PartialAsync("_FooterSignUpRegisterPartial")
-    </div>
-        }else{
-    <div class="page-header header-filter" filter-color="purple" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
-        <div class="container">
-            @RenderBody()
+    }
+    else
+    {
+        <div class="page-header header-filter" filter-color="black" style="background-image: url('@Url.Content("~/")images/@ViewData["Background"]'); background-size: cover; background-position: top center;">
+            <div class="container">
+                @RenderBody()
+            </div>
+            @await Html.PartialAsync("_FooterDashboardPartial")
         </div>
-        @await Html.PartialAsync("_FooterSignUpRegisterPartial")
-    </div>
-        }
-
-
-
+    }
     @await Html.PartialAsync("_ScriptsPartial")
     @RenderSection("Scripts", required: false)
 </body>

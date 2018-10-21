@@ -1,9 +1,90 @@
 ﻿@{
     ViewData["Title"] = "Blog";
     ViewData["Additional"] = "Dashboard";
-    ViewData["Background"] = "maincontent/memoria-grafica.png";
-    ViewData["Title-Main"] = "Memoria Grafica de 'Conecta con la Memoria'";
-    ViewData["Title-Description"] = "Proceso Grafico y Explicativo del Proyecto 'Conecta'";
+    ViewData["Background"] = "maincontent/memoria-grafica-culminada.png";
+    ViewData["Title-Main"] = "Memoria Grafica de 'Matta Sur Conecta con la Memoria'";
+    ViewData["Title-Description"] = "Proceso Grafico y Explicativo del Proyecto 'Matta Sur Conecta con la Memoria'";
     Layout = "~/Views/Shared/_LayoutBlog.cshtml";
 }
-@await Html.PartialAsync("../GraphMemory")
+
+<div class="row">
+    <div class="col-md-12 ml-auto mr-auto">
+        <h3 class="title">Proceso detallado: Memoria grafica al Proyecto de Matta Sur Conecta con la Memoria</h3>
+        <p>
+            En esta sección del sitio web oficial de Matta Sur Conecta con la Memoria, se describe todo el proceso realizado a lo largo de los cuatro meses que han tenido como duración el proceso de consolidación del proyecto anteriormente mencionado, en esta paginá se detallara cada aspecto en 3 meses de labor y el mes faltante es la comprension, asociación y comprension del contexto del concurso, entre otros aspectos varios.
+        </p>
+        <hr />
+        <p>Recordando un poco el procedimiento de una Memoria Grafica se describe como:</p>
+        <div class="blockquote undefined">
+            <p>
+                Se puede definir como el texto donde se resumen y detallan actividades llevadas a cabo en un plazo determinado. Pretende hacer una relación de actividades, de forma que éstas queden documentadas para que "permanezcan en la memoria".
+            </p>
+            <p>
+                Memoria como recopilación de actividades: debe presentar información de organización, elaboración y producción del material realizado durante el diplomado.
+            </p>
+            <p>El Proceso de sus pasos de manera general seria:</p>
+            <ul>
+                <li><p>Hacer acopio de la información disponible sobre el tema o producto a desarrollar</p></li>
+                <li><p>Considerar fechas concretas (cuando se realizó determinada actividad)</p></li>
+                <li><p>Mencionar al equipo de trabajo (quienes intervienen)</p></li>
+                <li><p>Ordenar la información por módulos o temas, de manera que quede organizada de forma lógica y coherente.</p></li>
+            </ul>
+            <small>
+                Tomado de: <a href="http://blogs.fad.unam.mx/departamento_titulacion/wp-content/uploads/2014/10/ELABORACION-DE-MEMORIA-GRAFICA.pdf#">Facultad de Artes y Diseño - Universidad Autonoma de Mexico</a>
+            </small>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav nav-pills nav-pills-success nav-pills-icons flex-column" role="tablist">
+            <!--
+        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+    -->
+            <li class="nav-item">
+                <a class="nav-link active" href="#Julio" role="tab" data-toggle="tab">
+                    <i class="material-icons">dashboard</i>
+                    Julio
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Agosto" role="tab" data-toggle="tab">
+                    <i class="material-icons">dashboard</i>
+                    Agosto
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Septiembre" role="tab" data-toggle="tab">
+                    <i class="material-icons">schedule</i>
+                    Septiembre
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Octubre" role="tab" data-toggle="tab">
+                    <i class="material-icons">schedule</i>
+                    Octubre
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div class="tab-content">
+            <div class="tab-pane active" id="Julio">
+                @await Html.PartialAsync("_MG_Julio")
+            </div>
+            <div class="tab-pane" id="Agosto">
+                @await Html.PartialAsync("_MG_Agosto")
+            </div>
+            <div class="tab-pane" id="Septiembre">
+                @await Html.PartialAsync("_MG_Septiembre")
+            </div>
+            <div class="tab-pane" id="Octubre">
+                @await Html.PartialAsync("_MG_Octubre")
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
