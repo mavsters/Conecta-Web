@@ -5,7 +5,7 @@
     <title>@ViewData["Title"] - Conecta</title>
     @await Html.PartialAsync("_MetaTagsPartial")
     @await Html.PartialAsync("_HeadPartial")
-    @if (ViewData["Additional"]!=null&&ViewData["Additional"].ToString().Equals("Dashboard"))
+    @if (ViewData["Additional"] != null && (ViewData["Additional"].ToString().Equals("Dashboard") || ViewData["Additional"].ToString().Equals("Calendar")))
     {
         <!-- CSS Files -->
         <link href="~/css/material-dashboard.min.css?v=2.0.2" rel="stylesheet" />
@@ -28,8 +28,12 @@
         @await Html.PartialAsync("_RelateBlog")
     }
     @await Html.PartialAsync("_FooterPartial")
-    @await Html.PartialAsync("_CookieConsentPartial")
     @await Html.PartialAsync("_ScriptsPartial")
+    @if (ViewData["Additional"] != null && ViewData["Additional"].ToString().Equals("Calendar"))
+    {
+        <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+        <script src="~/js/plugins/fullcalendar.min.js"></script>
+    }
     @RenderSection("Scripts", required: false)
 </body>
 </html>

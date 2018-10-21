@@ -4,6 +4,13 @@
     font-weight: normal;
     font-style: normal
 }
+@font-face {
+    font-family: 'FontConectaTwo';
+    src: url('../fonts/conecta/bicycle-regular2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal
+}
+
 
 .carousel.carousel-full-nagivation .left {
     cursor: url(../../img/arrow-left.html),url(../../img/arrow-left-2.html),default !important
@@ -16754,7 +16761,7 @@ select.bs-select-hidden, select.selectpicker {
 .index-page .header-filter:after, .presentation-page .header-filter:after {
     background: rgba(236, 110, 41,.88);
     background: linear-gradient(45deg,rgba(51, 98, 163,.88),rgba(121, 142, 199,.31));
-    background: -webkit-linear-gradient(135deg,rgba(51, 98, 163, .88),rgba(160, 185, 225,.31));
+    background: -webkit-linear-gradient(135deg,rgba(38,46,95, .88),rgba(51, 98, 163,.31));
 }
 
 .index-page h4.description, .presentation-page h4.description {

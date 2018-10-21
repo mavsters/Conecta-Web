@@ -16,6 +16,6 @@
 }
 
 <div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
-    <a asp-controller="Language" asp-action="SetLanguage" asp-route-returnUrl="es">Espa&ntilde;ol / Spanish</a>
-    <a asp-controller="Language" asp-action="SetLanguage" asp-route-returnUrl="en">Ingl&#233;s / English</a>
+    <a href="javascript:addReplaceLangCode( document.location.href, 'es');">Espa&ntilde;ol / Spanish</a>
+    <a href="javascript:addReplaceLangCode( document.location.href, 'en');">Ingl&#233;s / English</a>
 </div>

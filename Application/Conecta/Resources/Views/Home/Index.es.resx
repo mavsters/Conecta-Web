@@ -117,8 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="App_Description" xml:space="preserve">
+    <value>Esta aplicación móvil te permite ubicarte, guiarte, estar al tanto de eventos e interactuar dentro y fuera del Ex-Asilo Hermanitas de los pobres.</value>
+  </data>
+  <data name="App_Title" xml:space="preserve">
+    <value>Matta Sur Conecta APP</value>
+  </data>
+  <data name="App_Topic_1" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Características Inigualables&lt;/h4&gt;&lt;p&gt;Excelente usabilidad, fácil adaptación, una guía completa, eventos imprescindibles y puntos indispensables son todo y lo que necesitas saber de la aplicación.&lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_2" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Fácil de Usar&lt;/h4&gt;&lt;p&gt;Gracias a su diseño, la aplicación es en esencia sencilla de utilizar y manejar, además la vida útil y objetivo de este software es brindarle al usuario una excelente guía y manejo de esta dentro del parque. &lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_3" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Constante Mejora&lt;/h4&gt;&lt;p&gt;La aplicación crece constantemente a pasos agigantados generando nuevas experiencias para el usuario. &lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_4" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Funcionalidad Eficaz&lt;/h4&gt;&lt;p&gt;Tanto la aplicación como el sitio web es funcional, ya que, la prioridad es permitirles a los usuarios sentirse cómodos al usarlas. &lt;/p&gt;</value>
+  </data>
+  <data name="Flip_Back_Context_1" xml:space="preserve">
+    <value>Este sitio web te mantendrá informado de los diversos eventos que se presentaran a lo largo del mes, e igualmente, se dará una descripción de estos y la ubicación mediante la aplicación.</value>
+  </data>
+  <data name="Flip_Back_Title_1" xml:space="preserve">
+    <value>Eventos de Matta Sur - Santiago de Chile</value>
+  </data>
+  <data name="Flip_Header_Context_1" xml:space="preserve">
+    <value>Mantente al tanto de todos los eventos que se celebran a lo largo del presente mes con Conecta y su parque recreacional.</value>
+  </data>
+  <data name="Flip_Header_Sub_Title_1" xml:space="preserve">
+    <value>Mantente atento en este sitio web a todos los eventos que se realizan en Matta Sur.</value>
+  </data>
+  <data name="Flip_Header_Title_1" xml:space="preserve">
+    <value>Cultura y Entretenimiento</value>
+  </data>
   <data name="Index_Content_Main" xml:space="preserve">
     <value>&lt;h2 class="title"&gt;¿Qué es el proyecto "Matta Sur - Conecta con la Memoria"?&lt;/h2&gt;
-&lt;h5 class="description"&gt;Matta Sur Conecta es un proyeco realizado por diferentes estudiantes de la universidad de Boyacá - Tunja que su único objetivo es brindar un lugar perfecto para todo ente que lo desee, la iniciativa de este proyecto es dar a conocer el patrimonio cultural de Matta Sur en Santiago de Chile, junto al asilo y la edificación de un nuevo parque recreacional se deseea llegar a ser uno de los mejores lugares patrimoniales que existan.&lt;/h5&gt;</value>
+&lt;h5 class="description"&gt;Matta Sur Conecta es un proyecto realizado por diferentes estudiantes de la universidad de Boyacá - Tunja que su único objetivo es brindar un lugar perfecto para todo ente que lo desee, la iniciativa de este proyecto es dar a conocer el patrimonio cultural de Matta Sur en Santiago de Chile, junto al asilo y la edificación de un nuevo parque recreacional se desea llegar a ser uno de los mejores lugares patrimoniales que existan.&lt;/h5&gt;</value>
+  </data>
+  <data name="Location_Btn" xml:space="preserve">
+    <value>¿Qué tan lejos esta?</value>
+  </data>
+  <data name="Location_Description_1" xml:space="preserve">
+    <value>Mediante una algoritmia, se define la distancia total desde tu ubicación actual y la ubicación del ex-Asilo teniendo una excelente exactitud. &lt;b&gt;Nuevo&lt;/b&gt; parque recreacional.</value>
+  </data>
+  <data name="Location_Description_2" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;País:&lt;/strong&gt;&lt;br&gt; Santiago de Chile&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Barrio Aledaño:&lt;/strong&gt;&lt;br&gt; Barrio Matta Sur&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lugar:&lt;/strong&gt;&lt;br&gt; Asilo de las hermanitas de los pobres de Santiago&lt;/p&gt;</value>
+  </data>
+  <data name="Location_Title_1" xml:space="preserve">
+    <value>¿Dónde estamos?</value>
+  </data>
+  <data name="Location_Title_2" xml:space="preserve">
+    <value>¿Qué tan lejos esta el Ex-Asilo Hermanitas de los pobres?</value>
+  </data>
+  <data name="Location_Title_3" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="See_Event" xml:space="preserve">
+    <value>Ver el Eventos en Matta Sur</value>
+  </data>
+  <data name="Topic_1" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;¿Qué hacemos?&lt;/h4&gt;
+&lt;p class="description"&gt;Elaboramos, diseñamos y construimos planos arquitectónicos para la mejora interna y externa del Asilo de los pobres, convirtiéndola en el mejor parque recreacional de todos.&lt;/p&gt;</value>
+  </data>
+  <data name="Topic_2" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Uso de las TIC&lt;/h4&gt;
+                        &lt;p class="description"&gt;
+                           Utilizamos las Tecnologías de la Información y la Comunicación para dar a conocer el proceso realizado a lo largo de la construcción de este proyecto, de igual forma, se utiliza un aplicativo móvil el cual permite brindar facilidad al usuario con respecto a la Guía y Ubicación de todo lo que desee dentro del parque.
+                        &lt;/p&gt;</value>
+  </data>
+  <data name="Topic_3" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Crecimiento de tus vivencias y experiencias&lt;/h4&gt;&lt;p class="description"&gt;
+Dentro y fuera del Ex-Asilo hermanitas de los pobres, podrás vivir uno de tus mejores momentos, ya que, junto a la experiencia visual y entretenimiento que el parque ofrece mediante aplicativo Web-Móvil podrás tener uno de los mejores momentos de tu vida.
+                        &lt;/p&gt;</value>
+  </data>
+  <data name="Topic_4" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Dashboard Administrativo&lt;/h4&gt;
+                        &lt;p class="description"&gt;
+El Dashboard genera un registro completo de tus actividades dentro del parque, al igual los puntos adquiridos en la vida útil del aplicativo, no obstante, existen herramientas en el dashboard que permiten accesos más rápidos.
+                        &lt;/p&gt;</value>
   </data>
 </root>

@@ -24,3 +24,23 @@ function showfile(content, url) {
     var contentTemp = "<object data='" + urlMain +"' type='application/pdf' frameborder='0' style='overflow: hidden;position: relative;overflow-x: hidden;overflow-y: hidden;height: -webkit-fill-available;width: 100%;' height='100%' width='100%'></object>";
     document.getElementById("content-" + content).innerHTML = contentTemp;
 }
+
+function addReplaceLangCode(url, langCode) {
+    var a = document.createElement('a');
+    a.href = url; // or document.location.href;
+
+    var paths = a.pathname.split('/');
+    paths.shift();
+
+    if (paths[0].length == 2) {
+        paths[0] = langCode;
+    } else {
+        paths.unshift(langCode);
+    }
+    var newURL =  a.protocol + '//' +
+        a.host + '/' + paths.join('/') +
+        (a.search != '' ? a.search : '') +
+        (a.hash != '' ? a.hash : '');
+    window.location.href = newURL;
+}
+

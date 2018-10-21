@@ -15,24 +15,26 @@
             <div class="col-md-6 ml-auto mr-auto">
                 <div class="rotating-card-container">
                     <div class="card card-rotate card-background">
-                        <div class="front front-background" style="background-image:url('@Url.Content("~/")images/maincontent/memoria-grafica-culminada.png');">
+                        <div class="front front-background" style="background-image:url('@Url.Content("~/")images/background/3.jpg');">
                             <div class="card-body">
                                 <h6 class="card-category">Universidad de Boyacá</h6>
                                 <a asp-area="" asp-controller="Main" asp-action="Conecta">
                                     <h3 class="card-title">Matta Sur Conecta con la Memoria</h3>
                                 </a>
                                 <p class="card-description">
-                                    Conoce todo el proceso realizado ante la culminación del proyecto arquitectonico con diversas modalidades aquí.
+                                    @Localization["Flip_Box_Header_1"]
                                 </p>
                             </div>
                         </div>
 
-                        <div class="back back-background" style="background-image: url('@Url.Content("~/")images/maincontent/memoria-grafica-culminada.png');">
+                        <div class="back back-background" style="background-image: url('@Url.Content("~/")images/background/3.jpg');">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Matta Sur - Conecta con la Memoria
                                 </h5>
-                                <p class="card-description">Conoce desde las memorias graficas hasta la implementación del aplicativo movil de Conecta.</p>
+                                <p class="card-description">
+                                    @Localization["Flip_Box_Back_1"]
+                                </p>
                                 <div class="footer justify-content-center">
                                     <a asp-controller="Main" asp-action="Conecta" class="btn btn-info btn-just-icon btn-fill btn-round">
                                         <i class="material-icons">subject</i>
@@ -57,10 +59,7 @@
                         <i class="material-icons">format_paint</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">¿Qué hacemos?</h4>
-                        <p class="description">
-                            Elaboramos, diseñamos y construimos planos arquitectonicos para la mejora interna y externa del Asilo de los pobres, convirtiendola en el mejor parque recreacional de todos.
-                        </p>
+                        @Localization["Topic_1"]
                     </div>
                 </div>
                 <div class="info info-horizontal">
@@ -68,10 +67,7 @@
                         <i class="material-icons">code</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Uso de las TIC</h4>
-                        <p class="description">
-                            Utilizamos las Tecnologias de la Información y la Comunicación para dar a conocer el proceso realizado a lo largo de la construcción de este proyecto, de igual forma, se utiliza un aplicativo movil el cual permite brindar facilidad al usuario con respecto a la <b>Guía y Ubicación</b> de todo lo que desee dentro del parque.
-                        </p>
+                        @Localization["Topic_2"]
                     </div>
                 </div>
             </div>
@@ -84,10 +80,7 @@
                         <i class="material-icons">timeline</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Crecimiento de tus vivencias y experiencias</h4>
-                        <p class="description">
-                            Con la aplicación y la interacción que tengas en el parque podras vivir uno de tus mejores momentos.
-                        </p>
+                        @Localization["Topic_3"]
                     </div>
                 </div>
                 <div class="info info-horizontal">
@@ -95,10 +88,7 @@
                         <i class="material-icons">dashboard</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Dashboard Administrativo</h4>
-                        <p class="description">
-                            El Dashboard genera un registro completo de tus actividades dentro del parque, al igual los puntos adquiridos en la vida útil del aplicativo, no obstante, existen herramientas en el dashboard que permiten accesos más rapidos...
-                        </p>
+                        @Localization["Topic_4"]
                     </div>
                 </div>
             </div>
@@ -107,12 +97,16 @@
                     <div class="card card-rotate card-background">
                         <div class="front front-background" style="background-image:url('@Url.Content("~/")images/Evento/evento-1.jpg');">
                             <div class="card-body">
-                                <h6 class="card-category">Cultura y Entretenimiento</h6>
+                                <h6 class="card-category">
+                                    @Localization["Flip_Header_Title_1"]
+                                </h6>
                                 <a asp-controller="Dashboard" asp-action="Eventos">
-                                    <h3 class="card-title">Mantente atento en este sitio web a todos los eventos que se realizan en Matta Sur</h3>
+                                    <h3 class="card-title">
+                                        @Localization["Flip_Header_Sub_Title_1"]
+                                    </h3>
                                 </a>
                                 <p class="card-description">
-                                    Mantente al tanto de todos los eventos que se celebran a lo largo del presente mes con Conecta y su parque recreacional
+                                    @Localization["Flip_Header_Context_1"]
                                 </p>
                             </div>
                         </div>
@@ -120,9 +114,11 @@
                         <div class="back back-background" style="background-image: url('@Url.Content("~/")images/Evento/evento-1.jpg');">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    Eventos de Matta Sur - Santiago de Chile
+                                    @Localization["Flip_Back_Title_1"]
                                 </h5>
-                                <p class="card-description">Este sitio web te mantendra informado de los diversos eventos que se presentaran a lo largo del mes, e igualmente, se dara una descripción de los mismos y la ubicación mediante la aplicación.</p>
+                                <p class="card-description">
+                                    @Localization["Flip_Back_Context_1"]
+                                </p>
                                 <div class="footer justify-content-center">
                                     /
                                     <a asp-controller="Dashboard" asp-action="Eventos" class="btn btn-info btn-just-icon btn-fill btn-round">
@@ -135,7 +131,8 @@
                 </div>
                 <center>
                     <a asp-controller="Dashboard" asp-action="Eventos" class="btn btn-danger btn-round">
-                        <i class="material-icons">subject</i> Ver el Eventos en Matta Sur
+                        <i class="material-icons">subject</i>
+                        @Localization["See_Event"]
                         <div class="ripple-container"></div>
                     </a>
                 </center>
@@ -149,8 +146,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
-                <h2 class="title">Matta Sur Conecta APP</h2>
-                <h5 class="description">Esta aplicación movíl te permite ubicarte, guiarte, estar al tanto de eventos e interactuar dentro y fuera del Ex-Asilo Hermanitas de los pobres.</h5>
+                <h2 class="title">
+                    @Localization["App_Title"]
+                </h2>
+                <h5 class="description">
+                    @Localization["App_Description"]
+                </h5>
             </div>
         </div>
         <div class="row">
@@ -160,8 +161,7 @@
                         <i class="material-icons">code</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Caracteristicas Inigualables</h4>
-                        <p>Excelente usabilidad, fácil adaptación, una guia completa, eventos inpresindibles y puntos indispensables son todo y lo que necesitas saber de la aplicaicón</p>
+                        @Localization["App_Topic_1"]
                     </div>
                 </div>
                 <div class="info info-horizontal">
@@ -169,8 +169,7 @@
                         <i class="material-icons">format_paint</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Fácil de Usar</h4>
-                        <p>Gracias a su diseño, la aplicación es en escencia sencilla de utilizar y manejar, ademas la vida útil y objetivo de este software es brindarle al usuario una excelente guia y manejo de la misma dentro del parque.</p>
+                        @Localization["App_Topic_2"]
                     </div>
                 </div>
             </div>
@@ -185,8 +184,7 @@
                         <i class="material-icons">dashboard</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Constante Mejora</h4>
-                        <p>La aplicación crece constantemente a pasos aginagatados generando nuevas experiencias para el usuario.</p>
+                        @Localization["App_Topic_3"]
                     </div>
                 </div>
                 <div class="info info-horizontal">
@@ -194,8 +192,7 @@
                         <i class="material-icons">view_carousel</i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Funcionalidad Eficaz</h4>
-                        <p>Tanto la aplicación como el sitio web es funcional, ya que, la prioridad es permitirle a los usuarios sentirse comodos al usarlas.</p>
+                        @Localization["App_Topic_4"]
                     </div>
                 </div>
             </div>
@@ -212,7 +209,9 @@
     <div class="col-md-6">
         <div class="card card-contact card-raised">
             <div class="card-header card-header-danger text-center">
-                <h4 class="card-title">¿Dónde estamos?</h4>
+                <h4 class="card-title">
+                    @Localization["Location_Title_1"]
+                </h4>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -222,13 +221,15 @@
                                 <i class="material-icons">phone</i>
                             </div>
                             <div class="description">
-                                <h5 class="info-title">¿Qué tan lejos esta el Ex-Asilo?</h5>
+                                <h5 class="info-title">
+                                    @Localization["Location_Title_2"]
+                                </h5>
                                 <p>
-                                    Mediante una algoritmia, se define la distancia total desde tu ubicación alctual y la ubicación del ex-Asilo teniendo una excelente exatitud.<b>Nuevo</b> parque recreacional.
+                                    @Localization["Location_Description_1"]
                                 </p>
                                 <br />
                                 <a asp-controller="MapsExtends" asp-action="Recomendacion" style="z-index: 1;" class="btn btn btn-info btn-primary btn-round">
-                                    ¿Qué tan lejos esta?
+                                    @Localization["Location_Btn"]
                                     <br />
                                     <i class="material-icons">airplanemode_active</i>
                                     <div class="ripple-container"></div>
@@ -242,15 +243,10 @@
                                 <i class="material-icons">pin_drop</i>
                             </div>
                             <div class="description">
-                                <h5 class="info-title">Ubicación</h5>
-                                <p>
-                                    <strong>País:</strong><br> Santiago de Chile
-                                    <br><br>
-                                    <strong>Barrio Aledaño:</strong><br> Barrio Matta Sur
-                                    <br><br>
-                                    <strong>Lugar:</strong><br> Asilo de las hermanitas de los pobres de Santiago
-                                    <br><br>
-                                </p>
+                                <h5 class="info-title">
+                                    @Localization["Location_Title_3"]
+                                </h5>
+                                @Localization["Location_Description_2   "]
                             </div>
                         </div>
                     </div>

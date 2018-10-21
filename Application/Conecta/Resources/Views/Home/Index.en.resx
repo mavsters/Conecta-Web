@@ -117,8 +117,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="App_Description" xml:space="preserve">
+    <value>This mobile application allows you to locate, guide, be aware of events and interact in and out of the former asylum Sisters of the Poor.</value>
+  </data>
+  <data name="App_Title" xml:space="preserve">
+    <value>Matta Sur Connects APP</value>
+  </data>
+  <data name="App_Topic_1" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Unique features&lt;/h4&gt;&lt;p&gt;Excellent usability, easy adaptation, a complete guide, essential events and essential points are everything and what you need to know about the application. &lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_2" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Easy to use&lt;/h4&gt;&lt;p&gt;Thanks to its design, the application is essentially simple to use and manage, plus the useful life and purpose of this software is to provide the user with an excellent guide and management of this within the park. &lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_3" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Constant Enhancement&lt;/h4&gt;&lt;p&gt;The application grows constantly by leaps and bounds, generating new experiences for the user. &lt;/p&gt;</value>
+  </data>
+  <data name="App_Topic_4" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Effective functionality&lt;/h4&gt;&lt;p&gt;Both the application and the Web site is functional, because the priority is to allow users to feel comfortable when using them.  &lt;/p&gt;</value>
+  </data>
+  <data name="Flip_Back_Context_1" xml:space="preserve">
+    <value>This website will keep you informed of the various events that will be presented throughout the month, and will also give a description of these and the location through the application.</value>
+  </data>
+  <data name="Flip_Back_Title_1" xml:space="preserve">
+    <value>Events of Matta Sur - Santiago de Chile</value>
+  </data>
+  <data name="Flip_Header_Context_1" xml:space="preserve">
+    <value>Stay tuned for all events that take place throughout this month with Conecta and its recreational park.</value>
+  </data>
+  <data name="Flip_Header_Sub_Title_1" xml:space="preserve">
+    <value>Keep an eye on this website for all events held in Matta Sur.</value>
+  </data>
+  <data name="Flip_Header_Title_1" xml:space="preserve">
+    <value>Culture and Entertainment</value>
+  </data>
   <data name="Index_Content_Main" xml:space="preserve">
-    <value>&lt;h2 class="title"&gt;What is the project "Matta Sur - Conecta con la memoria"?&lt;/h2&gt;
-&lt;h5 class="description"&gt;Matta Sur Conecta is a project carried out by different students of the University of Boyacá - Tunja whose sole objective is to provide a perfect place for any entity that wishes it, the initiative of this project is to make known the cultural heritage of Matta Sur in Santiago of Chile, next to the asylum and the construction of a new recreational park it is desired to become one of the best heritage sites that exist.&lt;/h5&gt;</value>
+    <value>&lt;h2 class="title"&gt;What is the project "Matta Sur-connect with memory"?&lt;/h2&gt;
+&lt;h5 class="description"&gt;Matta Sur Conecta is a project carried out by different students of the University of Boyacá-Tunja that their only objective is to provide a perfect place for any entity that wants it, the initiative of this project is to make known the patrimony Cultural of Matta Sur in Santiago de Chile, next to the asylum and the building of a new recreational park is to become one of the best patrimonial places that exist.&lt;/h5&gt;</value>
+  </data>
+  <data name="Location_Btn" xml:space="preserve">
+    <value>How far is it?</value>
+  </data>
+  <data name="Location_Description_1" xml:space="preserve">
+    <value>Using a algorithms, you define the total distance from your current location and the location of the ex-asylum with excellent accuracy. &lt;b&gt; New &lt;/b&gt; Recreational Park.</value>
+  </data>
+  <data name="Location_Description_2" xml:space="preserve">
+    <value>&lt;p&gt; &lt;strong&gt; Country: &lt;/strong&gt; &lt;br&gt; Santiago de Chile &lt;/p&gt; &lt;p&gt; &lt;strong&gt; neighborhood: &lt;/strong&gt; &lt;br&gt; Barrio Matta Sur &lt;/p&gt; &lt;p&gt; &lt;strong&gt; Place: &lt;/strong&gt; &lt;br&gt; The Sisters of the Poor of Santiago &lt;/p&gt;</value>
+  </data>
+  <data name="Location_Title_1" xml:space="preserve">
+    <value>Asylum where are we?</value>
+  </data>
+  <data name="Location_Title_2" xml:space="preserve">
+    <value>How far is the Ex-Asylum sisters Of the poor?</value>
+  </data>
+  <data name="Location_Title_3" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="See_Event" xml:space="preserve">
+    <value>View events in Matta Sur</value>
+  </data>
+  <data name="Topic_1" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;What do we do?&lt;/h4&gt;
+&lt;p class="description"&gt;We elaborate, design and construct architectural plans for the internal and external improvement of the asylum of the poor, making it the best recreational park of all. &lt;/p&gt;</value>
+  </data>
+  <data name="Topic_2" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Using TIC&lt;/h4&gt;
+                        &lt;p class="description"&gt;
+                           We use information and communication technologies to make known the process carried out throughout the construction of this project, in the same way, a mobile application is used which allows to provide facilid Ad to the user regarding the guide and location of everything you want inside the park.
+                        &lt;/p&gt;</value>
+  </data>
+  <data name="Topic_3" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Growing your experience and experiences &lt;/h4&gt;&lt;p class="description"&gt;
+In and out of the former asylum Sisters of the Poor, you can live one of your best moments, because, along with the visual experience and entertainment that the Park offers by Web-Mobile application you can have one of the best moments of your life.
+                        &lt;/p&gt;</value>
+  </data>
+  <data name="Topic_4" xml:space="preserve">
+    <value>&lt;h4 class="info-title"&gt;Dashboard Administrative &lt;/h4&gt;
+                        &lt;p class="description"&gt;
+The dashboard generates a complete record of your activities within the park, as well as the points acquired in the useful life of the application, however, there are tools s on the dashboard that allow faster accesses.
+                        &lt;/p&gt;</value>
   </data>
 </root>

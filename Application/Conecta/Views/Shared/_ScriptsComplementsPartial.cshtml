@@ -9,7 +9,66 @@
 <script type="text/javascript">
     //<![CDATA[
     $().ready(function () {
-@{
+function startCalendar(){
+        $calendar = $("#fullCalendar"), today = new Date, y = today.getFullYear(), m = today.getMonth(), d = today.getDate(), $calendar.fullCalendar({
+            viewRender: function (e, a) {
+                "month" != e.name && $(a).find(".fc-scroller").perfectScrollbar()
+            },
+            header: {
+                left: "title",
+                center: "month,agendaWeek,agendaDay",
+                right: "prev,next,today"
+            },
+            defaultDate: today,
+            selectable: !0,
+            selectHelper: !0,
+            views: {
+                month: {
+                    titleFormat: "MMMM YYYY"
+                },
+                week: {
+                    titleFormat: " MMMM D YYYY"
+                },
+                day: {
+                    titleFormat: "D MMM, YYYY"
+                }
+            },
+            editable: !0,
+            eventLimit: !0,
+            events: [
+                {
+                title: "Postulación del Concurso BID",
+                start: new Date(2018,5,11),
+                className: "event-default"
+            }, {
+                    title: "Entrega Fase I",
+                    start: new Date(2018, 7, 13),
+                    className: "event-rose"
+                },
+                {
+                    title: "Publicación equipos Clasificados",
+                    start: new Date(2018,7,27),
+                    className: "event-green"
+                }, {
+                    title: "Entrega Fase II",
+                    start: new Date(2018, 9, 22),
+                    className: "event-rose"
+                },
+                {
+                    title: "Equipos Finalistas",
+                    start: new Date(2018, 10, 12),
+                    className: "event-orange"
+                },
+                {
+                    title: "Validacion en la ciudad de Santiago de Chile",
+                    start: new Date(2019, 1, 1),
+                    end: new Date(2019, 2, 31),
+                    className: "event-green"
+                }
+            ]
+        });
+        }
+        @{
     var script = "";
     switch (title)
     {
@@ -19,9 +78,13 @@
         case "contact":
             script = "materialKitDemo.initContactUsMap();";
             break;
+        case "blog":
+            script = "startCalendar();";
+            break;
+
     }
-        }
-        @script
+    }
+    @script
     });
 //]]></script>
 
