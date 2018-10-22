@@ -36,18 +36,18 @@
                 $activeTab = $navigation.find(baseItemSelector + ':first');
             }
 
-            // See if we're currently in the first/last then disable the previous and last buttons
-            $($settings.previousSelector, element).toggleClass('disabled', (obj.firstIndex() >= obj.currentIndex()));
-            $($settings.nextSelector, element).toggleClass('disabled', (obj.currentIndex() >= obj.navigationLength()));
-            $($settings.nextSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
+            // See if we're currently in the first/last then disable the Anterior and last buttons
+            $($settings.AnteriorSelector, element).toggleClass('disabled', (obj.firstIndex() >= obj.currentIndex()));
+            $($settings.SiguienteSelector, element).toggleClass('disabled', (obj.currentIndex() >= obj.navigationLength()));
+            $($settings.SiguienteSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
             $($settings.lastSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
             $($settings.finishSelector, element).toggleClass('hidden', (obj.currentIndex() < obj.navigationLength()));
             $($settings.backSelector, element).toggleClass('disabled', (historyStack.length == 0));
             $($settings.backSelector, element).toggleClass('hidden', (obj.currentIndex() >= obj.navigationLength() && $($settings.finishSelector, element).length > 0));
 
             // We are unbinding and rebinding to ensure single firing and no double-click errors
-            obj.rebindClick($($settings.nextSelector, element), obj.next);
-            obj.rebindClick($($settings.previousSelector, element), obj.previous);
+            obj.rebindClick($($settings.SiguienteSelector, element), obj.Siguiente);
+            obj.rebindClick($($settings.AnteriorSelector, element), obj.Anterior);
             obj.rebindClick($($settings.lastSelector, element), obj.last);
             obj.rebindClick($($settings.firstSelector, element), obj.first);
             obj.rebindClick($($settings.finishSelector, element), obj.finish);
@@ -58,18 +58,18 @@
             }
         };
 
-        this.next = function(e) {
+        this.Siguiente = function(e) {
             // If we clicked the last then dont activate this
             if (element.hasClass('last')) {
                 return false;
             }
 
-            if ($settings.onNext && typeof $settings.onNext === 'function' && $settings.onNext($activeTab, $navigation, obj.nextIndex()) === false) {
+            if ($settings.onSiguiente && typeof $settings.onSiguiente === 'function' && $settings.onSiguiente($activeTab, $navigation, obj.SiguienteIndex()) === false) {
                 return false;
             }
 
             var formerIndex = obj.currentIndex();
-            var $index = obj.nextIndex();
+            var $index = obj.SiguienteIndex();
 
             // Did we click the last button
             if ($index > obj.navigationLength()) {} else {
@@ -78,18 +78,18 @@
             }
         };
 
-        this.previous = function(e) {
+        this.Anterior = function(e) {
             // If we clicked the first then dont activate this
             if (element.hasClass('first')) {
                 return false;
             }
 
-            if ($settings.onPrevious && typeof $settings.onPrevious === 'function' && $settings.onPrevious($activeTab, $navigation, obj.previousIndex()) === false) {
+            if ($settings.onAnterior && typeof $settings.onAnterior === 'function' && $settings.onAnterior($activeTab, $navigation, obj.AnteriorIndex()) === false) {
                 return false;
             }
 
             var formerIndex = obj.currentIndex();
-            var $index = obj.previousIndex();
+            var $index = obj.AnteriorIndex();
 
             if ($index < 0) {} else {
                 historyStack.push(formerIndex);
@@ -162,16 +162,16 @@
             return $navigation.find(baseItemSelector + ($settings.withVisible ? ':visible' : '')).index(e);
         };
 
-        this.nextIndex = function() {
-            var nextIndexCandidate = this.currentIndex();
-            var nextTabCandidate = null;
+        this.SiguienteIndex = function() {
+            var SiguienteIndexCandidate = this.currentIndex();
+            var SiguienteTabCandidate = null;
             do {
-                nextIndexCandidate++;
-                nextTabCandidate = $navigation.find(baseItemSelector + ($settings.withVisible ? ':visible' : '') + ":eq(" + nextIndexCandidate + ")");
-            } while ((nextTabCandidate) && (nextTabCandidate.hasClass("disabled")));
-            return nextIndexCandidate;
+                SiguienteIndexCandidate++;
+                SiguienteTabCandidate = $navigation.find(baseItemSelector + ($settings.withVisible ? ':visible' : '') + ":eq(" + SiguienteIndexCandidate + ")");
+            } while ((SiguienteTabCandidate) && (SiguienteTabCandidate.hasClass("disabled")));
+            return SiguienteIndexCandidate;
         };
-        this.previousIndex = function() {
+        this.AnteriorIndex = function() {
             var prevIndexCandidate = this.currentIndex();
             var prevTabCandidate = null;
             do {
@@ -186,10 +186,10 @@
         this.activeTab = function() {
             return $activeTab;
         };
-        this.nextTab = function() {
+        this.SiguienteTab = function() {
             return $navigation.find(baseItemSelector + ':eq(' + (obj.currentIndex() + 1) + ')').length ? $navigation.find(baseItemSelector + ':eq(' + (obj.currentIndex() + 1) + ')') : null;
         };
-        this.previousTab = function() {
+        this.AnteriorTab = function() {
             if (obj.currentIndex() <= 0) {
                 return null;
             }
@@ -243,14 +243,14 @@
 
         var innerTabShown = function(e) {
             var $element = $(e.target).parent();
-            var nextTab = $navigation.find(baseItemSelector).index($element);
+            var SiguienteTab = $navigation.find(baseItemSelector).index($element);
 
             // If it's disabled then do not change
             if ($element.hasClass('disabled')) {
                 return false;
             }
 
-            if ($settings.onTabChange && typeof $settings.onTabChange === 'function' && $settings.onTabChange($activeTab, $navigation, obj.currentIndex(), nextTab) === false) {
+            if ($settings.onTabChange && typeof $settings.onTabChange === 'function' && $settings.onTabChange($activeTab, $navigation, obj.currentIndex(), SiguienteTab) === false) {
                 return false;
             }
 
@@ -289,7 +289,7 @@
 
         // Load onShow
         if ($settings.onShow && typeof $settings.onShow === 'function') {
-            $settings.onShow($activeTab, $navigation, obj.nextIndex());
+            $settings.onShow($activeTab, $navigation, obj.SiguienteIndex());
         }
 
         $('a[data-toggle="tab"]', $navigation).on('click', innerTabClick);
@@ -323,16 +323,16 @@
     $.fn.bootstrapWizard.defaults = {
         withVisible: true,
         tabClass: 'nav nav-pills',
-        nextSelector: '.card-wizard .nav-item.next',
-        previousSelector: '.card-wizard .nav-item.previous',
+        SiguienteSelector: '.card-wizard .nav-item.Siguiente',
+        AnteriorSelector: '.card-wizard .nav-item.Anterior',
         firstSelector: '.card-wizard .nav-item.first',
         lastSelector: '.card-wizard .nav-item.last',
         finishSelector: '.card-wizard .nav-item.finish',
         backSelector: '.card-wizard .nav-item.back',
         onShow: null,
         onInit: null,
-        onNext: null,
-        onPrevious: null,
+        onSiguiente: null,
+        onAnterior: null,
         onLast: null,
         onFirst: null,
         onFinish: null,

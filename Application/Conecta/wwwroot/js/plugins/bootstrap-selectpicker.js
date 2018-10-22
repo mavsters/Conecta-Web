@@ -749,7 +749,7 @@
             currentChunk = undefined,
             prevPositions,
             positionIsDifferent,
-            previousElements,
+            AnteriorElements,
             menuIsDifferent = true,
             isVirtual = that.isVirtual();
 
@@ -790,7 +790,7 @@
 
         prevPositions = [that.selectpicker.view.position0, that.selectpicker.view.position1];
 
-        // always display previous, current, and next chunks
+        // always display Anterior, current, and Siguiente chunks
         firstChunk = Math.max(0, currentChunk - 1);
         lastChunk = Math.min(chunkCount - 1, currentChunk + 1);
 
@@ -824,7 +824,7 @@
         }
 
         if (init || positionIsDifferent) {
-          previousElements = that.selectpicker.view.visibleElements ? that.selectpicker.view.visibleElements.slice() : [];
+          AnteriorElements = that.selectpicker.view.visibleElements ? that.selectpicker.view.visibleElements.slice() : [];
 
           that.selectpicker.view.visibleElements = that.selectpicker.current.elements.slice(that.selectpicker.view.position0, that.selectpicker.view.position1);
 
@@ -832,7 +832,7 @@
 
           // if searching, check to make sure the list has actually been updated before updating DOM
           // this prevents unnecessary repaints
-          if ( isSearching || (isVirtual === false && init) ) menuIsDifferent = !isEqual(previousElements, that.selectpicker.view.visibleElements);
+          if ( isSearching || (isVirtual === false && init) ) menuIsDifferent = !isEqual(AnteriorElements, that.selectpicker.view.visibleElements);
 
           // if virtual scroll is disabled and not searching,
           // menu should never need to be updated more than once
@@ -1093,7 +1093,7 @@
             isOptgroupDisabled = isOptgroup && parent.disabled,
             isDisabled = this.disabled || isOptgroupDisabled,
             prevHiddenIndex,
-            showDivider = this.previousElementSibling && this.previousElementSibling.tagName === 'OPTGROUP',
+            showDivider = this.AnteriorElementSibling && this.AnteriorElementSibling.tagName === 'OPTGROUP',
             textElement;
 
         var parentData = $parent.data();
@@ -1103,15 +1103,15 @@
           // used to determine whether or not a divider should be placed after an optgroup if there are
           // hidden options between the optgroup and the first visible option
           prevHiddenIndex = thisData.prevHiddenIndex;
-          $this.next().data('prevHiddenIndex', (prevHiddenIndex !== undefined ? prevHiddenIndex : index));
+          $this.Siguiente().data('prevHiddenIndex', (prevHiddenIndex !== undefined ? prevHiddenIndex : index));
 
           liIndex--;
 
-          // if previous element is not an optgroup
+          // if Anterior element is not an optgroup
           if (!showDivider) {
             if (prevHiddenIndex !== undefined) {
               // select the element **before** the first hidden element in the group
-              var prevHidden = $selectOptions[prevHiddenIndex].previousElementSibling;
+              var prevHidden = $selectOptions[prevHiddenIndex].AnteriorElementSibling;
 
               if (prevHidden && prevHidden.tagName === 'OPTGROUP' && !prevHidden.disabled) {
                 showDivider = true;
@@ -1154,7 +1154,7 @@
 
           var optGroupClass = ' ' + parent.className || '';
 
-          if (!this.previousElementSibling) { // Is it the first option of the optgroup?
+          if (!this.AnteriorElementSibling) { // Is it the first option of the optgroup?
             optID += 1;
 
             // Get the opt group label
@@ -1232,13 +1232,13 @@
             originalIndex: index
           });
         } else {
-          // if previous element is not an optgroup and hideDisabled is true
+          // if Anterior element is not an optgroup and hideDisabled is true
           if (!showDivider && that.options.hideDisabled) {
             prevHiddenIndex = thisData.prevHiddenIndex;
 
             if (prevHiddenIndex !== undefined) {
               // select the element **before** the first hidden element in the group
-              var prevHidden = $selectOptions[prevHiddenIndex].previousElementSibling;
+              var prevHidden = $selectOptions[prevHiddenIndex].AnteriorElementSibling;
 
               if (prevHidden && prevHidden.tagName === 'OPTGROUP' && !prevHidden.disabled) {
                 showDivider = true;
@@ -2265,7 +2265,7 @@
       if (typeof status === 'undefined') status = true;
 
       var $selectOptions = this.$element.find('option'),
-          previousSelected = 0,
+          AnteriorSelected = 0,
           currentSelected = 0,
           prevValue = getSelectValues(this.$element[0]);
 
@@ -2276,7 +2276,7 @@
             option = $selectOptions[index];
 
         if (option) {
-          if (option.selected) previousSelected++;
+          if (option.selected) AnteriorSelected++;
           option.selected = status;
           if (option.selected) currentSelected++;
         }
@@ -2284,7 +2284,7 @@
 
       this.$element.removeClass('bs-select-hidden');
 
-      if (previousSelected === currentSelected) return;
+      if (AnteriorSelected === currentSelected) return;
 
       this.setOptionStatus();
 

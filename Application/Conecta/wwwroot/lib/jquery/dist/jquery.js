@@ -680,7 +680,7 @@ var i,
 		function( elem ) {
 			return elem.disabled === true && ("form" in elem || "label" in elem);
 		},
-		{ dir: "parentNode", next: "legend" }
+		{ dir: "parentNode", Siguiente: "legend" }
 	);
 
 // Optimize for push.apply( _, NodeList )
@@ -927,7 +927,7 @@ function siblingCheck( a, b ) {
 
 	// Check if b follows a
 	if ( cur ) {
-		while ( (cur = cur.nextSibling) ) {
+		while ( (cur = cur.SiguienteSibling) ) {
 			if ( cur === b ) {
 				return -1;
 			}
@@ -1597,7 +1597,7 @@ getText = Sizzle.getText = function( elem ) {
 			return elem.textContent;
 		} else {
 			// Traverse its children
-			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
+			for ( elem = elem.firstChild; elem; elem = elem.SiguienteSibling ) {
 				ret += getText( elem );
 			}
 		}
@@ -1625,8 +1625,8 @@ Expr = Sizzle.selectors = {
 	relative: {
 		">": { dir: "parentNode", first: true },
 		" ": { dir: "parentNode" },
-		"+": { dir: "previousSibling", first: true },
-		"~": { dir: "previousSibling" }
+		"+": { dir: "AnteriorSibling", first: true },
+		"~": { dir: "AnteriorSibling" }
 	},
 
 	preFilter: {
@@ -1691,7 +1691,7 @@ Expr = Sizzle.selectors = {
 			} else if ( unquoted && rpseudo.test( unquoted ) &&
 				// Get excess from tokenize (recursively)
 				(excess = tokenize( unquoted, true )) &&
-				// advance to the next closing parenthesis
+				// advance to the Siguiente closing parenthesis
 				(excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length) ) {
 
 				// excess is a negative index
@@ -1763,7 +1763,7 @@ Expr = Sizzle.selectors = {
 
 				function( elem, context, xml ) {
 					var cache, uniqueCache, outerCache, node, nodeIndex, start,
-						dir = simple !== forward ? "nextSibling" : "previousSibling",
+						dir = simple !== forward ? "SiguienteSibling" : "AnteriorSibling",
 						parent = elem.parentNode,
 						name = ofType && elem.nodeName.toLowerCase(),
 						useCache = !xml && !ofType,
@@ -1784,7 +1784,7 @@ Expr = Sizzle.selectors = {
 									}
 								}
 								// Reverse direction for :only-* (if we haven't yet done so)
-								start = dir = type === "only" && !start && "nextSibling";
+								start = dir = type === "only" && !start && "SiguienteSibling";
 							}
 							return true;
 						}
@@ -1794,7 +1794,7 @@ Expr = Sizzle.selectors = {
 						// non-xml :nth-child(...) stores cache data on `parent`
 						if ( forward && useCache ) {
 
-							// Seek `elem` from a previously-cached index
+							// Seek `elem` from a Anteriorly-cached index
 
 							// ...in a gzip-friendly way
 							node = parent;
@@ -1823,7 +1823,7 @@ Expr = Sizzle.selectors = {
 							}
 
 						} else {
-							// Use previously-cached element index if available
+							// Use Anteriorly-cached element index if available
 							if ( useCache ) {
 								// ...in a gzip-friendly way
 								node = elem;
@@ -2030,7 +2030,7 @@ Expr = Sizzle.selectors = {
 			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
-			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
+			for ( elem = elem.firstChild; elem; elem = elem.SiguienteSibling ) {
 				if ( elem.nodeType < 6 ) {
 					return false;
 				}
@@ -2207,7 +2207,7 @@ function toSelector( tokens ) {
 
 function addCombinator( matcher, combinator, base ) {
 	var dir = combinator.dir,
-		skip = combinator.next,
+		skip = combinator.Siguiente,
 		key = skip || dir,
 		checkNonElements = base && key === "parentNode",
 		doneName = done++;
@@ -2251,10 +2251,10 @@ function addCombinator( matcher, combinator, base ) {
 						} else if ( (oldCache = uniqueCache[ key ]) &&
 							oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
 
-							// Assign to newCache so results back-propagate to previous elements
+							// Assign to newCache so results back-propagate to Anterior elements
 							return (newCache[ 2 ] = oldCache[ 2 ]);
 						} else {
-							// Reuse newcache so results back-propagate to previous elements
+							// Reuse newcache so results back-propagate to Anterior elements
 							uniqueCache[ key ] = newCache;
 
 							// A match means we're done; a fail means we have to keep checking
@@ -2438,7 +2438,7 @@ function matcherFromTokens( tokens ) {
 
 			// Return special upon seeing a positional matcher
 			if ( matcher[ expando ] ) {
-				// Find the next relative operator (if any) for proper handling
+				// Find the Siguiente relative operator (if any) for proper handling
 				j = ++i;
 				for ( ; j < len; j++ ) {
 					if ( Expr.relative[ tokens[j].type ] ) {
@@ -2786,7 +2786,7 @@ var dir = function( elem, dir, until ) {
 var siblings = function( n, elem ) {
 	var matched = [];
 
-	for ( ; n; n = n.nextSibling ) {
+	for ( ; n; n = n.SiguienteSibling ) {
 		if ( n.nodeType === 1 && n !== elem ) {
 			matched.push( n );
 		}
@@ -3020,7 +3020,7 @@ var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 	guaranteedUnique = {
 		children: true,
 		contents: true,
-		next: true,
+		Siguiente: true,
 		prev: true
 	};
 
@@ -3121,23 +3121,23 @@ jQuery.each( {
 	parentsUntil: function( elem, i, until ) {
 		return dir( elem, "parentNode", until );
 	},
-	next: function( elem ) {
-		return sibling( elem, "nextSibling" );
+	Siguiente: function( elem ) {
+		return sibling( elem, "SiguienteSibling" );
 	},
 	prev: function( elem ) {
-		return sibling( elem, "previousSibling" );
+		return sibling( elem, "AnteriorSibling" );
 	},
-	nextAll: function( elem ) {
-		return dir( elem, "nextSibling" );
+	SiguienteAll: function( elem ) {
+		return dir( elem, "SiguienteSibling" );
 	},
 	prevAll: function( elem ) {
-		return dir( elem, "previousSibling" );
+		return dir( elem, "AnteriorSibling" );
 	},
-	nextUntil: function( elem, i, until ) {
-		return dir( elem, "nextSibling", until );
+	SiguienteUntil: function( elem, i, until ) {
+		return dir( elem, "SiguienteSibling", until );
 	},
 	prevUntil: function( elem, i, until ) {
-		return dir( elem, "previousSibling", until );
+		return dir( elem, "AnteriorSibling", until );
 	},
 	siblings: function( elem ) {
 		return siblings( ( elem.parentNode || {} ).firstChild, elem );
@@ -3213,7 +3213,7 @@ function createOptions( options ) {
  *
  *	once:			will ensure the callback list can only be fired once (like a Deferred)
  *
- *	memory:			will keep track of previous values and will call any callback added
+ *	memory:			will keep track of Anterior values and will call any callback added
  *					after the list has been fired right away with the latest "memorized"
  *					values (like a Deferred)
  *
@@ -4353,7 +4353,7 @@ jQuery.extend( {
 			startLength = queue.length,
 			fn = queue.shift(),
 			hooks = jQuery._queueHooks( elem, type ),
-			next = function() {
+			Siguiente = function() {
 				jQuery.dequeue( elem, type );
 			};
 
@@ -4373,7 +4373,7 @@ jQuery.extend( {
 
 			// Clear up the last queue stop function
 			delete hooks.stop;
-			fn.call( elem, next, hooks );
+			fn.call( elem, Siguiente, hooks );
 		}
 
 		if ( !startLength && hooks ) {
@@ -5923,7 +5923,7 @@ jQuery.fn.extend( {
 	after: function() {
 		return domManip( this, arguments, function( elem ) {
 			if ( this.parentNode ) {
-				this.parentNode.insertBefore( elem, this.nextSibling );
+				this.parentNode.insertBefore( elem, this.SiguienteSibling );
 			}
 		} );
 	},
@@ -7347,7 +7347,7 @@ jQuery.fn.extend( {
 				}
 			}
 
-			// Start the next in the queue if the last step wasn't forced.
+			// Start the Siguiente in the queue if the last step wasn't forced.
 			// Timers currently will call their complete callbacks, which
 			// will dequeue but only if they were gotoEnd.
 			if ( dequeue || !gotoEnd ) {
@@ -7478,8 +7478,8 @@ jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 	type = type || "fx";
 
-	return this.queue( type, function( next, hooks ) {
-		var timeout = window.setTimeout( next, time );
+	return this.queue( type, function( Siguiente, hooks ) {
+		var timeout = window.setTimeout( Siguiente, time );
 		hooks.stop = function() {
 			window.clearTimeout( timeout );
 		};
@@ -7932,7 +7932,7 @@ jQuery.fn.extend( {
 
 				// If the element has a class name or if we're passed `false`,
 				// then remove the whole classname (if there was one, the above saved it).
-				// Otherwise bring back whatever was previously saved (if anything),
+				// Otherwise bring back whatever was Anteriorly saved (if anything),
 				// falling back to the empty string if nothing was stored.
 				if ( this.setAttribute ) {
 					this.setAttribute( "class",
@@ -8805,7 +8805,7 @@ jQuery.extend( {
 	// Counter for holding the number of active queries
 	active: 0,
 
-	// Last-Modified header cache for next request
+	// Last-Modified header cache for Siguiente request
 	lastModified: {},
 	etag: {},
 
@@ -9750,7 +9750,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		// Clean-up function (fires after converters)
 		jqXHR.always( function() {
 
-			// If previous value didn't exist - remove it
+			// If Anterior value didn't exist - remove it
 			if ( overwritten === undefined ) {
 				jQuery( window ).removeProp( callbackName );
 

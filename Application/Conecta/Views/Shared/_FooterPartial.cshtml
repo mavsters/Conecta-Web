@@ -25,15 +25,17 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-md-2">
-                            <h5>Idioma</h5>
-                            <ul class="links-vertical">
-                                <li>
-                                    @await Html.PartialAsync("_SelectLanguagePartial")
-                                </li>
-                            </ul>
-                        </div>
-
+                        @if (ViewData["Title"] != null && ViewData["Title"].ToString().Equals("Index"))
+                        {
+                            <div class="col-md-2">
+                                <h5>Idioma</h5>
+                                <ul class="links-vertical">
+                                    <li>
+                                        @await Html.PartialAsync("_SelectLanguagePartial")
+                                    </li>
+                                </ul>
+                            </div>
+                        }
                         <div class="col-md-2">
                             <h5>Legal</h5>
                             <ul class="links-vertical">

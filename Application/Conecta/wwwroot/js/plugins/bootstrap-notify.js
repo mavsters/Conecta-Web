@@ -374,7 +374,7 @@
         reposition: function(posX) {
             var self = this,
                 notifies = '[data-notify-position="' + this.settings.placement.from + '-' + this.settings.placement.align + '"]:not([data-closing="true"])',
-                $elements = this.$ele.nextAll(notifies);
+                $elements = this.$ele.SiguienteAll(notifies);
             if (this.settings.newest_on_top === true) {
                 $elements = this.$ele.prevAll(notifies);
             }

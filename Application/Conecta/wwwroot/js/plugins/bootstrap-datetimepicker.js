@@ -148,7 +148,7 @@
                 return T("y") || T("M") || T("d")
             },
             O = function() {
-                var t = e("<thead>").append(e("<tr>").append(e("<th>").addClass("prev").attr("data-action", "previous").append(e("<span>").addClass(a.icons.previous))).append(e("<th>").addClass("picker-switch").attr("data-action", "pickerSwitch").attr("colspan", a.calendarWeeks ? "6" : "5")).append(e("<th>").addClass("next").attr("data-action", "next").append(e("<span>").addClass(a.icons.next)))),
+                var t = e("<thead>").append(e("<tr>").append(e("<th>").addClass("prev").attr("data-action", "Anterior").append(e("<span>").addClass(a.icons.Anterior))).append(e("<th>").addClass("picker-switch").attr("data-action", "pickerSwitch").attr("colspan", a.calendarWeeks ? "6" : "5")).append(e("<th>").addClass("Siguiente").attr("data-action", "Siguiente").append(e("<span>").addClass(a.icons.Siguiente)))),
                     n = e("<tbody>").append(e("<tr>").append(e("<td>").attr("colspan", a.calendarWeeks ? "8" : "7")));
                 return [e("<div>").addClass("datepicker-days").append(e("<table>").addClass("table-condensed").append(t).append(e("<tbody>"))), e("<div>").addClass("datepicker-months").append(e("<table>").addClass("table-condensed").append(t.clone()).append(n.clone())), e("<div>").addClass("datepicker-years").append(e("<table>").addClass("table-condensed").append(t.clone()).append(n.clone())), e("<div>").addClass("datepicker-decades").append(e("<table>").addClass("table-condensed").append(t.clone()).append(n.clone()))]
             },
@@ -305,7 +305,7 @@
                 var t = h.find(".datepicker-months"),
                     n = t.find("th"),
                     o = t.find("tbody").find("span");
-                n.eq(0).find("span").attr("title", a.tooltips.prevYear), n.eq(1).attr("title", a.tooltips.selectYear), n.eq(2).find("span").attr("title", a.tooltips.nextYear), t.find(".disabled").removeClass("disabled"), N(i.clone().subtract(1, "y"), "y") || n.eq(0).addClass("disabled"), n.eq(1).text(i.year()), N(i.clone().add(1, "y"), "y") || n.eq(2).addClass("disabled"), o.removeClass("active"), r.isSame(i, "y") && !u && o.eq(r.month()).addClass("active"), o.each(function(t) {
+                n.eq(0).find("span").attr("title", a.tooltips.prevYear), n.eq(1).attr("title", a.tooltips.selectYear), n.eq(2).find("span").attr("title", a.tooltips.SiguienteYear), t.find(".disabled").removeClass("disabled"), N(i.clone().subtract(1, "y"), "y") || n.eq(0).addClass("disabled"), n.eq(1).text(i.year()), N(i.clone().add(1, "y"), "y") || n.eq(2).addClass("disabled"), o.removeClass("active"), r.isSame(i, "y") && !u && o.eq(r.month()).addClass("active"), o.each(function(t) {
                     N(i.clone().month(t), "M") || e(this).addClass("disabled")
                 })
             },
@@ -315,7 +315,7 @@
                     n = i.clone().subtract(5, "y"),
                     o = i.clone().add(6, "y"),
                     s = "";
-                for (t.eq(0).find("span").attr("title", a.tooltips.prevDecade), t.eq(1).attr("title", a.tooltips.selectDecade), t.eq(2).find("span").attr("title", a.tooltips.nextDecade), e.find(".disabled").removeClass("disabled"), a.minDate && a.minDate.isAfter(n, "y") && t.eq(0).addClass("disabled"), t.eq(1).text(n.year() + "-" + o.year()), a.maxDate && a.maxDate.isBefore(o, "y") && t.eq(2).addClass("disabled"); !n.isAfter(o, "y");) s += '<span data-action="selectYear" class="year' + (n.isSame(r, "y") && !u ? " active" : "") + (N(n, "y") ? "" : " disabled") + '">' + n.year() + "</span>", n.add(1, "y");
+                for (t.eq(0).find("span").attr("title", a.tooltips.prevDecade), t.eq(1).attr("title", a.tooltips.selectDecade), t.eq(2).find("span").attr("title", a.tooltips.SiguienteDecade), e.find(".disabled").removeClass("disabled"), a.minDate && a.minDate.isAfter(n, "y") && t.eq(0).addClass("disabled"), t.eq(1).text(n.year() + "-" + o.year()), a.maxDate && a.maxDate.isBefore(o, "y") && t.eq(2).addClass("disabled"); !n.isAfter(o, "y");) s += '<span data-action="selectYear" class="year' + (n.isSame(r, "y") && !u ? " active" : "") + (N(n, "y") ? "" : " disabled") + '">' + n.year() + "</span>", n.add(1, "y");
                 e.find("td").html(s)
             },
             Q = function() {
@@ -329,7 +329,7 @@
                     p = !1,
                     c = !1,
                     u = "";
-                for (o.eq(0).find("span").attr("title", a.tooltips.prevCentury), o.eq(2).find("span").attr("title", a.tooltips.nextCentury), n.find(".disabled").removeClass("disabled"), (s.isSame(t({
+                for (o.eq(0).find("span").attr("title", a.tooltips.prevCentury), o.eq(2).find("span").attr("title", a.tooltips.SiguienteCentury), n.find(".disabled").removeClass("disabled"), (s.isSame(t({
                         y: 1900
                     })) || a.minDate && a.minDate.isAfter(s, "y")) && o.eq(0).addClass("disabled"), o.eq(1).text(s.year() + "-" + d.year()), (s.isSame(t({
                         y: 2e3
@@ -342,7 +342,7 @@
                     l = [],
                     p = [];
                 if (S()) {
-                    for (d.eq(0).find("span").attr("title", a.tooltips.prevMonth), d.eq(1).attr("title", a.tooltips.selectMonth), d.eq(2).find("span").attr("title", a.tooltips.nextMonth), s.find(".disabled").removeClass("disabled"), d.eq(1).text(i.format(a.dayViewHeaderFormat)), N(i.clone().subtract(1, "M"), "M") || d.eq(0).addClass("disabled"), N(i.clone().add(1, "M"), "M") || d.eq(2).addClass("disabled"), t = i.clone().startOf("M").startOf("w").startOf("d"), o = 0; o < 42; o++) 0 === t.weekday() && (n = e("<tr>"), a.calendarWeeks && n.append('<td class="cw">' + t.week() + "</td>"), l.push(n)), p = ["day"], t.isBefore(i, "M") && p.push("old"), t.isAfter(i, "M") && p.push("new"), t.isSame(r, "d") && !u && p.push("active"), N(t, "d") || p.push("disabled"), t.isSame(x(), "d") && p.push("today"), 0 !== t.day() && 6 !== t.day() || p.push("weekend"), q({
+                    for (d.eq(0).find("span").attr("title", a.tooltips.prevMonth), d.eq(1).attr("title", a.tooltips.selectMonth), d.eq(2).find("span").attr("title", a.tooltips.SiguienteMonth), s.find(".disabled").removeClass("disabled"), d.eq(1).text(i.format(a.dayViewHeaderFormat)), N(i.clone().subtract(1, "M"), "M") || d.eq(0).addClass("disabled"), N(i.clone().add(1, "M"), "M") || d.eq(2).addClass("disabled"), t = i.clone().startOf("M").startOf("w").startOf("d"), o = 0; o < 42; o++) 0 === t.weekday() && (n = e("<tr>"), a.calendarWeeks && n.append('<td class="cw">' + t.week() + "</td>"), l.push(n)), p = ["day"], t.isBefore(i, "M") && p.push("old"), t.isAfter(i, "M") && p.push("new"), t.isSame(r, "d") && !u && p.push("active"), N(t, "d") || p.push("disabled"), t.isSame(x(), "d") && p.push("today"), 0 !== t.day() && 6 !== t.day() || p.push("weekend"), q({
                         type: "dp.classify",
                         date: t,
                         classNames: p
@@ -415,11 +415,11 @@
                 return void 0 === a.parseInputDate ? (!t.isMoment(e) || e instanceof Date) && (e = x(e)) : e = a.parseInputDate(e), e
             },
             ae = {
-                next: function() {
+                Siguiente: function() {
                     var e = y[p].navFnc;
                     i.add(y[p].navStep, e), U(), B(e)
                 },
-                previous: function() {
+                Anterior: function() {
                     var e = y[p].navFnc;
                     i.subtract(y[p].navStep, e), U(), B(e)
                 },
@@ -883,8 +883,8 @@
             date: "glyphicon glyphicon-calendar",
             up: "glyphicon glyphicon-chevron-up",
             down: "glyphicon glyphicon-chevron-down",
-            previous: "glyphicon glyphicon-chevron-left",
-            next: "glyphicon glyphicon-chevron-right",
+            Anterior: "glyphicon glyphicon-chevron-left",
+            Siguiente: "glyphicon glyphicon-chevron-right",
             today: "glyphicon glyphicon-screenshot",
             clear: "glyphicon glyphicon-trash",
             close: "glyphicon glyphicon-remove"
@@ -894,16 +894,16 @@
             clear: "Clear selection",
             close: "Close the picker",
             selectMonth: "Select Month",
-            prevMonth: "Previous Month",
-            nextMonth: "Next Month",
+            prevMonth: "Anterior Month",
+            SiguienteMonth: "Siguiente Month",
             selectYear: "Select Year",
-            prevYear: "Previous Year",
-            nextYear: "Next Year",
+            prevYear: "Anterior Year",
+            SiguienteYear: "Siguiente Year",
             selectDecade: "Select Decade",
-            prevDecade: "Previous Decade",
-            nextDecade: "Next Decade",
-            prevCentury: "Previous Century",
-            nextCentury: "Next Century",
+            prevDecade: "Anterior Decade",
+            SiguienteDecade: "Siguiente Decade",
+            prevCentury: "Anterior Century",
+            SiguienteCentury: "Siguiente Century",
             pickHour: "Pick Hour",
             incrementHour: "Increment Hour",
             decrementHour: "Decrement Hour",

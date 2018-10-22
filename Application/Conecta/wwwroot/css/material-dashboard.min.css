@@ -1,4 +1,4 @@
-dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
+ dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
     margin-top: 0
 }
 
@@ -4901,31 +4901,31 @@ button.close {
     perspective: 1000px
 }
 
-    .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    .carousel-item-Siguiente, .carousel-item-prev, .carousel-item.active {
         display: block
     }
 
-.carousel-item-next, .carousel-item-prev {
+.carousel-item-Siguiente, .carousel-item-prev {
     position: absolute;
     top: 0
 }
 
-    .carousel-item-next.carousel-item-left, .carousel-item-prev.carousel-item-right {
+    .carousel-item-Siguiente.carousel-item-left, .carousel-item-prev.carousel-item-right {
         transform: translateX(0)
     }
 
 @supports (transform-style:preserve-3d) {
-    .carousel-item-next.carousel-item-left, .carousel-item-prev.carousel-item-right {
+    .carousel-item-Siguiente.carousel-item-left, .carousel-item-prev.carousel-item-right {
         transform: translate3d(0,0,0)
     }
 }
 
-.active.carousel-item-right, .carousel-item-next {
+.active.carousel-item-right, .carousel-item-Siguiente {
     transform: translateX(100%)
 }
 
 @supports (transform-style:preserve-3d) {
-    .active.carousel-item-right, .carousel-item-next {
+    .active.carousel-item-right, .carousel-item-Siguiente {
         transform: translate3d(100%,0,0)
     }
 }
@@ -4940,7 +4940,7 @@ button.close {
     }
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-Siguiente, .carousel-control-prev {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -4953,7 +4953,7 @@ button.close {
     opacity: .5
 }
 
-    .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+    .carousel-control-Siguiente:focus, .carousel-control-Siguiente:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
         color: #fff;
         text-decoration: none;
         outline: 0;
@@ -4964,11 +4964,11 @@ button.close {
     left: 0
 }
 
-.carousel-control-next {
+.carousel-control-Siguiente {
     right: 0
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-Siguiente-icon, .carousel-control-prev-icon {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -4980,7 +4980,7 @@ button.close {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
 }
 
-.carousel-control-next-icon {
+.carousel-control-Siguiente-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
 }
 
@@ -6076,7 +6076,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     }
 }
 
-.bootstrap-datetimepicker-widget .btn[data-action=incrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=incrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=showHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=showMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=togglePeriod]::after, .bootstrap-datetimepicker-widget .btn[data-action=clear]::after, .bootstrap-datetimepicker-widget .btn[data-action=today]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.next::after, .bootstrap-datetimepicker-widget table th.prev::after, .sr-only {
+.bootstrap-datetimepicker-widget .btn[data-action=incrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=incrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=showHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=showMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=togglePeriod]::after, .bootstrap-datetimepicker-widget .btn[data-action=clear]::after, .bootstrap-datetimepicker-widget .btn[data-action=today]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.Siguiente::after, .bootstrap-datetimepicker-widget table th.prev::after, .sr-only {
     white-space: nowrap;
     clip-path: inset(50%)
 }
@@ -19195,7 +19195,7 @@ svg {
  * https://github.com/Eonasdan/bootstrap-datetimepicker/
  */
 
-.bootstrap-datetimepicker-widget .btn[data-action=incrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=incrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=showHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=showMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=togglePeriod]::after, .bootstrap-datetimepicker-widget .btn[data-action=clear]::after, .bootstrap-datetimepicker-widget .btn[data-action=today]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.next::after, .bootstrap-datetimepicker-widget table th.prev::after, .sr-only {
+.bootstrap-datetimepicker-widget .btn[data-action=incrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=incrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=decrementMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=showHours]::after, .bootstrap-datetimepicker-widget .btn[data-action=showMinutes]::after, .bootstrap-datetimepicker-widget .btn[data-action=togglePeriod]::after, .bootstrap-datetimepicker-widget .btn[data-action=clear]::after, .bootstrap-datetimepicker-widget .btn[data-action=today]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.Siguiente::after, .bootstrap-datetimepicker-widget table th.prev::after, .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -19384,7 +19384,7 @@ svg {
             cursor: not-allowed
         }
 
-        .bootstrap-datetimepicker-widget table th.next span, .bootstrap-datetimepicker-widget table th.prev span {
+        .bootstrap-datetimepicker-widget table th.Siguiente span, .bootstrap-datetimepicker-widget table th.prev span {
             height: 27px;
             width: 27px;
             line-height: 28px;
@@ -19394,11 +19394,11 @@ svg {
         }
 
         .bootstrap-datetimepicker-widget table th.prev::after {
-            content: "Previous Month"
+            content: "Anterior Month"
         }
 
-        .bootstrap-datetimepicker-widget table th.next::after {
-            content: "Next Month"
+        .bootstrap-datetimepicker-widget table th.Siguiente::after {
+            content: "Siguiente Month"
         }
 
         .bootstrap-datetimepicker-widget table th.dow {

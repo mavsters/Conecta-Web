@@ -4826,12 +4826,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   text-decoration: none;
   background-color: #eee;
 }
-.pager .next > a,
-.pager .next > span {
+.pager .Siguiente > a,
+.pager .Siguiente > span {
   float: right;
 }
-.pager .previous > a,
-.pager .previous > span {
+.pager .Anterior > a,
+.pager .Anterior > span {
   float: left;
 }
 .pager .disabled > a,
@@ -6264,7 +6264,7 @@ button.close {
     -webkit-perspective: 1000px;
             perspective: 1000px;
   }
-  .carousel-inner > .item.next,
+  .carousel-inner > .item.Siguiente,
   .carousel-inner > .item.active.right {
     left: 0;
     -webkit-transform: translate3d(100%, 0, 0);
@@ -6276,7 +6276,7 @@ button.close {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0);
   }
-  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.Siguiente.left,
   .carousel-inner > .item.prev.right,
   .carousel-inner > .item.active {
     left: 0;
@@ -6285,26 +6285,26 @@ button.close {
   }
 }
 .carousel-inner > .active,
-.carousel-inner > .next,
+.carousel-inner > .Siguiente,
 .carousel-inner > .prev {
   display: block;
 }
 .carousel-inner > .active {
   left: 0;
 }
-.carousel-inner > .next,
+.carousel-inner > .Siguiente,
 .carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
-.carousel-inner > .next {
+.carousel-inner > .Siguiente {
   left: 100%;
 }
 .carousel-inner > .prev {
   left: -100%;
 }
-.carousel-inner > .next.left,
+.carousel-inner > .Siguiente.left,
 .carousel-inner > .prev.right {
   left: 0;
 }
@@ -6355,7 +6355,7 @@ button.close {
   opacity: .9;
 }
 .carousel-control .icon-prev,
-.carousel-control .icon-next,
+.carousel-control .icon-Siguiente,
 .carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
   position: absolute;
@@ -6369,13 +6369,13 @@ button.close {
   left: 50%;
   margin-left: -10px;
 }
-.carousel-control .icon-next,
+.carousel-control .icon-Siguiente,
 .carousel-control .glyphicon-chevron-right {
   right: 50%;
   margin-right: -10px;
 }
 .carousel-control .icon-prev,
-.carousel-control .icon-next {
+.carousel-control .icon-Siguiente {
   width: 20px;
   height: 20px;
   font-family: serif;
@@ -6384,7 +6384,7 @@ button.close {
 .carousel-control .icon-prev:before {
   content: '\2039';
 }
-.carousel-control .icon-next:before {
+.carousel-control .icon-Siguiente:before {
   content: '\203a';
 }
 .carousel-indicators {
@@ -6435,7 +6435,7 @@ button.close {
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-prev,
-  .carousel-control .icon-next {
+  .carousel-control .icon-Siguiente {
     width: 30px;
     height: 30px;
     margin-top: -10px;
@@ -6446,7 +6446,7 @@ button.close {
     margin-left: -10px;
   }
   .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-next {
+  .carousel-control .icon-Siguiente {
     margin-right: -10px;
   }
   .carousel-caption {

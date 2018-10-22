@@ -417,16 +417,16 @@
           // DELETE
           case 46:
             if (doGetCaretPosition($input[0]) === 0) {
-              var next = $inputWrapper.next();
-              if (next.length) {
-                self.remove(next.data('item'));
+              var Siguiente = $inputWrapper.Siguiente();
+              if (Siguiente.length) {
+                self.remove(Siguiente.data('item'));
               }
             }
             break;
 
           // LEFT ARROW
           case 37:
-            // Try to move the input before the previous tag
+            // Try to move the input before the Anterior tag
             var $prevTag = $inputWrapper.prev();
             if ($input.val().length === 0 && $prevTag[0]) {
               $prevTag.before($inputWrapper);
@@ -435,10 +435,10 @@
             break;
           // RIGHT ARROW
           case 39:
-            // Try to move the input after the next tag
-            var $nextTag = $inputWrapper.next();
-            if ($input.val().length === 0 && $nextTag[0]) {
-              $nextTag.after($inputWrapper);
+            // Try to move the input after the Siguiente tag
+            var $SiguienteTag = $inputWrapper.Siguiente();
+            if ($input.val().length === 0 && $SiguienteTag[0]) {
+              $SiguienteTag.after($inputWrapper);
               $input.focus();
             }
             break;

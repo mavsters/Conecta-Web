@@ -132,7 +132,7 @@ var Util = function ($$$1) {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
       do {
-        // eslint-disable-next-line no-bitwise
+        // eslint-disable-Siguiente-line no-bitwise
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
 
@@ -563,7 +563,7 @@ var Carousel = function ($$$1) {
     wrap: 'boolean'
   };
   var Direction = {
-    NEXT: 'next',
+    Siguiente: 'Siguiente',
     PREV: 'prev',
     LEFT: 'left',
     RIGHT: 'right'
@@ -584,7 +584,7 @@ var Carousel = function ($$$1) {
     SLIDE: 'slide',
     RIGHT: 'carousel-item-right',
     LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
+    Siguiente: 'carousel-item-Siguiente',
     PREV: 'carousel-item-prev',
     ITEM: 'carousel-item'
   };
@@ -592,7 +592,7 @@ var Carousel = function ($$$1) {
     ACTIVE: '.active',
     ACTIVE_ITEM: '.active.carousel-item',
     ITEM: '.carousel-item',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
+    Siguiente_PREV: '.carousel-item-Siguiente, .carousel-item-prev',
     INDICATORS: '.carousel-indicators',
     DATA_SLIDE: '[data-slide], [data-slide-to]',
     DATA_RIDE: '[data-ride="carousel"]'
@@ -625,17 +625,17 @@ var Carousel = function ($$$1) {
     var _proto = Carousel.prototype;
 
     // Public
-    _proto.next = function next() {
+    _proto.Siguiente = function Siguiente() {
       if (!this._isSliding) {
-        this._slide(Direction.NEXT);
+        this._slide(Direction.Siguiente);
       }
     };
 
-    _proto.nextWhenVisible = function nextWhenVisible() {
-      // Don't call next when the page isn't visible
+    _proto.SiguienteWhenVisible = function SiguienteWhenVisible() {
+      // Don't call Siguiente when the page isn't visible
       // or the carousel or its parent isn't visible
       if (!document.hidden && $$$1(this._element).is(':visible') && $$$1(this._element).css('visibility') !== 'hidden') {
-        this.next();
+        this.Siguiente();
       }
     };
 
@@ -650,7 +650,7 @@ var Carousel = function ($$$1) {
         this._isPaused = true;
       }
 
-      if ($$$1(this._element).find(Selector.NEXT_PREV)[0] && Util.supportsTransitionEnd()) {
+      if ($$$1(this._element).find(Selector.Siguiente_PREV)[0] && Util.supportsTransitionEnd()) {
         Util.triggerTransitionEnd(this._element);
         this.cycle(true);
       }
@@ -670,7 +670,7 @@ var Carousel = function ($$$1) {
       }
 
       if (this._config.interval && !this._isPaused) {
-        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
+        this._interval = setInterval((document.visibilityState ? this.SiguienteWhenVisible : this.Siguiente).bind(this), this._config.interval);
       }
     };
 
@@ -698,7 +698,7 @@ var Carousel = function ($$$1) {
         return;
       }
 
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
+      var direction = index > activeIndex ? Direction.Siguiente : Direction.PREV;
 
       this._slide(direction, this._items[index]);
     };
@@ -775,7 +775,7 @@ var Carousel = function ($$$1) {
 
         case ARROW_RIGHT_KEYCODE:
           event.preventDefault();
-          this.next();
+          this.Siguiente();
           break;
 
         default:
@@ -788,13 +788,13 @@ var Carousel = function ($$$1) {
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
+      var isSiguienteDirection = direction === Direction.Siguiente;
       var isPrevDirection = direction === Direction.PREV;
 
       var activeIndex = this._getItemIndex(activeElement);
 
       var lastItemIndex = this._items.length - 1;
-      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
+      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isSiguienteDirection && activeIndex === lastItemIndex;
 
       if (isGoingToWrap && !this._config.wrap) {
         return activeElement;
@@ -824,10 +824,10 @@ var Carousel = function ($$$1) {
       if (this._indicatorsElement) {
         $$$1(this._indicatorsElement).find(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
 
-        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
+        var SiguienteIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
-        if (nextIndicator) {
-          $$$1(nextIndicator).addClass(ClassName.ACTIVE);
+        if (SiguienteIndicator) {
+          $$$1(SiguienteIndicator).addClass(ClassName.ACTIVE);
         }
       }
     };
@@ -839,18 +839,18 @@ var Carousel = function ($$$1) {
 
       var activeElementIndex = this._getItemIndex(activeElement);
 
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
+      var SiguienteElement = element || activeElement && this._getItemByDirection(direction, activeElement);
 
-      var nextElementIndex = this._getItemIndex(nextElement);
+      var SiguienteElementIndex = this._getItemIndex(SiguienteElement);
 
       var isCycling = Boolean(this._interval);
       var directionalClassName;
       var orderClassName;
       var eventDirectionName;
 
-      if (direction === Direction.NEXT) {
+      if (direction === Direction.Siguiente) {
         directionalClassName = ClassName.LEFT;
-        orderClassName = ClassName.NEXT;
+        orderClassName = ClassName.Siguiente;
         eventDirectionName = Direction.LEFT;
       } else {
         directionalClassName = ClassName.RIGHT;
@@ -858,18 +858,18 @@ var Carousel = function ($$$1) {
         eventDirectionName = Direction.RIGHT;
       }
 
-      if (nextElement && $$$1(nextElement).hasClass(ClassName.ACTIVE)) {
+      if (SiguienteElement && $$$1(SiguienteElement).hasClass(ClassName.ACTIVE)) {
         this._isSliding = false;
         return;
       }
 
-      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
+      var slideEvent = this._triggerSlideEvent(SiguienteElement, eventDirectionName);
 
       if (slideEvent.isDefaultPrevented()) {
         return;
       }
 
-      if (!activeElement || !nextElement) {
+      if (!activeElement || !SiguienteElement) {
         // Some weirdness is happening, so we bail
         return;
       }
@@ -880,22 +880,22 @@ var Carousel = function ($$$1) {
         this.pause();
       }
 
-      this._setActiveIndicatorElement(nextElement);
+      this._setActiveIndicatorElement(SiguienteElement);
 
       var slidEvent = $$$1.Event(Event.SLID, {
-        relatedTarget: nextElement,
+        relatedTarget: SiguienteElement,
         direction: eventDirectionName,
         from: activeElementIndex,
-        to: nextElementIndex
+        to: SiguienteElementIndex
       });
 
       if (Util.supportsTransitionEnd() && $$$1(this._element).hasClass(ClassName.SLIDE)) {
-        $$$1(nextElement).addClass(orderClassName);
-        Util.reflow(nextElement);
+        $$$1(SiguienteElement).addClass(orderClassName);
+        Util.reflow(SiguienteElement);
         $$$1(activeElement).addClass(directionalClassName);
-        $$$1(nextElement).addClass(directionalClassName);
+        $$$1(SiguienteElement).addClass(directionalClassName);
         $$$1(activeElement).one(Util.TRANSITION_END, function () {
-          $$$1(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
+          $$$1(SiguienteElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
           $$$1(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
           _this3._isSliding = false;
           setTimeout(function () {
@@ -904,7 +904,7 @@ var Carousel = function ($$$1) {
         }).emulateTransitionEnd(TRANSITION_DURATION);
       } else {
         $$$1(activeElement).removeClass(ClassName.ACTIVE);
-        $$$1(nextElement).addClass(ClassName.ACTIVE);
+        $$$1(SiguienteElement).addClass(ClassName.ACTIVE);
         this._isSliding = false;
         $$$1(this._element).trigger(slidEvent);
       }
@@ -3037,7 +3037,7 @@ var ScrollSpy = function ($$$1) {
 
       this._clear();
 
-      var queries = this._selector.split(','); // eslint-disable-next-line arrow-body-style
+      var queries = this._selector.split(','); // eslint-disable-Siguiente-line arrow-body-style
 
 
       queries = queries.map(function (selector) {
@@ -3051,7 +3051,7 @@ var ScrollSpy = function ($$$1) {
       } else {
         // Set triggered link as active
         $link.addClass(ClassName.ACTIVE); // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+        // With both <ul> and <nav> markup a parent is the Anterior sibling of any nav ancestor
 
         $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav-link is inside .nav-item
 
@@ -3204,25 +3204,25 @@ var Tab = function ($$$1) {
       }
 
       var target;
-      var previous;
+      var Anterior;
       var listElement = $$$1(this._element).closest(Selector.NAV_LIST_GROUP)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
         var itemSelector = listElement.nodeName === 'UL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
-        previous = $$$1.makeArray($$$1(listElement).find(itemSelector));
-        previous = previous[previous.length - 1];
+        Anterior = $$$1.makeArray($$$1(listElement).find(itemSelector));
+        Anterior = Anterior[Anterior.length - 1];
       }
 
       var hideEvent = $$$1.Event(Event.HIDE, {
         relatedTarget: this._element
       });
       var showEvent = $$$1.Event(Event.SHOW, {
-        relatedTarget: previous
+        relatedTarget: Anterior
       });
 
-      if (previous) {
-        $$$1(previous).trigger(hideEvent);
+      if (Anterior) {
+        $$$1(Anterior).trigger(hideEvent);
       }
 
       $$$1(this._element).trigger(showEvent);
@@ -3242,9 +3242,9 @@ var Tab = function ($$$1) {
           relatedTarget: _this._element
         });
         var shownEvent = $$$1.Event(Event.SHOWN, {
-          relatedTarget: previous
+          relatedTarget: Anterior
         });
-        $$$1(previous).trigger(hiddenEvent);
+        $$$1(Anterior).trigger(hiddenEvent);
         $$$1(_this._element).trigger(shownEvent);
       };
 
@@ -3811,7 +3811,7 @@ var BaseInput = function ($$$1) {
           if (_i >= _iterator.length) break;
           _ref = _iterator[_i++];
         } else {
-          _i = _iterator.next();
+          _i = _iterator.Siguiente();
           if (_i.done) break;
           _ref = _i.value;
         }
@@ -3877,7 +3877,7 @@ var BaseInput = function ($$$1) {
           if (_i2 >= _iterator2.length) break;
           _ref2 = _iterator2[_i2++];
         } else {
-          _i2 = _iterator2.next();
+          _i2 = _iterator2.Siguiente();
           if (_i2.done) break;
           _ref2 = _i2.value;
         }
@@ -3896,7 +3896,7 @@ var BaseInput = function ($$$1) {
           if (_i3 >= _iterator3.length) break;
           _ref3 = _iterator3[_i3++];
         } else {
-          _i3 = _iterator3.next();
+          _i3 = _iterator3.Siguiente();
           if (_i3.done) break;
           _ref3 = _i3.value;
         }
@@ -3912,7 +3912,7 @@ var BaseInput = function ($$$1) {
               if (_i4 >= _iterator4.length) break;
               _ref4 = _iterator4[_i4++];
             } else {
-              _i4 = _iterator4.next();
+              _i4 = _iterator4.Siguiente();
               if (_i4.done) break;
               _ref4 = _i4.value;
             }
@@ -6459,7 +6459,7 @@ var BootstrapMaterialDesign = function ($$$1) {
           if (_i >= _iterator.length) break;
           _ref = _iterator[_i++];
         } else {
-          _i = _iterator.next();
+          _i = _iterator.Siguiente();
           if (_i.done) break;
           _ref = _i.value;
         }
@@ -6527,7 +6527,7 @@ var BootstrapMaterialDesign = function ($$$1) {
 /*
  * This is the main entry point.
  *
- * You can import other modules here, including external packages. When bundling using rollup you can mark those modules as external and have them excluded or, if they have a jsnext:main entry in their package.json (like this package does), let rollup bundle them into your dist file.
+ * You can import other modules here, including external packages. When bundling using rollup you can mark those modules as external and have them excluded or, if they have a jsSiguiente:main entry in their package.json (like this package does), let rollup bundle them into your dist file.
  *
  * at your application entry point.  This is necessary for browsers that do not yet support some ES2015 runtime necessities such as Symbol.  We do this in `index-iife.js` for our iife rollup bundle.
  */

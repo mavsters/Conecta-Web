@@ -547,7 +547,7 @@ $.extend( $.validator, {
 			this.prepareForm();
 			this.hideErrors();
 			var elements = this.elements()
-				.removeData( "previousValue" )
+				.removeData( "AnteriorValue" )
 				.removeAttr( "aria-invalid" );
 
 			this.resetElements( elements );
@@ -845,7 +845,7 @@ $.extend( $.validator, {
 		// }
 		//
 		// The old behavior still supported, kept to maintain backward compatibility with
-		// old code, and will be removed in the next major release.
+		// old code, and will be removed in the Siguiente major release.
 		defaultMessage: function( element, rule ) {
 			if ( typeof rule === "string" ) {
 				rule = { method: rule };
@@ -1123,10 +1123,10 @@ $.extend( $.validator, {
 			}
 		},
 
-		previousValue: function( element, method ) {
+		AnteriorValue: function( element, method ) {
 			method = typeof method === "string" && method || "remote";
 
-			return $.data( element, "previousValue" ) || $.data( element, "previousValue", {
+			return $.data( element, "AnteriorValue" ) || $.data( element, "AnteriorValue", {
 				old: null,
 				valid: true,
 				message: this.defaultMessage( element, { method: method } )
@@ -1506,22 +1506,22 @@ $.extend( $.validator, {
 
 			method = typeof method === "string" && method || "remote";
 
-			var previous = this.previousValue( element, method ),
+			var Anterior = this.AnteriorValue( element, method ),
 				validator, data, optionDataString;
 
 			if ( !this.settings.messages[ element.name ] ) {
 				this.settings.messages[ element.name ] = {};
 			}
-			previous.originalMessage = previous.originalMessage || this.settings.messages[ element.name ][ method ];
-			this.settings.messages[ element.name ][ method ] = previous.message;
+			Anterior.originalMessage = Anterior.originalMessage || this.settings.messages[ element.name ][ method ];
+			this.settings.messages[ element.name ][ method ] = Anterior.message;
 
 			param = typeof param === "string" && { url: param } || param;
 			optionDataString = $.param( $.extend( { data: value }, param.data ) );
-			if ( previous.old === optionDataString ) {
-				return previous.valid;
+			if ( Anterior.old === optionDataString ) {
+				return Anterior.valid;
 			}
 
-			previous.old = optionDataString;
+			Anterior.old = optionDataString;
 			validator = this;
 			this.startRequest( element );
 			data = {};
@@ -1536,7 +1536,7 @@ $.extend( $.validator, {
 					var valid = response === true || response === "true",
 						errors, message, submitted;
 
-					validator.settings.messages[ element.name ][ method ] = previous.originalMessage;
+					validator.settings.messages[ element.name ][ method ] = Anterior.originalMessage;
 					if ( valid ) {
 						submitted = validator.formSubmitted;
 						validator.resetInternals();
@@ -1548,11 +1548,11 @@ $.extend( $.validator, {
 					} else {
 						errors = {};
 						message = response || validator.defaultMessage( element, { method: method, parameters: value } );
-						errors[ element.name ] = previous.message = message;
+						errors[ element.name ] = Anterior.message = message;
 						validator.invalid[ element.name ] = true;
 						validator.showErrors( errors );
 					}
-					previous.valid = valid;
+					Anterior.valid = valid;
 					validator.stopRequest( element, valid );
 				}
 			}, param ) );
@@ -1564,7 +1564,7 @@ $.extend( $.validator, {
 
 // Ajax mode: abort
 // usage: $.ajax({ mode: "abort"[, port: "uniqueport"]});
-// if mode:"abort" is used, the previous request on that port (port can be undefined) is aborted via XMLHttpRequest.abort()
+// if mode:"abort" is used, the Anterior request on that port (port can be undefined) is aborted via XMLHttpRequest.abort()
 
 var pendingRequests = {},
 	ajax;

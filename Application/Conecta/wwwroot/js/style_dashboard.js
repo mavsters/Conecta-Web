@@ -90,8 +90,8 @@ demodashboard = {
                 date: "fa fa-calendar",
                 up: "fa fa-chevron-up",
                 down: "fa fa-chevron-down",
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
+                Anterior: 'fa fa-chevron-left',
+                Siguiente: 'fa fa-chevron-right',
                 today: 'fa fa-screenshot',
                 clear: 'fa fa-trash',
                 close: 'fa fa-remove'
@@ -156,10 +156,10 @@ demodashboard = {
         // Wizard Initialization
         $('.card-wizard').bootstrapWizard({
             'tabClass': 'nav nav-pills',
-            'nextSelector': '.btn-next',
-            'previousSelector': '.btn-previous',
+            'SiguienteSelector': '.btn-Siguiente',
+            'AnteriorSelector': '.btn-Anterior',
 
-            onNext: function (tab, navigation, index) {
+            onSiguiente: function (tab, navigation, index) {
                 var $valid = $('.card-wizard form').valid();
                 if (!$valid) {
                     $validator.focusInvalid();
@@ -199,10 +199,10 @@ demodashboard = {
 
                 // If it's the last tab then hide the last button and show the finish instead
                 if ($current >= $total) {
-                    $($wizard).find('.btn-next').hide();
+                    $($wizard).find('.btn-Siguiente').hide();
                     $($wizard).find('.btn-finish').show();
                 } else {
-                    $($wizard).find('.btn-next').show();
+                    $($wizard).find('.btn-Siguiente').show();
                     $($wizard).find('.btn-finish').hide();
                 }
 

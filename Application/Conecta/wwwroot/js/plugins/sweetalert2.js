@@ -187,9 +187,9 @@
 
     // Remember state in cases where opening and handling a modal will fiddle with it.
     var states = {
-        previousWindowKeyDown: null,
-        previousActiveElement: null,
-        previousBodyPadding: null
+        AnteriorWindowKeyDown: null,
+        AnteriorActiveElement: null,
+        AnteriorBodyPadding: null
     }
 
     /*
@@ -230,12 +230,12 @@
 
         range.oninput = function() {
             sweetAlert.resetValidationError()
-            range.previousSibling.value = range.value
+            range.AnteriorSibling.value = range.value
         }
 
         range.onchange = function() {
             sweetAlert.resetValidationError()
-            range.previousSibling.value = range.value
+            range.AnteriorSibling.value = range.value
         }
 
         select.onchange = function() {
@@ -430,12 +430,12 @@
         return false
     })()
 
-    // Reset the page to its previous state
+    // Reset the page to its Anterior state
     var resetPrevState = function() {
         var modal = getModal()
-        window.onkeydown = states.previousWindowKeyDown
-        if (states.previousActiveElement && states.previousActiveElement.focus) {
-            states.previousActiveElement.focus()
+        window.onkeydown = states.AnteriorWindowKeyDown
+        if (states.AnteriorActiveElement && states.AnteriorActiveElement.focus) {
+            states.AnteriorActiveElement.focus()
         }
         clearTimeout(modal.timeout)
     }
@@ -718,7 +718,7 @@
         addClass(document.body, swalClasses.in)
         fixScrollbar()
         iOSfix()
-        states.previousActiveElement = document.activeElement
+        states.AnteriorActiveElement = document.activeElement
         if (onComplete !== null && typeof onComplete === 'function') {
             onComplete.call(this, modal)
         }
@@ -726,21 +726,21 @@
 
     function fixScrollbar() {
         // for queues, do not do this more than once
-        if (states.previousBodyPadding !== null) {
+        if (states.AnteriorBodyPadding !== null) {
             return
         }
         // if the body has overflow
         if (document.body.scrollHeight > window.innerHeight) {
             // add padding so the content doesn't shift after removal of scrollbar
-            states.previousBodyPadding = document.body.style.paddingRight
+            states.AnteriorBodyPadding = document.body.style.paddingRight
             document.body.style.paddingRight = measureScrollbar() + 'px'
         }
     }
 
     function undoScrollbar() {
-        if (states.previousBodyPadding !== null) {
-            document.body.style.paddingRight = states.previousBodyPadding
-            states.previousBodyPadding = null
+        if (states.AnteriorBodyPadding !== null) {
+            document.body.style.paddingRight = states.AnteriorBodyPadding
+            states.AnteriorBodyPadding = null
         }
     }
 
@@ -1004,7 +1004,7 @@
             // Focus handling
             function setFocus(index, increment) {
                 var focusableElements = getFocusableElements(params.focusCancel)
-                // search for visible elements and select the next possible match
+                // search for visible elements and select the Siguiente possible match
                 for (var i = 0; i < focusableElements.length; i++) {
                     index = index + increment
 
@@ -1048,7 +1048,7 @@
                 // TAB
                 if (keyCode === 9) {
                     if (!e.shiftKey) {
-                        // Cycle to the next button
+                        // Cycle to the Siguiente button
                         setFocus(btnIndex, 1)
                     } else {
                         // Cycle to the prev button
@@ -1073,7 +1073,7 @@
                 }
             }
 
-            states.previousWindowKeyDown = window.onkeydown
+            states.AnteriorWindowKeyDown = window.onkeydown
             window.onkeydown = handleKeyDown
 
             // Loading state

@@ -344,7 +344,7 @@ if (typeof jQuery === 'undefined') {
     if (/input|textarea/i.test(e.target.tagName)) return
     switch (e.which) {
       case 37: this.prev(); break
-      case 39: this.next(); break
+      case 39: this.Siguiente(); break
       default: return
     }
 
@@ -358,7 +358,7 @@ if (typeof jQuery === 'undefined') {
 
     this.options.interval
       && !this.paused
-      && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
+      && (this.interval = setInterval($.proxy(this.Siguiente, this), this.options.interval))
 
     return this
   }
@@ -371,7 +371,7 @@ if (typeof jQuery === 'undefined') {
   Carousel.prototype.getItemForDirection = function (direction, active) {
     var activeIndex = this.getItemIndex(active)
     var willWrap = (direction == 'prev' && activeIndex === 0)
-                || (direction == 'next' && activeIndex == (this.$items.length - 1))
+                || (direction == 'Siguiente' && activeIndex == (this.$items.length - 1))
     if (willWrap && !this.options.wrap) return active
     var delta = direction == 'prev' ? -1 : 1
     var itemIndex = (activeIndex + delta) % this.$items.length
@@ -387,13 +387,13 @@ if (typeof jQuery === 'undefined') {
     if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
     if (activeIndex == pos) return this.pause().cycle()
 
-    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
+    return this.slide(pos > activeIndex ? 'Siguiente' : 'prev', this.$items.eq(pos))
   }
 
   Carousel.prototype.pause = function (e) {
     e || (this.paused = true)
 
-    if (this.$element.find('.next, .prev').length && $.support.transition) {
+    if (this.$element.find('.Siguiente, .prev').length && $.support.transition) {
       this.$element.trigger($.support.transition.end)
       this.cycle(true)
     }
@@ -403,9 +403,9 @@ if (typeof jQuery === 'undefined') {
     return this
   }
 
-  Carousel.prototype.next = function () {
+  Carousel.prototype.Siguiente = function () {
     if (this.sliding) return
-    return this.slide('next')
+    return this.slide('Siguiente')
   }
 
   Carousel.prototype.prev = function () {
@@ -413,16 +413,16 @@ if (typeof jQuery === 'undefined') {
     return this.slide('prev')
   }
 
-  Carousel.prototype.slide = function (type, next) {
+  Carousel.prototype.slide = function (type, Siguiente) {
     var $active   = this.$element.find('.item.active')
-    var $next     = next || this.getItemForDirection(type, $active)
+    var $Siguiente     = Siguiente || this.getItemForDirection(type, $active)
     var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
+    var direction = type == 'Siguiente' ? 'left' : 'right'
     var that      = this
 
-    if ($next.hasClass('active')) return (this.sliding = false)
+    if ($Siguiente.hasClass('active')) return (this.sliding = false)
 
-    var relatedTarget = $next[0]
+    var relatedTarget = $Siguiente[0]
     var slideEvent = $.Event('slide.bs.carousel', {
       relatedTarget: relatedTarget,
       direction: direction
@@ -436,19 +436,19 @@ if (typeof jQuery === 'undefined') {
 
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active')
-      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
-      $nextIndicator && $nextIndicator.addClass('active')
+      var $SiguienteIndicator = $(this.$indicators.children()[this.getItemIndex($Siguiente)])
+      $SiguienteIndicator && $SiguienteIndicator.addClass('active')
     }
 
     var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
     if ($.support.transition && this.$element.hasClass('slide')) {
-      $next.addClass(type)
-      $next[0].offsetWidth // force reflow
+      $Siguiente.addClass(type)
+      $Siguiente[0].offsetWidth // force reflow
       $active.addClass(direction)
-      $next.addClass(direction)
+      $Siguiente.addClass(direction)
       $active
         .one('bsTransitionEnd', function () {
-          $next.removeClass([type, direction].join(' ')).addClass('active')
+          $Siguiente.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
           setTimeout(function () {
@@ -458,7 +458,7 @@ if (typeof jQuery === 'undefined') {
         .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
     } else {
       $active.removeClass('active')
-      $next.addClass('active')
+      $Siguiente.addClass('active')
       this.sliding = false
       this.$element.trigger(slidEvent)
     }
@@ -2094,15 +2094,15 @@ if (typeof jQuery === 'undefined') {
 
     if ($this.parent('li').hasClass('active')) return
 
-    var $previous = $ul.find('.active:last a')
+    var $Anterior = $ul.find('.active:last a')
     var hideEvent = $.Event('hide.bs.tab', {
       relatedTarget: $this[0]
     })
     var showEvent = $.Event('show.bs.tab', {
-      relatedTarget: $previous[0]
+      relatedTarget: $Anterior[0]
     })
 
-    $previous.trigger(hideEvent)
+    $Anterior.trigger(hideEvent)
     $this.trigger(showEvent)
 
     if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
@@ -2111,13 +2111,13 @@ if (typeof jQuery === 'undefined') {
 
     this.activate($this.closest('li'), $ul)
     this.activate($target, $target.parent(), function () {
-      $previous.trigger({
+      $Anterior.trigger({
         type: 'hidden.bs.tab',
         relatedTarget: $this[0]
       })
       $this.trigger({
         type: 'shown.bs.tab',
-        relatedTarget: $previous[0]
+        relatedTarget: $Anterior[0]
       })
     })
   }
@@ -2128,7 +2128,7 @@ if (typeof jQuery === 'undefined') {
       && $.support.transition
       && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
 
-    function next() {
+    function Siguiente() {
       $active
         .removeClass('active')
         .find('> .dropdown-menu > .active')
@@ -2163,9 +2163,9 @@ if (typeof jQuery === 'undefined') {
 
     $active.length && transition ?
       $active
-        .one('bsTransitionEnd', next)
+        .one('bsTransitionEnd', Siguiente)
         .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
-      next()
+      Siguiente()
 
     $active.removeClass('in')
   }
