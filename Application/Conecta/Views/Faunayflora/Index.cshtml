@@ -1,2 +1,40 @@
 ﻿@{
+    ViewData["Title"] = "Blog";
+    ViewData["Background"] = "maincontent/fauna-flora.jpg";
+    ViewData["Title-Main"] = "Fauna - Chilena";
+    ViewData["Title-Description"] = "Conoce una breve Biodiversidad de Animales que puedes encontrar en Chile.";
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+    string[] content = new string[] { "Alpaca", "Chinchilla", "Chingue", "Coatí", "Coipo", "Colocolo", "Degú o Ratón cola de pincel", "Guanaco", "Güiña", "Huemul", "Llaca", "Llama", "Lobo Marino", "Pudú", "Puma" };
 }
+
+<div class="row">
+
+    <div class="col-md-12 ml-auto mr-auto">
+        <h3 class="title">Fauna de Chile</h3>
+        <p>
+            Aunque la fauna de Chile es tan variada como la flora, es menos abundante. Del grupo de los mamíferos destacan especies como el puma (gato salvaje americano), el guanaco (pariente de los camellos), el huemul (que pertenece a la familia de los ciervos y es endémico del país), la vizcacha (roedor que gusta de los lugares rocosos de la cordillera y el altiplano), y otro pariente de los ciervos, el más pequeño de la familia, el pudú, muy difícil de observar en su estado salvaje.
+        </p><p>
+            Pero la fauna chilena no se limita a la escarpada geografía de la cordillera, la sequedad del desierto o la frondosidad de los bosques del sur y la Patagonia. La larga línea costera que flanquea por el oeste al país, presenta una rica variedad de especies, incluyendo desde leones marinos, lobos de mar, toninas y nutrias, hasta colosales ballenas en las heladas aguas australes.
+        </p>
+        <hr />
+        @for (int i = 1; i <= 15; i++)
+        {
+            <center>
+                <div class="card card-plain card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="~/images/fauna/@(i.ToString()+".jpg")">
+                            <img class="img img-raised" src="~/images/fauna/@(i.ToString()+".jpg")">
+                        </a>
+                        <div class="colored-shadow colored-shadow-big" style="background-image: url(&quot;/images/fauna/@(i.ToString()+".jpg")&quot;); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-info">Fauna</h6>
+                        <h3 class="card-title">
+                            <a href="~/images/fauna/@(i.ToString()+".jpg")">@content[i - 1]</a>
+                        </h3>
+                    </div>
+                </div>
+            </center>
+        }
+    </div>
+</div>

@@ -13,6 +13,11 @@ namespace Conecta.Controllers
             return View();
         }
 
+        public IActionResult Renders()
+        {
+            return View();
+        }
+
         public IActionResult MemoriaGrafica()
         {
             return View();
