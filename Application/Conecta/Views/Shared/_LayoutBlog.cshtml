@@ -7,8 +7,8 @@
     @await Html.PartialAsync("_HeadPartial")
     @if (ViewData["Additional"] != null && (ViewData["Additional"].ToString().Equals("Dashboard") || ViewData["Additional"].ToString().Equals("Calendar")))
     {
-        <!-- CSS Files
-        <link href="~/css/material-dashboard.min.css?v=2.0.2" rel="stylesheet" />-->
+        <!-- CSS Files-->
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
     }
 </head>
 <body class="blog-page sidebar-collapse">
